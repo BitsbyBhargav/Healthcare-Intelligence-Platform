@@ -2,14 +2,22 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import sqlite3
+from pathlib import Path
 
 st.set_page_config(page_title="Healthcare DW Analytics", layout="wide")
 
 st.title("🏥 Hospital Operational Analytics & Readmission Dashboard")
 st.markdown("### Data Warehouse Business Intelligence Platform (Jury 1)")
 
+# Resolve the actual warehouse database in the data folder
+project_root = Path(__file__).resolve().parent.parent
+db_path = project_root / 'data' / 'healthcare_dw.db'
+if not db_path.exists():
+    st.error(f"Data warehouse not found at {db_path}. Run the ETL pipeline first.")
+    st.stop()
+
 # Connect to Data Warehouse
-conn = sqlite3.connect('healthcare_dw.db')
+conn = sqlite3.connect(db_path)
 
 # Load Data via SQL
 fact_df = pd.read_sql_query("SELECT * FROM Fact_Admissions", conn)
