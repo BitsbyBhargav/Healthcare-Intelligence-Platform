@@ -1,0 +1,43 @@
+{
+  "Orange": "3.40.0",
+  "Associate": "1.4.0",
+  "rows": 3000,
+  "discrete_association_features": 17,
+  "rules": 45,
+  "itemsets": 77,
+  "rule_output_rows": 45,
+  "iris_reproduces_error": true,
+  "five_fold_accuracy": [
+    0.5253333333333333,
+    0.576,
+    0.5553333333333333,
+    0.593
+  ],
+  "five_fold_macro_f1": [
+    0.325416377596759,
+    0.37129412407169515,
+    0.3101728421486027,
+    0.31509350859384405
+  ],
+  "five_fold_auc": [
+    0.5182195361665777,
+    0.6039040902774656,
+    0.5254128073758868,
+    0.5692301405585112
+  ],
+  "learners": [
+    "Decision Tree",
+    "Naive Bayes",
+    "KNN",
+    "Random Forest"
+  ],
+  "widget_checks": [
+    "Rules",
+    "Itemsets",
+    "Rule Table",
+    "Confusion Matrix",
+    "ROC Analysis",
+    "Distributions"
+  ],
+  "scope": "Real widget execution; separate from desktop visual verification"
+}

@@ -1,0 +1,5 @@
+Mining 101,766 hospital encounters...
+Unique clinical items: 33
+Apriori: 85 frequent itemsets, 23 cross-domain rules, 0.09 s
+FP-Growth: 85 frequent itemsets, 23 cross-domain rules, 0.26 s
+Saved mining outputs to C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\jury_2_dw\outputs

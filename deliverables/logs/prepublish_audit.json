@@ -1,0 +1,67 @@
+{
+  "candidate_files": 136,
+  "credential_or_network_findings": [],
+  "suspect_file_names": [],
+  "missing_required_assets": [],
+  "ignore_probes": {
+    ".env": true,
+    ".env.local": true,
+    ".streamlit/secrets.toml": true,
+    "credentials.prod.json": true,
+    ".venv/example": true,
+    "venv/example": true,
+    "__pycache__/example.pyc": true,
+    ".pytest_cache/example": true,
+    "tmp/example.tmp": true,
+    "archive/old-model.pkl": true,
+    "jury_2_dw/outputs/experimental.joblib": true,
+    "deliverables/logs/streamlit.log": true
+  },
+  "over_100_MiB": [],
+  "over_50_MiB": [],
+  "largest_files": [
+    {
+      "file": "jury_2_dw/outputs/best_model.joblib",
+      "bytes": 19651316,
+      "MiB": 18.74
+    },
+    {
+      "file": "data/diabetes_130_us.csv",
+      "bytes": 18241862,
+      "MiB": 17.4
+    },
+    {
+      "file": "data/healthcare_dw.db",
+      "bytes": 9773056,
+      "MiB": 9.32
+    },
+    {
+      "file": "HEALTHCARE DASHBOARD.pbix",
+      "bytes": 4708446,
+      "MiB": 4.49
+    },
+    {
+      "file": "data/Fact_Admissions.csv",
+      "bytes": 4353916,
+      "MiB": 4.15
+    },
+    {
+      "file": "data/Dim_Patient.csv",
+      "bytes": 2485587,
+      "MiB": 2.37
+    },
+    {
+      "file": "deliverables/Jury2_Healthcare_Intelligence_Implementation_Report.pdf",
+      "bytes": 2274889,
+      "MiB": 2.17
+    },
+    {
+      "file": "deliverables/Jury2_Three_Dashboard_Evidence.pdf",
+      "bytes": 940237,
+      "MiB": 0.9
+    }
+  ],
+  "pdf_documents_scanned": 2,
+  "source_and_pdf_hashes_verified": true,
+  "scope": "Working publication candidates: text, PDF extracted text, readable BI metadata and decoded workflow settings. Pattern scan, not a guarantee of all possible secret formats."
+}

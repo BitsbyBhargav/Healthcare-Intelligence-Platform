@@ -1,0 +1,3 @@
+{'Dim_Patient': 71518, 'Dim_Admission': 474, 'Dim_Diagnosis': 34387, 'Fact_Admissions': 101766}
+Warehouse: C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\data\healthcare_dw.db
+Run python jury_1_dw/sql.py to demonstrate OLAP queries.

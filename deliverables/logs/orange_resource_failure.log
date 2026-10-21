@@ -1,0 +1,32 @@
+
+  File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\tests\verify_orange.py", line 9, in <module>
+    from Orange.classification import TreeLearner, NaiveBayesLearner, KNNLearner, RandomForestLearner
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\Orange\classification\__init__.py", line 4, in <module>
+    from .base_classification import (ModelClassification as Model,
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\Orange\classification\base_classification.py", line 5, in <module>
+    from Orange.base import Learner, Model, SklLearner, SklModel
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\Orange\base.py", line 21, in <module>
+    from Orange.preprocess import Continuize, RemoveNaNColumns, SklImpute, Normalize
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\Orange\preprocess\__init__.py", line 4, in <module>
+    from .continuize import *
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\Orange\preprocess\continuize.py", line 6, in <module>
+    from Orange.preprocess.preprocess import Continuize
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\Orange\preprocess\preprocess.py", line 9, in <module>
+    from sklearn.impute import SimpleImputer
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\impute\__init__.py", line 6, in <module>
+    from ._knn import KNNImputer
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\impute\_knn.py", line 12, in <module>
+    from ..neighbors._base import _get_weights
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\neighbors\__init__.py", line 15, in <module>
+    from ._nca import NeighborhoodComponentsAnalysis
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\neighbors\_nca.py", line 23, in <module>
+    from ..decomposition import PCA
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\decomposition\__init__.py", line 8, in <module>
+    from ._dict_learning import (
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\decomposition\_dict_learning.py", line 22, in <module>
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\linear_model\__init__.py", line 7, in <module>
+    from ._base import LinearRegression
+  File "C:\Users\offic\AppData\Local\Programs\Orange\Lib\site-packages\sklearn\linear_model\_base.py", line 44, in <module>
+    from ..utils._seq_dataset import (
+ImportError: DLL load failed while importing _seq_dataset: The paging file is too small for this operation to complete.

@@ -1,0 +1,26 @@
+[
+  {
+    "stay_group":"1-3 days",
+    "encounters":49188,
+    "readmitted_within_30":4768,
+    "avg_length_of_stay":2.0721314142,
+    "avg_medications":12.7725258193,
+    "readmission_rate_30_pct":9.69
+  },
+  {
+    "stay_group":"4-7 days",
+    "encounters":37288,
+    "readmitted_within_30":4544,
+    "avg_length_of_stay":5.1430218837,
+    "avg_medications":17.5310555675,
+    "readmission_rate_30_pct":12.19
+  },
+  {
+    "stay_group":"8-14 days",
+    "encounters":15290,
+    "readmitted_within_30":2045,
+    "avg_length_of_stay":10.0500327011,
+    "avg_medications":22.7943754088,
+    "readmission_rate_30_pct":13.37
+  }
+]

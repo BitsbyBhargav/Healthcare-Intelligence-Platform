@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "view": "Association Mining",
+      "status": "passed"
+    },
+    {
+      "view": "Model Benchmark",
+      "status": "passed"
+    },
+    {
+      "view": "Best Model",
+      "status": "passed"
+    },
+    {
+      "view": "Clinical Profiling",
+      "status": "passed"
+    },
+    {
+      "view": "Live Risk Studio",
+      "status": "passed"
+    },
+    {
+      "interaction": "Saved-model prediction",
+      "status": "passed"
+    }
+  ],
+  "page_errors": [],
+  "capture": "Chromium viewport screenshots of the running app, no reconstructed UI"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "model":"Random Forest",
+    "accuracy":0.51412,
+    "precision_macro":0.43398,
+    "recall_macro":0.44455,
+    "f1_macro":0.43471,
+    "f1_weighted":0.52211,
+    "recall_under_30":0.30251,
+    "precision_under_30":0.19401,
+    "roc_auc_ovr_macro":0.64618,
+    "training_seconds":3.23
+  },
+  {
+    "model":"XGBoost",
+    "accuracy":0.4923,
+    "precision_macro":0.43023,
+    "recall_macro":0.44662,
+    "f1_macro":0.42379,
+    "f1_weighted":0.50615,
+    "recall_under_30":0.38375,
+    "precision_under_30":0.18126,
+    "roc_auc_ovr_macro":0.64569,
+    "training_seconds":2.62
+  },
+  {
+    "model":"Decision Tree",
+    "accuracy":0.43456,
+    "precision_macro":0.40603,
+    "recall_macro":0.41873,
+    "f1_macro":0.38333,
+    "f1_weighted":0.45919,
+    "recall_under_30":0.43671,
+    "precision_under_30":0.15055,
+    "roc_auc_ovr_macro":0.60102,
+    "training_seconds":0.95
+  },
+  {
+    "model":"KNN",
+    "accuracy":0.56284,
+    "precision_macro":0.48793,
+    "recall_macro":0.38564,
+    "f1_macro":0.3612,
+    "f1_weighted":0.50408,
+    "recall_under_30":0.01526,
+    "precision_under_30":0.4,
+    "roc_auc_ovr_macro":0.61108,
+    "training_seconds":3.57
+  },
+  {
+    "model":"Naive Bayes",
+    "accuracy":0.14319,
+    "precision_macro":0.39475,
+    "recall_macro":0.34401,
+    "f1_macro":0.12407,
+    "f1_weighted":0.09605,
+    "recall_under_30":0.93582,
+    "precision_under_30":0.11168,
+    "roc_auc_ovr_macro":0.56495,
+    "training_seconds":0.68
+  }
+]

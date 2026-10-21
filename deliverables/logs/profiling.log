@@ -1,0 +1,15 @@
+CLINICAL DATA SUMMARY
+ {
+  "dataset_encounters": 101766,
+  "unique_patients": 71518,
+  "readmission_counts": {
+    "NO": 54864,
+    ">30": 35545,
+    "<30": 11357
+  },
+  "readmission_under_30_pct": 11.16,
+  "mean_length_of_stay_days": 4.4,
+  "mean_medications": 16.02,
+  "scope": "Retrospective, observational analysis of historic diabetes hospital encounters"
+}
+Saved historical profiles to C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\jury_2_dw\outputs

@@ -1,0 +1,352 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 53,
+    "sha256": "f65330f4207baa36110223c2e38d153e00cc378d777113ab7f922fc4c812f2c5"
+  },
+  {
+    "path": "DWDM Jury 1.twb",
+    "bytes": 116173,
+    "sha256": "0fbf9cb1485188ea512678fdf391499c7b5bc1a56d47021ab120da5d217f6c92"
+  },
+  {
+    "path": "HEALTHCARE DASHBOARD.pbix",
+    "bytes": 4708446,
+    "sha256": "686717664218ee018d6d80f1549629b33d4d6796a5d01c2a3f5dab1af74a4dd2"
+  },
+  {
+    "path": "healthcare_dw.db",
+    "bytes": 7077888,
+    "sha256": "463c7848dfd02337bd5f5fdde3117cf109aac07ba5126dbbe557233b381cd3ac"
+  },
+  {
+    "path": "RUN_FIRST.txt",
+    "bytes": 1170,
+    "sha256": "f226bff12142d6e87b46bb2aa2e3d4c09395acf7ce2a3bd968f88884d57e68b7"
+  },
+  {
+    "path": "data\\diabetes_130_us.csv",
+    "bytes": 18241862,
+    "sha256": "cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964"
+  },
+  {
+    "path": "data\\Dim_Admission.csv",
+    "bytes": 5456,
+    "sha256": "c75425c27d5afb8101376faafd7cf932f5d5f8c2c535f46427c5e6e38384d723"
+  },
+  {
+    "path": "data\\Dim_Diagnosis.csv",
+    "bytes": 906980,
+    "sha256": "f49551c3e35325cdf79901fccdb6d00cb965587e8cc367fd449cea15b04d88cf"
+  },
+  {
+    "path": "data\\Dim_Patient.csv",
+    "bytes": 2485587,
+    "sha256": "1f9a2c7aa4fe73d86197d49df84afde4203af6fb47dc3eddcf4134c02f789705"
+  },
+  {
+    "path": "data\\Fact_Admissions.csv",
+    "bytes": 3973239,
+    "sha256": "1ca1acd799454ccf2e13fd3c0b8f049ec49eadd3ce613da1aef297c61d9a23dd"
+  },
+  {
+    "path": "data\\healthcare_dw.db",
+    "bytes": 7962624,
+    "sha256": "e5b1ed5bd00b7bafc2023c5ca9746e8028f69c1a3babac44f3861f72568e98cf"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 000308.png",
+    "bytes": 44235,
+    "sha256": "180453d1ecae707f0be7426e289f622817f5d2c7c12e97df7676d70ce2bee9bf"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 000749.png",
+    "bytes": 63937,
+    "sha256": "696b11f0cd0545e90f101c968a59493d7f0385b7fded6c7170203247da70a779"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 003903.png",
+    "bytes": 14447,
+    "sha256": "246d0c5c0c719a65a49736b49667420ce123d13538ee29cfedc7676ed75942a8"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 003945.png",
+    "bytes": 5874,
+    "sha256": "eb663f4930d63e2f84ee1c8ff3b980c16f7c71d2d54ba2e23d603571458bafce"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 004026.png",
+    "bytes": 148307,
+    "sha256": "d09597d5ecd5d77d67293d32eb2b927a7bb98527c9d09d61a2d910fc6e4485bb"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 063113.png",
+    "bytes": 38204,
+    "sha256": "d9f2e52f6d7a92e4a5bd1f9d3ea20383e29a0dc5cd471e5a0b8822981bb0c84c"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 063427.png",
+    "bytes": 55097,
+    "sha256": "d883fd44d9d5815bdf1552531ebc8954ce4481bc83262db4f0f6ae8e3b5fe59f"
+  },
+  {
+    "path": "diagrams\\Screenshot 2026-09-03 063717.png",
+    "bytes": 278366,
+    "sha256": "de479be76c611c77e8605dc694b2c5bf2d86ac2e84c3074f93d5db42c8ca27e6"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\README_START_HERE.txt",
+    "bytes": 3379,
+    "sha256": "9b2eab79b580edd014856c7c2ee2225bb4e0abb6a2e19096eb91201798fbeb8a"
+  },
+  {
+    "path": "jury_1_dw\\dashboard.py",
+    "bytes": 2289,
+    "sha256": "a38df00e25395cbcc02663ee2a6db93d9b9dcc506b8d8cb8921f401d8a7eb321"
+  },
+  {
+    "path": "jury_1_dw\\etl_and_olap.py",
+    "bytes": 5027,
+    "sha256": "7c8ce928747d101646e9a7a95a07118e9032a943aaff3285a5943a656c22476f"
+  },
+  {
+    "path": "jury_1_dw\\export_tables.py",
+    "bytes": 774,
+    "sha256": "6ff27a50891782d3b2a2f87fb098d1bd3669f0b015202d13dd1be803e7ed239e"
+  },
+  {
+    "path": "jury_1_dw\\sql.py",
+    "bytes": 1289,
+    "sha256": "e3f0ab94dd81665df47caa6b36f55181901487f66b9bb1860416ed803f7d69fd"
+  },
+  {
+    "path": "jury_2_dw\\app.py",
+    "bytes": 16092,
+    "sha256": "f8fed7960a10d26508c71cc23d7cee55b43e6c450ea12ec2d2d80e66453472b8"
+  },
+  {
+    "path": "jury_2_dw\\benchmark_models.py",
+    "bytes": 12866,
+    "sha256": "f6453085822c25b64e9e01a733f9141069f2d57bc736895a8171ca0c66986a39"
+  },
+  {
+    "path": "jury_2_dw\\clinical_profiling.py",
+    "bytes": 4093,
+    "sha256": "b488bf1de515de0d6fe4a0dbe39dab82c6a77c940cc4efd4ba2183a0b7fb4964"
+  },
+  {
+    "path": "jury_2_dw\\decision_threshold.pkl",
+    "bytes": 117,
+    "sha256": "f59236cdd241a44fb9c6f25ae2f9de27254f205f125ceec7dc688227a2f14980"
+  },
+  {
+    "path": "jury_2_dw\\extract_record.py",
+    "bytes": 383,
+    "sha256": "e0b4b903378e7403ba73aa8370a460780855aea38089d6a689607fd20be84dcd"
+  },
+  {
+    "path": "jury_2_dw\\import.py",
+    "bytes": 329,
+    "sha256": "642dc6cc91d225980e3d6a53cdf980fccd3afdba14a45ae54f6f1ff3beae6ba8"
+  },
+  {
+    "path": "jury_2_dw\\jury2_features.py",
+    "bytes": 2479,
+    "sha256": "270c4e78a1db2cd119c087800dc2ce31d0dc223e744edf896eaffd3a4216932d"
+  },
+  {
+    "path": "jury_2_dw\\mine_associations.py",
+    "bytes": 6432,
+    "sha256": "1d5ce069771fe202a4ebfa98923891e641da8c80135986cadace34c245bbe7a2"
+  },
+  {
+    "path": "jury_2_dw\\model.py",
+    "bytes": 3538,
+    "sha256": "5c1259a06b4f952829afecc3d92d3a24c9176f84d9f903cf31e7ab001992a8b4"
+  },
+  {
+    "path": "jury_2_dw\\model_scores.csv",
+    "bytes": 650,
+    "sha256": "f66bf7fe9f5af3f187dd2a28334b98925c399fe7202fea9871d3263af43ba772"
+  },
+  {
+    "path": "jury_2_dw\\requirements_jury2.txt",
+    "bytes": 153,
+    "sha256": "359dc033040eaeb00127b2bc8c74b4daabe671fc3702fee4c31dcd6957b1af4e"
+  },
+  {
+    "path": "jury_2_dw\\rf_readmission_model.pkl",
+    "bytes": 15259673,
+    "sha256": "1e9dd03d87bb1e2acfd5615cedb07d6a731eb9b5271d67a2ba37b79a8d11ec35"
+  },
+  {
+    "path": "jury_2_dw\\scaler.pkl",
+    "bytes": 93199,
+    "sha256": "e1fd653627b400dc4e2366d69ec5cd49afe605a6f56dc75380e683ebfca9336d"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\apriori_itemsets.csv",
+    "bytes": 3947,
+    "sha256": "b8f67411f51848f98e7fd9c4a8a637149e45d2daa102984d3cfadd4a99d79f67"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\apriori_rules.csv",
+    "bytes": 2457,
+    "sha256": "d0704fad18af0d49a30b0cb61dcbac7dfeb620284252ae5cc371b38984dfbe64"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\best_confusion_matrix.png",
+    "bytes": 36993,
+    "sha256": "dbb371ff484cdbbe4f942266a689687aeb6c1eacf648905a64c2aade9f91e0d1"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\best_feature_importance.csv",
+    "bytes": 1049,
+    "sha256": "713d206a5ba30176131f2733ba31b8384c7c1150c1b53e7f516059d982ed385c"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\best_feature_importance.png",
+    "bytes": 60883,
+    "sha256": "bdcf1c75a80b693af141a9ecbbb4bee748785ab84ed61d6a219827d19cfa69b3"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\best_model.joblib",
+    "bytes": 35487169,
+    "sha256": "5e558b6d80c3b4952cd326eb8dd40b6e47949b98befda5182ed95062b45828f0"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\best_model_report.json",
+    "bytes": 1568,
+    "sha256": "56968977ecc3a639249368d4c4bc8a8225934f5714b51bfe9d628f57a6075dfd"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\best_roc.png",
+    "bytes": 90969,
+    "sha256": "849d7a00f56a9c9a1fbbefcfb5b6547900c4045ed51ea0a76e0571e40299ea78"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\clinical_summary.json",
+    "bytes": 351,
+    "sha256": "4f56c741a5a5ffb2f5a7e40b7585668bde221f0b44edce8e4ccda3a0ba32ed49"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\fp_growth_itemsets.csv",
+    "bytes": 3947,
+    "sha256": "67d2ad7f76571091f9af905ba3537a8d62b8de521937595491bdb669b081112d"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\fp_growth_rules.csv",
+    "bytes": 2507,
+    "sha256": "5da1fb94d7c5fda043637d6997040bcf5f219bdd12b3233059c719158f7fade4"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\mining_summary.json",
+    "bytes": 400,
+    "sha256": "dfd1c30b5d8651733310e71f86408e24a54f3bbe731a76719f19dcb1f7569abf"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\model_comparison.csv",
+    "bytes": 525,
+    "sha256": "a0d2c79d26db21272a52c693ea91e9f84de4444a4f93e98369843c350d17811d"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\model_comparison.png",
+    "bytes": 53915,
+    "sha256": "b573990307453185699cb4e7a9e1d845a3be0d531af09125c02984a32b178d70"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_age.csv",
+    "bytes": 704,
+    "sha256": "7e9371a9bf640a9974bac05df71f40f44853943c804d6a6a1963c84ec7fa4043"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_age.png",
+    "bytes": 47279,
+    "sha256": "3d9fbac4a8baf59c3f1175998d7668088cb33d93a67f184fa945adca7c11f969"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_diagnosis.csv",
+    "bytes": 1172,
+    "sha256": "d0162b74798af4e1a1e443e1b137ce582e3fb4d77aeefb121d7b2c3f36dfd990"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_diagnosis.png",
+    "bytes": 75051,
+    "sha256": "41df03c0a7db59740d8c1aa0c3c307d320559af885013558aa38f419b31558f5"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_medications.csv",
+    "bytes": 348,
+    "sha256": "cb7b4eef31798e5c4659ffdf830ce0522ba72969419024fae156ca1477a3b451"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_medications.png",
+    "bytes": 29773,
+    "sha256": "ba25ccf5e8b13f76fb909be51327fd9b211a8a20d71e3b9f2c227b305095aeca"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_prior_inpatient.csv",
+    "bytes": 285,
+    "sha256": "a3d86be89adbc1b11c4ce15e7a1820657fe370dda6ada53de2390edf78133cf7"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\profile_prior_inpatient.png",
+    "bytes": 31888,
+    "sha256": "3c50e2756937b78233d58948a30663751b3d253d0aa78d6848d341f62d6c4916"
+  },
+  {
+    "path": "jury_2_dw\\outputs\\top_association_rules.png",
+    "bytes": 86714,
+    "sha256": "c8c751030e0fedd517b0aa4f508a5d80e2ed33fd635c9ddd0803ac0a75ecd2f4"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\.jury2_association.ows.swp.p",
+    "bytes": 2742,
+    "sha256": "0dabb88cd6b673dead876ba6acb871855d39e15e1eef05eca020e6234370d274"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\.jury2_classification.ows.swp.p",
+    "bytes": 6409,
+    "sha256": "6c82bd04bb86e3fca93c7dfd086f422c15336a55dac71a37b9498ea2a506e8eb"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\build_workflows.py",
+    "bytes": 4061,
+    "sha256": "b418bcacdc3b8ff67702504c548111fd833f8b0f7aff7d219944121f782da838"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\jury2_association.ows",
+    "bytes": 1824,
+    "sha256": "207ba61b3b645bd04df1cefa50bf68f9f444c21878a9f2826ecddefb5892b196"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\jury2_classification.ows",
+    "bytes": 3376,
+    "sha256": "61a149e36e2c77f80cbfc4c679142cd092d061fd33ef0df537cc5cd96bf5bfd1"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\orange_associations.csv",
+    "bytes": 199923,
+    "sha256": "1d6f97910d41e992ca1b4d500e998f3b6244925deef8c42c7d3fd0b6a62916c0"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\orange_associations.tab",
+    "bytes": 199976,
+    "sha256": "1f7772dcd51296e3911493d31bd14d2069d21e20f523d75b198efc65ee2d9a3f"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\orange_classification.csv",
+    "bytes": 266768,
+    "sha256": "0b463aa267bdf57981a5244c505573df6fbb53a1abd78de8eccd7c5eae8853e6"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\orange_classification.tab",
+    "bytes": 266832,
+    "sha256": "4652bef980b349c4b81bf0e81d67ae4759a8e92945726a4e4a277db5136d118f"
+  },
+  {
+    "path": "Jury2_Orange_QuickDemo\\jury_2_dw\\orange_demo\\prepare_orange_data.py",
+    "bytes": 4963,
+    "sha256": "7e09ddea3dc5c3303fbd7a9e982d5bd0d5aa20d240a097ac7bcfd4c98c9c0a14"
+  }
+]

@@ -1,0 +1,72 @@
+..................F.........F                                            [100%]
+================================== FAILURES ===================================
+_____________________________ test_etl_integrity ______________________________
+
+tmp_path = WindowsPath('C:/Users/offic/AppData/Local/Temp/pytest-of-offic/pytest-0/test_etl_integrity0')
+raw =         encounter_id  patient_nbr  ... diabetesMed readmitted
+0            2278392      8222157  ...          No      ...1  ...         Yes         NO
+101765     443867222    175429310  ...          No         NO
+
+[101766 rows x 50 columns]
+
+    def test_etl_integrity(tmp_path,raw):
+        source=tmp_path/'sample.csv'; raw.head(100).to_csv(source,index=False)
+        db=tmp_path/'test.db'; sizes=build_warehouse(source,db)
+        assert sizes['Fact_Admissions']==100
+        with sqlite3.connect(db) as c:
+            assert c.execute('select count(*) from Fact_Admissions f join Dim_Patient p using(patient_nbr) join Dim_Admission a using(admission_id) join Dim_Diagnosis d using(diag_id)').fetchone()[0]==100
+>           assert c.execute('select encounter_id from Fact_Admissions limit 1').fetchone()[0]==int(raw.encounter_id.iloc[0])
+E           assert 12522 == 2278392
+E            +  where 2278392 = int(np.int64(2278392))
+
+tests\test_platform.py:84: AssertionError
+______________________________ test_foreign_cwd _______________________________
+
+tmp_path = WindowsPath('C:/Users/offic/AppData/Local/Temp/pytest-of-offic/pytest-0/test_foreign_cwd0')
+
+    def test_foreign_cwd(tmp_path):
+        result=subprocess.run([sys.executable,str(ROOT/'jury_2_dw/clinical_profiling.py'),'--output',str(tmp_path/'profiles')],cwd=tmp_path,capture_output=True,text=True)
+>       assert result.returncode==0,result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\jury_2_dw\clinical_profiling.py", line 90, in <module>
+E             main()
+E             ~~~~^^
+E           File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\jury_2_dw\clinical_profiling.py", line 52, in main
+E             df = pd.read_csv(args.data, low_memory=False).replace("?", np.nan)
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\.venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+E             return _read(filepath_or_buffer, kwds)
+E           File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\.venv\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+E             return parser.read(nrows)
+E                    ~~~~~~~~~~~^^^^^^^
+E           File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\.venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+E             ) = self._engine.read(  # type: ignore[attr-defined]
+E                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                 nrows
+E                 ^^^^^
+E             )
+E             ^
+E           File "C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\.venv\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 239, in read
+E             data = self._reader.read(nrows)
+E           File "pandas/_libs/parsers.pyx", line 820, in pandas._libs.parsers.TextReader.read
+E           File "pandas/_libs/parsers.pyx", line 921, in pandas._libs.parsers.TextReader._read_rows
+E           File "pandas/_libs/parsers.pyx", line 1066, in pandas._libs.parsers.TextReader._convert_column_data
+E           File "pandas/_libs/parsers.pyx", line 1120, in pandas._libs.parsers.TextReader._convert_tokens
+E           File "pandas/_libs/parsers.pyx", line 1222, in pandas._libs.parsers.TextReader._convert_with_dtype
+E           File "pandas/_libs/parsers.pyx", line 1833, in pandas._libs.parsers._try_int64
+E         numpy._core._exceptions._ArrayMemoryError: Unable to allocate 795. KiB for an array with shape (101766,) and data type int64
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Users\\offic\\OneDrive\\Desktop\\Healthcare-Intelligence-Platform\\.venv\\Scripts\\python....re._exceptions._ArrayMemoryError: Unable to allocate 795. KiB for an array with shape (101766,) and data type int64\n').returncode
+
+tests\test_platform.py:121: AssertionError
+============================== warnings summary ===============================
+tests/test_platform.py::test_features_and_missing
+  C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\jury_2_dw\jury2_features.py:56: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    df = raw.replace("?", np.nan).copy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_platform.py::test_etl_integrity - assert 12522 == 2278392
+FAILED tests/test_platform.py::test_foreign_cwd - AssertionError: Traceback (...
+2 failed, 27 passed, 1 warning in 16.88s

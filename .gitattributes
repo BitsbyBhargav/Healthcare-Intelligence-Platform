@@ -1,0 +1,12 @@
+# Preserve byte-exact data, serialized artifacts and evidence on Windows checkouts.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.joblib binary
+*.pkl binary
+*.db binary
+*.pbix binary
+*.log binary
+*.csv -text whitespace=cr-at-eol
+# The empty role header is required by Orange's native three-row format.
+*.tab -text whitespace=cr-at-eol,-blank-at-eol

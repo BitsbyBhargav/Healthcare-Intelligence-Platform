@@ -1,0 +1,16 @@
+{
+  "source_preserved": true,
+  "pytest_passed": 29,
+  "pytest_failed": 0,
+  "browser_checks": 6,
+  "browser_page_errors": 0,
+  "orange_rules": 45,
+  "orange_itemsets": 77,
+  "pdf_pages": [
+    7,
+    30
+  ],
+  "pdf_all_pages_rendered": true,
+  "visual_review": "Final contact sheets and representative full-page tables/figures reviewed; no clipped content or unnecessary blank pages observed.",
+  "limitations_reference": "docs/VALIDATION.md and docs/FINAL_COMPLETION_REPORT.md"
+}

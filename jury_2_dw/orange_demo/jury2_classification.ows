@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="Jury 2 - Classification in Orange" description="Load orange_classification.tab in File. The target column is already marked as class. Use Test and Score then Confusion Matrix / ROC. The experiment is supplementary.">
+  <nodes>
+    <node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Classification data" position="(80.0,180.0)" />
+    <node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Preview data" position="(320.0,50.0)" />
+    <node id="2" name="Tree" qualified_name="Orange.widgets.model.owtree.OWTreeLearner" project_name="Orange3" version="" title="Decision Tree" position="(325.0,170.0)" />
+    <node id="3" name="Naive Bayes" qualified_name="Orange.widgets.model.ownaivebayes.OWNaiveBayes" project_name="Orange3" version="" title="Naive Bayes" position="(325.0,255.0)" />
+    <node id="4" name="kNN" qualified_name="Orange.widgets.model.owknn.OWKNNLearner" project_name="Orange3" version="" title="kNN" position="(325.0,340.0)" />
+    <node id="5" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="" title="Random Forest" position="(325.0,425.0)" />
+    <node id="6" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test &amp; Score" position="(600.0,230.0)" />
+    <node id="7" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Confusion Matrix" position="(850.0,160.0)" />
+    <node id="8" name="ROC Analysis" qualified_name="Orange.widgets.evaluate.owrocanalysis.OWROCAnalysis" project_name="Orange3" version="" title="ROC Analysis" position="(850.0,310.0)" />
+    <node id="9" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions" position="(95.0,395.0)" />
+  </nodes>
+  <links>
+    <link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+    <link id="1" source_node_id="0" sink_node_id="6" source_channel="Data" sink_channel="Data" enabled="true" />
+    <link id="2" source_node_id="2" sink_node_id="6" source_channel="Learner" sink_channel="Learner" enabled="true" />
+    <link id="3" source_node_id="3" sink_node_id="6" source_channel="Learner" sink_channel="Learner" enabled="true" />
+    <link id="4" source_node_id="4" sink_node_id="6" source_channel="Learner" sink_channel="Learner" enabled="true" />
+    <link id="5" source_node_id="5" sink_node_id="6" source_channel="Learner" sink_channel="Learner" enabled="true" />
+    <link id="6" source_node_id="6" sink_node_id="7" source_channel="Evaluation Results" sink_channel="Evaluation Results" enabled="true" />
+    <link id="7" source_node_id="6" sink_node_id="8" source_channel="Evaluation Results" sink_channel="Evaluation Results" enabled="true" />
+    <link id="8" source_node_id="0" sink_node_id="9" source_channel="Data" sink_channel="Data" enabled="true" />
+  </links>
+  <annotations />
+  <thumbnail />
+  <node_properties>
+    <properties node_id="0" format="pickle">gASVSQEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVkaWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMcEM6L1VzZXJzL29mZmljL09uZURyaXZlL0Rlc2t0b3AvSGVhbHRoY2FyZS1JbnRlbGxpZ2VuY2UtUGxhdGZvcm0vanVyeV8yX2R3L29yYW5nZV9kZW1vL29yYW5nZV9jbGFzc2lmaWNhdGlvbi50YWKUjAZwcmVmaXiUjAdiYXNlZGlylIwHcmVscGF0aJSMGW9yYW5nZV9jbGFzc2lmaWNhdGlvbi50YWKUjAV0aXRsZZSMAJSMBXNoZWV0lGgPjAtmaWxlX2Zvcm1hdJROdWJhjAZzb3VyY2WUSwCMEGNvbnRleHRfc2V0dGluZ3OUXZR1Lg==</properties>
+    <properties node_id="2" format="pickle">gASVeAAAAAAAAAB9lCiMC2xpbWl0X2RlcHRolIiMCW1heF9kZXB0aJRLCIwIbWluX2xlYWaUSwqMDmxpbWl0X21pbl9sZWFmlIiMDG1pbl9pbnRlcm5hbJRLFIwSbGltaXRfbWluX2ludGVybmFslIiMDGJpbmFyeV90cmVlc5SJdS4=</properties>
+    <properties node_id="4" format="pickle">gASVNwAAAAAAAAB9lCiMC25fbmVpZ2hib3JzlEsPjAxtZXRyaWNfaW5kZXiUSwCMDHdlaWdodF9pbmRleJRLAHUu</properties>
+    <properties node_id="5" format="pickle">gASVKgAAAAAAAAB9lCiMDG5fZXN0aW1hdG9yc5RLZIwQdXNlX3JhbmRvbV9zdGF0ZZSIdS4=</properties>
+    <properties node_id="6" format="pickle">gASVMQAAAAAAAAB9lCiMB25fZm9sZHOUSwKMDWN2X3N0cmF0aWZpZWSUiIwKcmVzYW1wbGluZ5RLAHUu</properties>
+  </node_properties>
+  <session_state>
+    <window_groups />
+  </session_state>
+</scheme>

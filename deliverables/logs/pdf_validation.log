@@ -1,0 +1,18 @@
+[
+  {
+    "file": "Jury2_Three_Dashboard_Evidence.pdf",
+    "pages": 7,
+    "bytes": 940237,
+    "sha256": "c0afe60c91e8ce49664635078a719b007ef5ae8deb5945bac5d0525fc70c9cea",
+    "all_pages_rendered": true,
+    "text_and_bounds_pass": true
+  },
+  {
+    "file": "Jury2_Healthcare_Intelligence_Implementation_Report.pdf",
+    "pages": 30,
+    "bytes": 2274889,
+    "sha256": "3d2b3a4ee8d7bc8942e4bead8c1febc6095aa09b50d9210aa127455a8ca4a62b",
+    "all_pages_rendered": true,
+    "text_and_bounds_pass": true
+  }
+]

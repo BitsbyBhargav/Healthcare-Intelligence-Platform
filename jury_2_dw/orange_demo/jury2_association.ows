@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="Jury 2 - FP Growth Association Mining in Orange" description="Install Orange3-Associate add-on. Load orange_associations.tab into File. Configure support ~3% and confidence ~35% then press Find Rules.">
+  <nodes>
+    <node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Association data" position="(65.0,160.0)" />
+    <node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Review transactions" position="(310.0,55.0)" />
+    <node id="2" name="Association Rules" qualified_name="orangecontrib.associate.widgets.owassociate.OWAssociate" project_name="Orange3-Associate" version="" title="FP-Growth Rules" position="(355.0,205.0)" />
+    <node id="3" name="Frequent Itemsets" qualified_name="orangecontrib.associate.widgets.owitemsets.OWItemsets" project_name="Orange3-Associate" version="" title="Frequent Itemsets" position="(355.0,360.0)" />
+    <node id="4" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Rule table" position="(665.0,195.0)" />
+  </nodes>
+  <links>
+    <link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+    <link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" />
+    <link id="2" source_node_id="0" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" />
+    <link id="3" source_node_id="2" sink_node_id="4" source_channel="Rules" sink_channel="Data" enabled="true" />
+  </links>
+  <annotations />
+  <thumbnail />
+  <node_properties>
+    <properties node_id="0" format="pickle">gASVRQEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVkaWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMbkM6L1VzZXJzL29mZmljL09uZURyaXZlL0Rlc2t0b3AvSGVhbHRoY2FyZS1JbnRlbGxpZ2VuY2UtUGxhdGZvcm0vanVyeV8yX2R3L29yYW5nZV9kZW1vL29yYW5nZV9hc3NvY2lhdGlvbnMudGFilIwGcHJlZml4lIwHYmFzZWRpcpSMB3JlbHBhdGiUjBdvcmFuZ2VfYXNzb2NpYXRpb25zLnRhYpSMBXRpdGxllIwAlIwFc2hlZXSUaA+MC2ZpbGVfZm9ybWF0lE51YmGMBnNvdXJjZZRLAIwQY29udGV4dF9zZXR0aW5nc5RdlHUu</properties>
+    <properties node_id="2" format="pickle">gASVYgAAAAAAAAB9lCiMCm1pblN1cHBvcnSUSwOMDW1pbkNvbmZpZGVuY2WUSyOMCGF1dG9GaW5klIiME2ZpbHRlckFudGVjZWRlbnRNYXiUSwKME2ZpbHRlckNvbnNlcXVlbnRNYXiUSwJ1Lg==</properties>
+    <properties node_id="3" format="pickle">gASVMwAAAAAAAAB9lCiMCm1pblN1cHBvcnSUSwOMDmZpbHRlck1heEl0ZW1zlEsDjAhhdXRvRmluZJSIdS4=</properties>
+  </node_properties>
+  <session_state>
+    <window_groups />
+  </session_state>
+</scheme>

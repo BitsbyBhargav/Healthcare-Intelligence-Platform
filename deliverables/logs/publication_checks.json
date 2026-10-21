@@ -1,0 +1,12 @@
+{
+  "model_original_bytes": 71691825,
+  "model_published_bytes": 19651316,
+  "compression": "joblib zlib level 3, lossless",
+  "roundtrip_encounters_checked": 500,
+  "probabilities_exactly_equal_with_single_thread": true,
+  "predictions_equal": true,
+  "all_tree_arrays_equal": true,
+  "model_sha256": "4a4f8961a20f509b0464e61102012df6e892b865a4ddae776ff587c31b13b48a",
+  "source_sha256": "cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964",
+  "manual_verification": "User approved publication after manual demo review"
+}

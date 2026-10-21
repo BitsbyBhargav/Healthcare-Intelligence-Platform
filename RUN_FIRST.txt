@@ -1,0 +1,13 @@
+START HERE - JURY 2
+==================
+Read README.md for setup, reproduction commands, Orange launch instructions and limitations.
+Current outputs are ready for demonstration.
+
+PowerShell from the repository root:
+  .\.venv\Scripts\python.exe -m streamlit run jury_2_dw/app.py --server.port 8512
+
+Faculty views: Association Mining, Model Benchmark, Best Model.
+Final PDFs: deliverables/
+Handover and viva material: docs/
+Full-data reproduction uses --train-cap 0 --val-cap 0 --test-cap 0 and --sample-size 0.
+Historical binary model code is archived locally and excluded from the active pipeline.

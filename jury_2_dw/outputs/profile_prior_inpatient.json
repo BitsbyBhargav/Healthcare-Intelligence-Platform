@@ -1,0 +1,26 @@
+[
+  {
+    "prior_inpatient_visits":"0",
+    "encounters":67630,
+    "readmitted_within_30":5706,
+    "avg_length_of_stay":4.20972941,
+    "avg_medications":15.6443294396,
+    "readmission_rate_30_pct":8.44
+  },
+  {
+    "prior_inpatient_visits":"1",
+    "encounters":19521,
+    "readmitted_within_30":2523,
+    "avg_length_of_stay":4.6692792377,
+    "avg_medications":16.3954715435,
+    "readmission_rate_30_pct":12.92
+  },
+  {
+    "prior_inpatient_visits":"2+",
+    "encounters":14615,
+    "readmitted_within_30":3128,
+    "avg_length_of_stay":4.8928498118,
+    "avg_medications":17.2697228874,
+    "readmission_rate_30_pct":21.4
+  }
+]

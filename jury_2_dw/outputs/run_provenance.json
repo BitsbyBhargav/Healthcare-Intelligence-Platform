@@ -1,0 +1,139 @@
+{
+  "source_sha256": "cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964",
+  "source_shape": [
+    101766,
+    50
+  ],
+  "python": "3.14.3",
+  "versions": {
+    "pandas": "2.3.3",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "mlxtend": "0.25.0",
+    "streamlit": "1.65.0",
+    "joblib": "1.6.0"
+  },
+  "seed": 42,
+  "validation_group_seed": 43,
+  "run_mode": "full data; train-cap=0 val-cap=0 test-cap=0",
+  "patient_counts": {
+    "train": 42910,
+    "validation": 14304,
+    "test": 14304
+  },
+  "split_row_index_sha256": {
+    "train": "dc94ff2b7af8c9166a5c55b76db75727bb435218046e819ac2af810db190b42a",
+    "validation": "8aeffee80c6c0757e9b3047e8be3236915e4333e8bc8b76bfd129b3bccbe9990",
+    "test": "6209232296945d042868a1af7630dd660c055bc35af7a9d9f5b9b107f15407cb"
+  },
+  "test_majority_NO_baseline": {
+    "accuracy": 0.5330437329168294,
+    "f1_macro": 0.23180192513823003
+  },
+  "class_counts": {
+    "NO": 54864,
+    ">30": 35545,
+    "<30": 11357
+  },
+  "fixed_candidates": {
+    "Decision Tree": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 30,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "Naive Bayes": {
+      "priors": null,
+      "var_smoothing": 1e-09
+    },
+    "KNN": {
+      "algorithm": "auto",
+      "leaf_size": 30,
+      "metric": "minkowski",
+      "metric_params": null,
+      "n_jobs": 2,
+      "n_neighbors": 31,
+      "p": 2,
+      "weights": "distance"
+    },
+    "Random Forest": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 18,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 4,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 140,
+      "n_jobs": 4,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "XGBoost": {
+      "objective": "multi:softprob",
+      "base_score": null,
+      "booster": null,
+      "callbacks": null,
+      "colsample_bylevel": null,
+      "colsample_bynode": null,
+      "colsample_bytree": 0.85,
+      "device": null,
+      "early_stopping_rounds": null,
+      "enable_categorical": true,
+      "eval_metric": "mlogloss",
+      "feature_types": null,
+      "feature_weights": null,
+      "gamma": null,
+      "grow_policy": null,
+      "importance_type": null,
+      "interaction_constraints": null,
+      "learning_rate": 0.07,
+      "max_bin": null,
+      "max_cat_threshold": null,
+      "max_cat_to_onehot": null,
+      "max_delta_step": null,
+      "max_depth": 5,
+      "max_leaves": null,
+      "min_child_weight": null,
+      "missing": "NaN",
+      "monotone_constraints": null,
+      "multi_strategy": null,
+      "n_estimators": 150,
+      "n_jobs": 4,
+      "num_parallel_tree": null,
+      "random_state": 42,
+      "reg_alpha": null,
+      "reg_lambda": null,
+      "sampling_method": null,
+      "scale_pos_weight": null,
+      "subsample": 0.85,
+      "tree_method": "hist",
+      "validate_parameters": null,
+      "verbosity": null
+    }
+  },
+  "source_limitations": [
+    "Historical 1999-2008 cohort",
+    "Local CSV has empty A1C entries; treat as Unknown",
+    "No temporal or external validation",
+    "Encounter-weighted mining/profiles include repeated patients"
+  ]
+}

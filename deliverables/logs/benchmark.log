@@ -1,0 +1,26 @@
+Dataset=101,766 rows | train=60,878 | validation=20,400 | holdout test=20,488
+Labels: ['NO', '>30', '<30'] | Prediction point: discharge
+Training Decision Tree...
+  macro F1=0.3833 | <30 recall=0.4367 | AUC=0.6010
+Training Naive Bayes...
+  macro F1=0.1241 | <30 recall=0.9358 | AUC=0.5649
+Training KNN...
+  macro F1=0.3612 | <30 recall=0.0153 | AUC=0.6111
+Training Random Forest...
+  macro F1=0.4347 | <30 recall=0.3025 | AUC=0.6462
+Training XGBoost...
+  macro F1=0.4238 | <30 recall=0.3838 | AUC=0.6457
+
+VALIDATION MODEL COMPARISON
+         model  accuracy  precision_macro  recall_macro  f1_macro  f1_weighted  recall_under_30  precision_under_30  roc_auc_ovr_macro  training_seconds
+Random Forest  0.514118         0.433978      0.444553  0.434712     0.522111         0.302513            0.194013           0.646178              3.23
+      XGBoost  0.492304         0.430229      0.446620  0.423786     0.506153         0.383752            0.181259           0.645692              2.62
+Decision Tree  0.434559         0.406033      0.418726  0.383333     0.459190         0.436715            0.150549           0.601024              0.95
+          KNN  0.562843         0.487925      0.385640  0.361196     0.504081         0.015260            0.400000           0.611082              3.57
+  Naive Bayes  0.143186         0.394753      0.344015  0.124067     0.096051         0.935817            0.111676           0.564949              0.68
+
+Selected from validation: Random Forest. Refit on train+validation subset...
+Calculating permutation importance...
+
+FINAL HOLDOUT TEST METRICS {'accuracy': 0.5111284654431862, 'precision_macro': 0.4328768336178086, 'recall_macro': 0.44171688335197223, 'f1_macro': 0.4330193866129218, 'f1_weighted': 0.5171180181514341, 'recall_under_30': 0.30038022813688214, 'precision_under_30': 0.1992713004484305, 'roc_auc_ovr_macro': 0.6503129079401831}
+Saved artifacts to C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform\jury_2_dw\outputs

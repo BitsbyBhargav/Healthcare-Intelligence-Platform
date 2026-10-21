@@ -1,0 +1,58 @@
+{
+  "selected_model": "Random Forest",
+  "selection_metric": "validation macro F1",
+  "prediction_point": "discharge",
+  "class_order": [
+    "NO",
+    ">30",
+    "<30"
+  ],
+  "dataset_rows": 101766,
+  "train_rows_used": 60878,
+  "validation_rows_used": 20400,
+  "holdout_test_rows_used": 20488,
+  "patient_disjoint_splits": true,
+  "test_metrics": {
+    "accuracy": 0.5111284654431862,
+    "precision_macro": 0.4328768336178086,
+    "recall_macro": 0.44171688335197223,
+    "f1_macro": 0.4330193866129218,
+    "f1_weighted": 0.5171180181514341,
+    "recall_under_30": 0.30038022813688214,
+    "precision_under_30": 0.1992713004484305,
+    "roc_auc_ovr_macro": 0.6503129079401831
+  },
+  "per_class_test_report": {
+    "NO": {
+      "precision": 0.649424219910847,
+      "recall": 0.6403259774745902,
+      "f1-score": 0.6448430079763936,
+      "support": 10921.0
+    },
+    ">30": {
+      "precision": 0.44993498049414826,
+      "recall": 0.3844444444444444,
+      "f1-score": 0.41461953265428403,
+      "support": 7200.0
+    },
+    "<30": {
+      "precision": 0.1992713004484305,
+      "recall": 0.30038022813688214,
+      "f1-score": 0.2395956192080876,
+      "support": 2367.0
+    },
+    "accuracy": 0.5111284654431862,
+    "macro avg": {
+      "precision": 0.4328768336178086,
+      "recall": 0.44171688335197223,
+      "f1-score": 0.4330193866129218,
+      "support": 20488.0
+    },
+    "weighted avg": {
+      "precision": 0.5273120330615805,
+      "recall": 0.5111284654431862,
+      "f1-score": 0.5171180181514341,
+      "support": 20488.0
+    }
+  }
+}

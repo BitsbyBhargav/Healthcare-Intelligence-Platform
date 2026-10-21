@@ -1,0 +1,73 @@
+RUN_FIRST.txt
+DWDM Jury 1.twb
+healthcare_dw.db
+HEALTHCARE DASHBOARD.pbix
+.gitignore
+diagrams\Screenshot 2026-09-03 000749.png
+diagrams\Screenshot 2026-09-03 063717.png
+diagrams\Screenshot 2026-09-03 000308.png
+diagrams\Screenshot 2026-09-03 063427.png
+diagrams\Screenshot 2026-09-03 063113.png
+diagrams\Screenshot 2026-09-03 004026.png
+jury_2_dw\app.py
+diagrams\Screenshot 2026-09-03 003945.png
+diagrams\Screenshot 2026-09-03 003903.png
+jury_2_dw\benchmark_models.py
+jury_2_dw\clinical_profiling.py
+jury_2_dw\decision_threshold.pkl
+jury_1_dw\sql.py
+jury_1_dw\export_tables.py
+jury_1_dw\etl_and_olap.py
+jury_1_dw\dashboard.py
+jury_2_dw\model.py
+jury_2_dw\mine_associations.py
+jury_2_dw\jury2_features.py
+jury_2_dw\import.py
+jury_2_dw\extract_record.py
+jury_2_dw\requirements_jury2.txt
+jury_2_dw\rf_readmission_model.pkl
+jury_2_dw\scaler.pkl
+jury_2_dw\model_scores.csv
+jury_2_dw\__pycache__\model.cpython-314.pyc
+jury_2_dw\__pycache__\jury2_features.cpython-314.pyc
+data\healthcare_dw.db
+data\Fact_Admissions.csv
+data\Dim_Patient.csv
+data\Dim_Diagnosis.csv
+data\Dim_Admission.csv
+data\diabetes_130_us.csv
+Jury2_Orange_QuickDemo\README_START_HERE.txt
+jury_2_dw\outputs\top_association_rules.png
+jury_2_dw\outputs\profile_prior_inpatient.png
+jury_2_dw\outputs\profile_prior_inpatient.csv
+jury_2_dw\outputs\profile_medications.png
+jury_2_dw\outputs\profile_medications.csv
+jury_2_dw\outputs\profile_diagnosis.png
+jury_2_dw\outputs\profile_diagnosis.csv
+jury_2_dw\outputs\profile_age.png
+jury_2_dw\outputs\profile_age.csv
+jury_2_dw\outputs\model_comparison.png
+jury_2_dw\outputs\model_comparison.csv
+jury_2_dw\outputs\mining_summary.json
+jury_2_dw\outputs\fp_growth_rules.csv
+jury_2_dw\outputs\fp_growth_itemsets.csv
+jury_2_dw\outputs\clinical_summary.json
+jury_2_dw\outputs\best_roc.png
+jury_2_dw\outputs\best_model_report.json
+jury_2_dw\outputs\best_model.joblib
+jury_2_dw\outputs\best_feature_importance.png
+jury_2_dw\outputs\best_feature_importance.csv
+jury_2_dw\outputs\best_confusion_matrix.png
+jury_2_dw\outputs\apriori_rules.csv
+jury_2_dw\outputs\apriori_itemsets.csv
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\__pycache__\prepare_orange_data.cpython-313.pyc
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\prepare_orange_data.py
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\orange_classification.tab
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\orange_classification.csv
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\orange_associations.tab
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\orange_associations.csv
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\jury2_classification.ows
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\jury2_association.ows
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\build_workflows.py
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\.jury2_classification.ows.swp.p
+Jury2_Orange_QuickDemo\jury_2_dw\orange_demo\.jury2_association.ows.swp.p
