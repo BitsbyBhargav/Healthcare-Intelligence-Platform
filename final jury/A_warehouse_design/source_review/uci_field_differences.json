@@ -1,0 +1,14 @@
+{
+  "common_encounter_ids": 101766,
+  "differing_fields": {
+    "weight": 98569,
+    "medical_specialty": 49949,
+    "max_glu_serum": 96420,
+    "A1Cresult": 84748,
+    "payer_code": 40256,
+    "race": 2273,
+    "diag_3": 1423,
+    "diag_2": 358,
+    "diag_1": 21
+  }
+}

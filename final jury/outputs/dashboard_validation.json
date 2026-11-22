@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "recorded_at_utc": "2026-11-22T17:36:09.418809+00:00",
+  "pages_checked": [
+    "A - Warehouse design",
+    "B - Snowflake deployment",
+    "C - Supervised dataset",
+    "D - Apriori and FP-Growth",
+    "E - Classifier comparison",
+    "F - Classification implementation",
+    "G - Unsupervised dataset",
+    "H - Four clustering algorithms",
+    "I - Selected clustering method",
+    "J - Performance metrics"
+  ],
+  "manual_fields": 19,
+  "golden_test_predictions": [
+    {
+      "encounter_id": "500364",
+      "expected": "NO",
+      "actual": "NO"
+    },
+    {
+      "encounter_id": "28236",
+      "expected": ">30",
+      "actual": ">30"
+    },
+    {
+      "encounter_id": "260166",
+      "expected": "<30",
+      "actual": "<30"
+    }
+  ],
+  "checks": [
+    "All ten pages render without Streamlit exceptions",
+    "All 19 manual controls reach the pipeline unchanged",
+    "Three manually entered held-out profiles reproduce saved predictions for all output classes",
+    "All submitted probability distributions sum to one"
+  ]
+}

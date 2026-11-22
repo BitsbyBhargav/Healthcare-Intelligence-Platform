@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "fact_rows": 4424257,
+  "dimension_tables": 7,
+  "failed_checks": 0,
+  "evidence": "User reported final Snowflake SQL output in chat",
+  "recorded_at_utc": "2026-11-22T17:16:12.691600+00:00"
+}

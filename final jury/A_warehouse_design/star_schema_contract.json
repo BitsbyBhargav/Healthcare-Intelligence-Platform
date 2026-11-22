@@ -1,0 +1,81 @@
+{
+  "dimensions": {
+    "SOURCE": [
+      "SOURCE_KEY",
+      "DIABETES_COHORT_DEFINITION"
+    ],
+    "PERIOD": [
+      "PERIOD",
+      "DISCHARGE_YEAR"
+    ],
+    "DEMOGRAPHIC": [
+      "SOURCE_KEY",
+      "AGE_BAND_RAW",
+      "AGE_BAND_COMMON",
+      "GENDER",
+      "RACE_RAW",
+      "ETHNICITY_RAW"
+    ],
+    "ADMISSION": [
+      "SOURCE_KEY",
+      "ADMISSION_TYPE_RAW",
+      "ADMISSION_TYPE_COMMON",
+      "DISPOSITION_RAW",
+      "PAYMENT_TYPE",
+      "UCI_ADMISSION_SOURCE_ID"
+    ],
+    "DIAGNOSIS": [
+      "SOURCE_KEY",
+      "DIAGNOSIS_SYSTEM",
+      "DIAGNOSIS_CODE",
+      "DIAGNOSIS_DESCRIPTION",
+      "APR_DRG_CODE"
+    ],
+    "FACILITY": [
+      "SOURCE_KEY",
+      "FACILITY_KEY",
+      "FACILITY_NAME",
+      "HOSPITAL_COUNTY",
+      "SERVICE_AREA"
+    ],
+    "TREATMENT": [
+      "SOURCE_KEY",
+      "UCI_INSULIN",
+      "UCI_CHANGE",
+      "UCI_DIABETESMED",
+      "UCI_A1CRESULT",
+      "UCI_MAX_GLU_SERUM"
+    ]
+  },
+  "fact_columns": [
+    "ENCOUNTER_KEY",
+    "SOURCE_ROW_ID",
+    "PATIENT_KEY",
+    "LOS_RAW",
+    "LOS_DAYS_LOWER_BOUND",
+    "LOS_TOP_CODED",
+    "TOTAL_CHARGES_USD",
+    "TOTAL_COSTS_USD",
+    "SEVERITY_CODE",
+    "SEVERITY_DESCRIPTION",
+    "READMISSION_LABEL",
+    "READMISSION_LABEL_AVAILABLE",
+    "IS_SYNTHETIC",
+    "UCI_NUM_LAB_PROCEDURES",
+    "UCI_NUM_PROCEDURES",
+    "UCI_NUM_MEDICATIONS",
+    "UCI_NUMBER_OUTPATIENT",
+    "UCI_NUMBER_EMERGENCY",
+    "UCI_NUMBER_INPATIENT",
+    "UCI_NUMBER_DIAGNOSES",
+    "UCI_DIAG_2",
+    "UCI_DIAG_3",
+    "MODEL_ROLE",
+    "LABEL_ORIGIN"
+  ],
+  "grain": "One published source encounter/discharge record",
+  "schema": "Star schema; 7 dimensions and FACT_ENCOUNTER",
+  "fact_primary_key": "ENCOUNTER_KEY",
+  "total_records": 4424257,
+  "execution_status": "User confirmed Snowflake PASS, 4424257 fact rows, 7 dimensions, 0 failed checks"
+}

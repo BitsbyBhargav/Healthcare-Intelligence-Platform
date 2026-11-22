@@ -1,0 +1,99 @@
+FINAL JURY - MANUAL SNOWFLAKE WORKFLOW
+Updated: 22 November 2026
+
+User preference: guide manual execution in Snowflake. Do not automate the UI.
+
+1. Environment creation
+   Script: 01_create_environment.sql
+   Objects: FINAL_JURY_WH, HEALTHCARE_FINAL_JURY, STAGING and DW schemas.
+   Status: User screenshot confirms SYSADMIN, FINAL_JURY_WH,
+           HEALTHCARE_FINAL_JURY, and DW as the current session context.
+           This verifies the selected objects exist; individual warehouse
+           configuration parameters were not shown in that screenshot.
+
+2. Staging preparation
+   Script: 02_create_staging.sql
+   Objects: STAGING.MODELLED_RAW (51 source columns), MODELLED_CSV_FORMAT,
+            MODELLED_STAGE.
+   Status: User confirmed successful execution and supplied a screenshot
+           showing STAGING_COLUMN_COUNT = 51. Saved as evidence/02_staging_51_columns.png.
+   Landing columns use VARCHAR to preserve source strings before explicit
+   validation/type conversion in DW. Empty CSV fields become SQL NULL; the
+   literal None in UCI laboratory-test fields remains a source value.
+
+Upload preparation completed locally:
+   Master modelled.csv remains unchanged (SHA-256 verified).
+   Nine gzip transport packages contain all 4,424,257 records and 51 columns.
+   Each package is below 31 MB. Reconstructing their uncompressed contents,
+   with repeated headers removed, matches the exact master SHA-256.
+   Files: upload_packages/modelled_part_001.csv.gz through _009.csv.gz.
+   Manifest: upload_manifest.json.
+   User screenshot now confirms all nine package filenames in MODELLED_STAGE.
+   Saved as evidence/03_uploaded_stage_files.png. File presence is confirmed;
+   Parsing validation and total staging row count have since been confirmed
+   in the user screenshots recorded below.
+   Staging SQL names/order were checked against the master CSV contract.
+   User's setup screenshot saved as evidence/01_snowflake_context.png.
+
+3. Upload and file validation
+   Instructions: UPLOAD_AND_LOAD.txt.
+   Script: 03_validate_uploaded_files.sql (validation only, no data insert).
+   Status: Upload confirmed from the user's nine-file LIST screenshot.
+           Zero-error validation is now confirmed by the user's empty error
+           result grid, saved as evidence/04_validation_no_errors.png.
+           This confirms file validation, not insertion into MODELLED_RAW.
+           User requested proceeding with loading before dinner.
+
+4. Data loading and reconciliation
+   Scripts: 04_load_staging.sql and 05_verify_staging.sql.
+   Status: User executed 04_load_staging.sql. Screenshot confirms
+           TOTAL_LOADED_ROWS = 4,424,257, matching the master record count.
+           Saved as evidence/05_staging_loaded_4424257.png.
+           Detailed post-load reconciliation in 05_verify_staging.sql is
+           still pending (unique keys, source/role counts, null/label rules).
+
+DINNER STOPPING POINT
+User requested a dinner break after the successful staging load. Stop
+implementation here. Resume with 05_verify_staging.sql, then finalize the
+dimensional design, create/populate DW facts and dimensions, prepare the
+schema diagram and A/B dashboard/query evidence. A and B are not complete
+merely because the 51-column staging table is populated.
+The remaining C-J rubric deliverables and final presentation/report are
+pending. The earlier synthetic pilot is exploratory, separate from the
+authoritative real UCI-SPARCS modelled.csv and not completion of C-J.
+
+Expected final context:
+  ACTIVE_ROLE       SYSADMIN
+  ACTIVE_WAREHOUSE  FINAL_JURY_WH
+  ACTIVE_DATABASE   HEALTHCARE_FINAL_JURY
+  ACTIVE_SCHEMA     DW
+
+Subsequent steps, after successful setup:
+2. Finalize and explain the fact/dimension design for Block A.
+3. Create the source staging table and dimensional tables.
+4. Load modelled.csv using an appropriate bulk-loading method.
+5. Populate facts and dimensions; reconcile source and target counts/keys.
+6. Save actual SQL results and screenshots; prepare A/B dashboard evidence.
+
+The authoritative source is final jury/modelled.csv, with 4,424,257 real
+UCI-SPARCS records and 51 columns. Its role/source/label-availability flags
+must survive loading. Unknown source fields remain null.
+
+Manual user-result checkpoints establish actual execution; preparing a SQL
+file is not evidence that Snowflake objects exist or data have been loaded.
+
+User requested notice and a stop below 20% remaining limit. No reliable
+remaining quota/context percentage is exposed to the assistant, so an exact
+threshold cannot be monitored or promised. Flag context pressure if observed
+and preserve a concise handoff before stopping.
+
+References:
+https://docs.snowflake.com/en/sql-reference/sql/create-warehouse
+https://docs.snowflake.com/en/sql-reference/sql/create-database
+https://docs.snowflake.com/en/sql-reference/sql/create-schema
+
+RESUMED AND COMPLETED DIMENSIONAL BUILD
+User resumed the dinner checkpoint and ran 06_build_dimensional_warehouse.sql.
+User-reported output: PASS; FACT_ROWS=4424257; DIMENSION_TABLES=7; FAILED_CHECKS=0.
+The star diagram, dashboard A/B views, and source/role integrity queries are
+ready. 07_demo_queries.sql is available for the live jury demonstration.

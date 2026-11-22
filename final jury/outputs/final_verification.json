@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "all three classifier metrics independently recomputed from 19861 saved real test predictions",
+    "saved classifier reproduces 30 recorded predictions",
+    "all 445 itemsets and support values agree across mining algorithms",
+    "association-rule lift arithmetic reconciles",
+    "5000 unique common clustering records with all four assignments",
+    "saved K-Means reproduces all 5000 assignments"
+  ]
+}

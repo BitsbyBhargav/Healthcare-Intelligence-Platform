@@ -1,0 +1,59 @@
+FINAL JURY - SOURCE REGISTER AND ATTRIBUTION
+
+1. UCI Diabetes 130-US Hospitals for Years 1999-2008
+Creators: Clore, J.; Cios, K.; DeShazo, J.; Strack, B. (2014).
+Publisher: UCI Machine Learning Repository.
+DOI: https://doi.org/10.24432/C5230J
+Dataset: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+License: Creative Commons Attribution 4.0, as stated on the official page.
+Original files: diabetic_data.csv and IDS_mapping.csv.
+Grain: hospital encounter; patients may appear more than once.
+Scope: diabetes encounters meeting the original study's inclusion criteria.
+Readmission outcome: NO, >30, <30, preserved as published.
+Dates: calendar encounter dates are not available in the public file.
+The prior local CSV represents the same encounters, not an additional source.
+
+2. SPARCS Inpatient Discharges, 2023
+Publisher: New York State Department of Health.
+Dataset: https://health.data.ny.gov/d/46xm-urtu
+API: https://health.data.ny.gov/resource/46xm-urtu.csv
+Documentation: official metadata, overview, and data dictionary preserved
+under data/raw/sparcs_2023.
+Grain: published hospital discharge record, not unique patient.
+Readmission outcome/patient linkage: not present in the selected public file.
+Cost estimate: facility-specific 2019 audited cost-to-charge ratios, according
+to the 2023 overview; values are estimated costs, not reimbursement or savings.
+
+3. SPARCS Inpatient Discharges, 2024
+Publisher: New York State Department of Health.
+Dataset: https://health.data.ny.gov/d/sf4k-39ay
+API: https://health.data.ny.gov/resource/sf4k-39ay.csv
+Documentation: official metadata, overview, and data dictionary preserved
+under data/raw/sparcs_2024.
+Grain: published hospital discharge record, not unique patient.
+Readmission outcome/patient linkage: not present in the selected public file.
+Cost estimate: facility-specific 2021 audited cost-to-charge ratios, according
+to the 2024 overview. Year-to-year cost comparisons need this methodology
+difference disclosed and are not direct inflation-adjusted efficiency claims.
+
+SPARCS ACCESS/TERMS
+Public de-identified files are accessed through the official public portal.
+Metadata reports licenseId=SEE_TERMS_OF_USE; do not substitute an assumed
+license based on a third-party mirror. Keep publisher attribution and source
+links with derived material. The public-data description is available at:
+https://www.health.ny.gov/statistics/sparcs/access/
+https://www.health.ny.gov/statistics/sparcs/training/docs/sparcs_dgc_manual
+Public files have suppressed fields and may have incomplete reporting; they
+are provisional and subject to updates. Snapshots/counts are recorded in the
+local manifests; do not imply full current population coverage or certainty.
+
+RECORD IDENTIFIERS
+Socrata :id is a platform record identifier within a source snapshot:
+https://dev.socrata.com/docs/system-fields
+It is not a public patient ID or a cross-dataset patient matching key.
+
+BOUNDARIES
+All acquired records are from real published sources; no synthetic records
+were generated or included. No restricted MIMIC/HCUP files were downloaded.
+Preserve source-qualified analysis and report population/period differences.
+No model evaluation results are inherited from earlier jury work.

@@ -1,0 +1,88 @@
+BLOCK A - REQUIREMENTS AND OPEN DECISIONS
+Updated: 22 November 2026
+Status: The user clarified that the warehouse dataset must be the actual
+UCI-SPARCS integration through aligned factors, stored only as modelled.csv.
+That integration preserves shared fields, source-only fields, outcome
+availability, and UCI cohort roles. SPARCS is included as requested, with
+unlabeled training/holdout candidate roles rather than invented outcomes.
+No analytical warehouse or dashboard implementation is complete yet.
+
+CONFIRMED USER DIRECTION
+- Continue the existing healthcare and hospital readmission foundation.
+- Make an advanced final jury version in its own folder.
+- Incorporate faculty feedback: increase data volume, integrate similar
+  sources, and develop a new business solution from the integrated data.
+- Keep previous jury implementations and outputs separate.
+
+BASE SOURCE
+The existing raw source is data/diabetes_130_us.csv in the earlier project.
+It represents the UCI Diabetes 130-US Hospitals dataset. Inspect it read-only
+for compatibility, and record a source/hash manifest when a final-jury copy
+is prepared. Do not carry over fitted models or old result claims.
+Official source:
+https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+
+PROPOSED BUSINESS EXTENSION
+Readmission risk segmentation and follow-up planning: combine encounter
+analytics and patient-group profiles to help demonstrate how a hospital could
+prioritize follow-up review and examine related resource demand. Finalize
+the precise decision, user, and outputs after confirming additional data.
+Separate observed results, model estimates, and planning assumptions.
+
+DATA INTEGRATION RULES
+1. Append only sufficiently compatible encounter records, with a source tag
+   and namespaced identifiers. Check overlap and outcome definitions first.
+2. Join tables only on documented shared identifiers at compatible grains.
+   Two sources' patient IDs do not identify the same people by default.
+3. Keep complementary operational or benchmark data at its own fact grain.
+4. Do not count duplicate downloads, join multiplication, or extra feature
+   columns as additional independent patient encounters.
+5. Do not invent missing readmission targets or substitute another clinical
+   outcome. Document which sources can support each analytical task.
+6. Real and synthetic records, if permitted, require explicit provenance and
+   separate reported evaluation; an increase in synthetic volume is not an
+   increase in observed real-world patient evidence.
+
+LATEST USER CLARIFICATION
+- Faculty asked for more records from similar data, modeled around our needs;
+  no numeric minimum was specified. Do not invent a minimum row-count target.
+- Preserve the previous project's healthcare/readmission foundation.
+- User confirmed that the Snowflake account has been created and requested
+  data preparation. Block A local preparation can proceed independently of
+  authenticated Snowflake setup, which belongs to Block B.
+- No further information is needed from the user to continue Block A.
+- Working choice: prioritize real, publicly accessible data. Synthetic
+  expansion has not been approved and is not the default path.
+
+CURRENT DATA INTEGRATION ROUTE
+Official UCI diabetes encounters plus full public SPARCS inpatient discharges
+for 2023 and 2024. Use source-qualified encounter keys and a common Parquet
+schema. Preserve original fields in raw files. Additional SPARCS records
+support operational and case-mix analysis, not fabricated readmission labels.
+See DATA_DESIGN.txt for the business problem, grains, relationships, mapping
+rules, and modeling boundaries. Actual measured counts and completion status
+are in data_preparation/preparation_report.json and verification_report.json.
+
+VERIFIED PREPARATION RESULT
+UCI: 101,766 records, all with the original readmission label.
+SPARCS 2023: 2,125,754 discharge records.
+SPARCS 2024: 2,196,737 discharge records.
+Total: 4,424,257 unique source-qualified record keys; 43.47x original volume.
+Synthetic records: zero. Added SPARCS records have no readmission target.
+Nine integration tests passed. All 45 common-schema Parquet partitions passed
+the full integrity audit, with no unmapped age categories or invalid parsed
+duration/money tokens. Capped stays and suppressed facility fields are
+preserved explicitly. See the summary for actual source-specific counts.
+
+REMAINING BLOCK A WORK AFTER PREPARATION
+Use modelled.csv for the warehouse. Distinguish observed labels, unlabeled
+SPARCS records, and the separate synthetic pilot. A possible semi-supervised
+experiment may use shared fields, but generated labels cannot be treated
+as observed ground truth for readmission accuracy. UCI's real test cohort
+remains 19,861 encounters. The SPARCS holdout supports distribution checks
+and other valid tasks, not scored readmission evaluation without outcomes.
+
+Implement the analytical fact/dimension warehouse structure from this data,
+render the schema diagram, and demonstrate Block A in its own dashboard.
+Prepared Parquet partitions and a validation-key database do not by themselves
+constitute a completed analytical warehouse or a Snowflake deployment.

@@ -1,0 +1,4 @@
+variant,validation_macro_f1,validation_early_readmission_recall,validation_accuracy,selected_on_validation
+Real_only,0.3654708929837594,0.0,0.5709193151579053,False
+Real_class_weighted,0.4308250312423767,0.2864721485411141,0.5142340713962946,True
+Real_plus_SMOTENC,0.4070676052198663,0.367816091954023,0.4755736305668524,False

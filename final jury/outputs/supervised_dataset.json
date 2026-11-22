@@ -1,0 +1,15 @@
+{
+  "name": "UCI Diabetes 130-US Hospitals",
+  "original_records": 101766,
+  "raw_columns": 50,
+  "eligible_records": 99343,
+  "predictor_count": 19,
+  "target": "readmitted",
+  "source": "https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008",
+  "splits": {
+    "train": 59565,
+    "validation": 19917,
+    "test": 19861
+  },
+  "missingness": "Source ? becomes null; None laboratory categories are retained"
+}

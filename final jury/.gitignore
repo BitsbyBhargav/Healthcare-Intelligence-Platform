@@ -1,0 +1,17 @@
+# Reproducible large source files and data products stay local.
+data/raw/**/*.csv
+data/raw/**/*.csv.gz
+data/raw/**/part_*.json
+data/processed/
+/modelled.csv
+B_snowflake_deployment/upload_packages/
+reports/preview/
+.venv/
+.vendor/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+secrets.toml
+*.tmp

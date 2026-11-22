@@ -1,0 +1,57 @@
+SYNTHETIC AUGMENTATION PILOT - REPRODUCTION AND INTERPRETATION
+
+Run from repository root using the existing environment, without upgrading
+that environment's libraries:
+  .\.venv\Scripts\python.exe -m pip install --no-deps --target "final jury\.vendor" imbalanced-learn==0.14.2 sklearn-compat==0.1.6
+  .\.venv\Scripts\python.exe "final jury\tools\augmentation_pilot.py"
+
+Alternatively, create a separate environment inside final jury and install
+requirements-augmentation.txt. The pilot requires the previously prepared
+data/processed/uci_supervised.parquet. No old jury modules/models are imported.
+
+Method documentation:
+https://imbalanced-learn.org/stable/over_sampling.html
+https://imbalanced-learn.org/stable/common_pitfalls.html
+
+Synthetic minority oversampling with numeric and categorical features
+(SMOTENC) was selected for a bounded feasibility experiment. Numeric distance
+is scaled using real training data, categorical domains are preserved,
+generated counts are rounded to valid integer ranges, and the target class
+is assigned by the oversampling procedure. Synthetic outcomes are not observed
+readmissions. These checks do not establish clinical plausibility or privacy.
+
+All three variants use the same real-patient split, real-only fitted
+preprocessing, features, Random Forest settings, and seed. Only weighting
+or addition of synthetic training examples differs. The validation macro F1
+selects the variant before the real test set is evaluated. Both the
+prespecified real-only baseline and the selected variant are evaluated once.
+
+The baseline here is a new unweighted pilot Random Forest. Its scores are not
+the previous Jury 2 model's scores. Different eligibility rules, split,
+features, and settings prevent claiming a matched improvement over that model.
+
+Actual findings:
+- Training: 59,565 real encounters plus 34,815 generated rows = 94,380.
+- Validation: 19,917 real encounters; test: 19,861 real encounters.
+- No patient is shared across the three real partitions.
+- Validation macro F1: real-only 0.3655; SMOTENC 0.4071; weighted 0.4308.
+- Validation <30 recall: real-only 0.0000; SMOTENC 0.3678; weighted 0.2865.
+- Class weighting won the prespecified macro-F1 comparison. SMOTENC had
+  higher minority recall but lower macro F1 than weighting.
+- On real test data, weighting versus the pilot baseline improved macro F1
+  from 0.3709 to 0.4382; accuracy fell from 0.5775 to 0.5212.
+- The SMOTENC model was not selected and was not tested on the held-out set.
+- Of the generated rows, 1,329 exactly match a training feature/label vector.
+  Oversampling is not a claim of independent new patient evidence. Similarity
+  diagnostics and exact-match counts are in results.json; they do not prove
+  that the generated rows are clinically valid.
+
+Do not generate labels for SPARCS and treat them as truth, merge generated
+patients into test/validation sets, or claim that increased synthetic volume
+is a new independently observed hospital cohort. Whether synthetic data meet
+the faculty's expansion requirement remains separate from their ML utility.
+
+Generated and merged training files are under data/processed/augmentation_pilot
+and ignored by Git. results.json, validation_comparison.csv, PILOT_SUMMARY.txt,
+and artifact_verification.json provide the recorded experimental evidence.
+This exploratory experiment does not complete the official later rubric blocks.

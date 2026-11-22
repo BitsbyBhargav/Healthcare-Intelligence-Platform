@@ -1,0 +1,81 @@
+{
+  "created_at_utc": "2026-11-22T14:07:25.014030+00:00",
+  "status": "verified",
+  "master_file": "modelled.csv",
+  "master_sha256": "31836af79bf2c399e7c024542796abbe3094c336455e4fd03388175a5708819d",
+  "reconstructed_master_sha256": "31836af79bf2c399e7c024542796abbe3094c336455e4fd03388175a5708819d",
+  "rows": 4424257,
+  "columns": 51,
+  "source_counts": {
+    "UCI_DIABETES": 101766,
+    "SPARCS_2023": 2125754,
+    "SPARCS_2024": 2196737
+  },
+  "model_role_counts": {
+    "TRAIN_LABELED": 59565,
+    "TEST_LABELED": 19861,
+    "VALIDATION_LABELED": 19917,
+    "EXCLUDED_READMISSION_COHORT": 2423,
+    "UNLABELED_TRAIN_CANDIDATE": 2125754,
+    "UNLABELED_HOLDOUT_CANDIDATE": 2196737
+  },
+  "package_count": 9,
+  "packages": [
+    {
+      "file": "modelled_part_001.csv.gz",
+      "rows": 500000,
+      "bytes": 26732822,
+      "sha256": "f2c37e8242fb1bbaa53b2819f55be2c16ef51cd7e5d6548160232d747a13737d"
+    },
+    {
+      "file": "modelled_part_002.csv.gz",
+      "rows": 500000,
+      "bytes": 27898540,
+      "sha256": "30316cc1211e0f1c390d9a31e304035e21e8e8761e35a19e2735dfe72e77f698"
+    },
+    {
+      "file": "modelled_part_003.csv.gz",
+      "rows": 500000,
+      "bytes": 27975626,
+      "sha256": "ea9404db799e034ce0c064b12e25bc0ed821285dfadda10afcd50413771b3528"
+    },
+    {
+      "file": "modelled_part_004.csv.gz",
+      "rows": 500000,
+      "bytes": 28018853,
+      "sha256": "c5b23cca09d77423cfaf542321d9387640a8a2f5719a8739c7f9261435594274"
+    },
+    {
+      "file": "modelled_part_005.csv.gz",
+      "rows": 500000,
+      "bytes": 29004181,
+      "sha256": "bee24fd1bb49324d4259332fedd66f6466fe72da31f25af2d2cfe58edaf8cb0a"
+    },
+    {
+      "file": "modelled_part_006.csv.gz",
+      "rows": 500000,
+      "bytes": 30619850,
+      "sha256": "730d227263d6a9236c349247d15bdef96208477bb9dd9adc45c4ec8115fc9a54"
+    },
+    {
+      "file": "modelled_part_007.csv.gz",
+      "rows": 500000,
+      "bytes": 29903517,
+      "sha256": "216a275a3bfe7759e1f8a67f747218a3b62697a58726947b530e938d7106afb4"
+    },
+    {
+      "file": "modelled_part_008.csv.gz",
+      "rows": 500000,
+      "bytes": 30034733,
+      "sha256": "457a5b2ff2694075029d3e00f032fc711b881c37f56b6ecb05d2903e18d52966"
+    },
+    {
+      "file": "modelled_part_009.csv.gz",
+      "rows": 424257,
+      "bytes": 25553282,
+      "sha256": "886a5a956896db9e28008acc36cb7b150aab056a678c1688d6d81c30138a20b7"
+    }
+  ],
+  "verification": "Exact original uncompressed CSV bytes reconstructed; master unchanged",
+  "purpose": "Temporary transport packages for manual Snowflake stage upload"
+}

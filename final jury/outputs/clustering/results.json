@@ -1,0 +1,114 @@
+{
+  "sample_records": 5000,
+  "eligible_full_records": 4316868,
+  "source": "SPARCS 2023 and 2024; real encounters",
+  "features": [
+    "log1p(length of stay)",
+    "log1p(estimated cost)",
+    "severity 1-4",
+    "one-hot common age band"
+  ],
+  "selection": "Highest silhouette among methods assigning every encounter; DBSCAN noise reported separately",
+  "selected": "K-Means",
+  "k_search": [
+    {
+      "k": 2,
+      "silhouette": 0.31217831125774886
+    },
+    {
+      "k": 3,
+      "silhouette": 0.2201867201125961
+    },
+    {
+      "k": 4,
+      "silhouette": 0.21957391988537847
+    },
+    {
+      "k": 5,
+      "silhouette": 0.20989711613747739
+    },
+    {
+      "k": 6,
+      "silhouette": 0.20507774077945004
+    }
+  ],
+  "k": 2,
+  "dbscan_search": [
+    {
+      "eps": 0.5,
+      "score": 0.17206668135989842
+    },
+    {
+      "eps": 0.8,
+      "score": 0.212017309206555
+    },
+    {
+      "eps": 1.1,
+      "score": 0.18086682348453115
+    },
+    {
+      "eps": 1.4,
+      "score": 0.1802292806647538
+    }
+  ],
+  "algorithms": {
+    "K-Means": {
+      "clusters": 2,
+      "noise": 0,
+      "coverage": 1.0,
+      "seconds": 0.043999800000165123,
+      "silhouette": 0.31217831125774886,
+      "davies_bouldin": 1.2208954156494565,
+      "calinski_harabasz": 2957.9352922487965,
+      "parameters": {
+        "k": 2
+      }
+    },
+    "Hierarchical": {
+      "clusters": 2,
+      "noise": 0,
+      "coverage": 1.0,
+      "seconds": 1.62311690000206,
+      "silhouette": 0.2770868836956007,
+      "davies_bouldin": 1.3743986558758958,
+      "calinski_harabasz": 2139.0128742877214,
+      "parameters": {
+        "k": 2
+      }
+    },
+    "GMM": {
+      "clusters": 2,
+      "noise": 0,
+      "coverage": 1.0,
+      "seconds": 0.05927769999834709,
+      "silhouette": 0.15221196656026217,
+      "davies_bouldin": 2.3011706445552,
+      "calinski_harabasz": 782.621433832557,
+      "parameters": {
+        "k": 2
+      }
+    },
+    "DBSCAN": {
+      "clusters": 14,
+      "noise": 136,
+      "coverage": 0.9728,
+      "seconds": 0.1693766999997024,
+      "silhouette": 0.21794542476002776,
+      "davies_bouldin": 1.6633555870617864,
+      "calinski_harabasz": 622.3273552710458,
+      "parameters": {
+        "eps": 0.8,
+        "min_samples": 15
+      }
+    }
+  },
+  "pca_explained_variance": 0.7323798956250651,
+  "limits": [
+    "Fixed reproducible hash sample; algorithms fit identical records/features",
+    "Internal metrics, not clinical validation",
+    "DBSCAN scores exclude noise; coverage must accompany them",
+    "Cost methodologies differ by source year",
+    "No readmission labels or identifiers used as clustering features",
+    "Charges retained for profiles but excluded as correlated with cost"
+  ]
+}

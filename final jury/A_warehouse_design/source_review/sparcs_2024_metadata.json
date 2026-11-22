@@ -1,0 +1,2648 @@
+{
+  "id": "sf4k-39ay",
+  "name": "Hospital Inpatient Discharges (SPARCS De-Identified): 2024",
+  "assetType": "dataset",
+  "attribution": "New York State Department of Health",
+  "attributionLink": "https://www.health.ny.gov/statistics/sparcs/",
+  "averageRating": 0,
+  "category": "Health",
+  "createdAt": 1759952827,
+  "description": "The Statewide Planning and Research Cooperative System (SPARCS) Inpatient De-identified File contains discharge level detail on patient characteristics, diagnoses, treatments, services, and charges.\n\nThis data file contains basic record level detail for the discharge. The de-identified data file does not contain data that is protected health information (PHI) under Health Insurance Portability and Accountability Act (HIPAA). The health information is not individually identifiable; all data elements considered identifiable have been redacted. For example, the direct identifiers regarding a date have the day and month portion of the date removed.\n\nFor more information visit: <a href=https://www.health.ny.gov/statistics/sparcs/>https://www.health.ny.gov/statistics/sparcs/</a>",
+  "diciBackend": false,
+  "displayType": "table",
+  "downloadCount": 3098,
+  "hideFromCatalog": false,
+  "hideFromDataJson": false,
+  "licenseId": "SEE_TERMS_OF_USE",
+  "locked": false,
+  "newBackend": true,
+  "numberOfComments": 0,
+  "oid": 41667498,
+  "provenance": "official",
+  "publicationAppendEnabled": false,
+  "publicationDate": 1760104067,
+  "publicationGroup": 20117213,
+  "publicationStage": "published",
+  "rowsUpdatedAt": 1760103462,
+  "rowsUpdatedBy": "a9xd-f5um",
+  "tableId": 20117213,
+  "totalTimesRated": 0,
+  "viewCount": 20382,
+  "viewLastModified": 1760110825,
+  "viewType": "tabular",
+  "approvals": [
+    {
+      "reviewedAt": 1760444697,
+      "reviewedAutomatically": true,
+      "state": "approved",
+      "submissionId": 7155232,
+      "submissionObject": "public_audience_request",
+      "submissionOutcome": "change_audience",
+      "submittedAt": 1760444697,
+      "targetAudience": "public",
+      "workflowId": 1966,
+      "submissionDetails": {
+        "permissionType": "READ"
+      },
+      "submissionOutcomeApplication": {
+        "endedAt": 1760444697,
+        "failureCount": 0,
+        "startedAt": 1760444697,
+        "status": "success"
+      },
+      "submitter": {
+        "id": "a9xd-f5um",
+        "displayName": "R. Staniek"
+      }
+    }
+  ],
+  "clientContext": {
+    "clientContextVariables": [],
+    "inheritedVariables": {}
+  },
+  "columns": [
+    {
+      "id": 619075075,
+      "name": "Health Service Area",
+      "dataTypeName": "text",
+      "description": "A description of the Health Service Area (HSA) in which the hospital is located.",
+      "fieldName": "health_service_area",
+      "position": 1,
+      "renderTypeName": "text",
+      "tableColumnId": 162421081,
+      "cachedContents": {
+        "non_null": "2191442",
+        "largest": "Western NY",
+        "null": "5295",
+        "top": [
+          {
+            "item": "New York City",
+            "count": "996124"
+          },
+          {
+            "item": "Long Island",
+            "count": "359214"
+          },
+          {
+            "item": "Hudson Valley",
+            "count": "243870"
+          },
+          {
+            "item": "Capital/Adirondacks",
+            "count": "143613"
+          },
+          {
+            "item": "Western NY",
+            "count": "142041"
+          },
+          {
+            "item": "Finger Lakes",
+            "count": "140528"
+          },
+          {
+            "item": "Central NY",
+            "count": "138048"
+          },
+          {
+            "item": "Southern Tier",
+            "count": "28004"
+          }
+        ],
+        "smallest": "Capital/Adirondacks",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075082,
+      "name": "Hospital County",
+      "dataTypeName": "text",
+      "description": "A description of the county in which the hospital is located.",
+      "fieldName": "hospital_county",
+      "position": 2,
+      "renderTypeName": "text",
+      "tableColumnId": 162421088,
+      "cachedContents": {
+        "non_null": "2191442",
+        "largest": "Yates",
+        "null": "5295",
+        "top": [
+          {
+            "item": "New York",
+            "count": "389375"
+          },
+          {
+            "item": "Kings",
+            "count": "200536"
+          },
+          {
+            "item": "Nassau",
+            "count": "192048"
+          },
+          {
+            "item": "Queens",
+            "count": "185610"
+          },
+          {
+            "item": "Suffolk",
+            "count": "167166"
+          },
+          {
+            "item": "Bronx",
+            "count": "165312"
+          },
+          {
+            "item": "Westchester",
+            "count": "127036"
+          },
+          {
+            "item": "Erie",
+            "count": "112360"
+          },
+          {
+            "item": "Monroe",
+            "count": "105204"
+          },
+          {
+            "item": "Onondaga",
+            "count": "71592"
+          },
+          {
+            "item": "Albany",
+            "count": "62047"
+          },
+          {
+            "item": "Richmond",
+            "count": "55291"
+          },
+          {
+            "item": "Dutchess",
+            "count": "37326"
+          },
+          {
+            "item": "Orange",
+            "count": "36391"
+          },
+          {
+            "item": "Rockland",
+            "count": "29917"
+          },
+          {
+            "item": "Broome",
+            "count": "26630"
+          },
+          {
+            "item": "Oneida",
+            "count": "24418"
+          },
+          {
+            "item": "Schenectady",
+            "count": "15345"
+          },
+          {
+            "item": "Warren",
+            "count": "12271"
+          },
+          {
+            "item": "Ontario",
+            "count": "11747"
+          }
+        ],
+        "smallest": "Albany",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075065,
+      "name": "Operating Certificate Number",
+      "dataTypeName": "text",
+      "description": "The facility Operating Certificate Number assigned by NYS Department of Health.",
+      "fieldName": "operating_certificate_number",
+      "position": 3,
+      "renderTypeName": "text",
+      "tableColumnId": 162421071,
+      "cachedContents": {
+        "non_null": "2191442",
+        "largest": "7004010",
+        "null": "5295",
+        "top": [
+          {
+            "item": "7002054",
+            "count": "160737"
+          },
+          {
+            "item": "7002053",
+            "count": "124002"
+          },
+          {
+            "item": "7003004",
+            "count": "84433"
+          },
+          {
+            "item": "7000006",
+            "count": "78101"
+          },
+          {
+            "item": "7002024",
+            "count": "62960"
+          },
+          {
+            "item": "2951001",
+            "count": "53329"
+          },
+          {
+            "item": "1401014",
+            "count": "53212"
+          },
+          {
+            "item": "7002032",
+            "count": "44867"
+          },
+          {
+            "item": "5151001",
+            "count": "42272"
+          },
+          {
+            "item": "7004003",
+            "count": "40331"
+          },
+          {
+            "item": "2701005",
+            "count": "40244"
+          },
+          {
+            "item": "0101000",
+            "count": "36882"
+          },
+          {
+            "item": "5957001",
+            "count": "35376"
+          },
+          {
+            "item": "7001020",
+            "count": "32485"
+          },
+          {
+            "item": "3301007",
+            "count": "32296"
+          },
+          {
+            "item": "7002017",
+            "count": "31477"
+          },
+          {
+            "item": "7003010",
+            "count": "29232"
+          },
+          {
+            "item": "2701003",
+            "count": "28682"
+          },
+          {
+            "item": "7002001",
+            "count": "28630"
+          },
+          {
+            "item": "7000002",
+            "count": "27039"
+          }
+        ],
+        "smallest": "0101000",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075066,
+      "name": "Permanent Facility Id",
+      "dataTypeName": "text",
+      "description": "Permanent Facility Identifier.",
+      "fieldName": "permanent_facility_id",
+      "position": 4,
+      "renderTypeName": "text",
+      "tableColumnId": 162421072,
+      "width": 215,
+      "cachedContents": {
+        "non_null": "2191442",
+        "largest": "015620",
+        "null": "5295",
+        "top": [
+          {
+            "item": "001456",
+            "count": "53353"
+          },
+          {
+            "item": "001463",
+            "count": "50456"
+          },
+          {
+            "item": "000541",
+            "count": "49153"
+          },
+          {
+            "item": "001464",
+            "count": "45983"
+          },
+          {
+            "item": "000413",
+            "count": "40244"
+          },
+          {
+            "item": "001630",
+            "count": "39948"
+          },
+          {
+            "item": "000511",
+            "count": "38698"
+          },
+          {
+            "item": "001169",
+            "count": "37784"
+          },
+          {
+            "item": "000001",
+            "count": "36882"
+          },
+          {
+            "item": "000245",
+            "count": "36013"
+          },
+          {
+            "item": "001740",
+            "count": "32783"
+          },
+          {
+            "item": "001305",
+            "count": "32485"
+          },
+          {
+            "item": "001450",
+            "count": "31477"
+          },
+          {
+            "item": "001304",
+            "count": "30163"
+          },
+          {
+            "item": "001458",
+            "count": "29759"
+          },
+          {
+            "item": "001637",
+            "count": "29232"
+          },
+          {
+            "item": "001306",
+            "count": "28861"
+          },
+          {
+            "item": "000411",
+            "count": "28682"
+          },
+          {
+            "item": "001438",
+            "count": "28630"
+          },
+          {
+            "item": "001466",
+            "count": "27491"
+          }
+        ],
+        "smallest": "000001",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075055,
+      "name": "Facility Name",
+      "dataTypeName": "text",
+      "description": "The name of the facility where services were performed based on the Permanent Facility Identifier (PFI), as maintained by the NYSDOH Division of Health Facility Planning.",
+      "fieldName": "facility_name",
+      "position": 5,
+      "renderTypeName": "text",
+      "tableColumnId": 162421061,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "WYOMING COUNTY COMMUNITY HOSPITAL",
+        "null": "0",
+        "top": [
+          {
+            "item": "MOUNT SINAI HOSPITAL",
+            "count": "53353"
+          },
+          {
+            "item": "NYU LANGONE HOSPITALS",
+            "count": "50456"
+          },
+          {
+            "item": "NORTH SHORE UNIVERSITY HOSPITAL",
+            "count": "49153"
+          },
+          {
+            "item": "NEW YORK-PRESBYTERIAN HOSPITAL - COLUMBIA PRESBYTERIAN CENTER",
+            "count": "45983"
+          },
+          {
+            "item": "STRONG MEMORIAL HOSPITAL",
+            "count": "40244"
+          },
+          {
+            "item": "LONG ISLAND JEWISH MEDICAL CENTER",
+            "count": "39948"
+          },
+          {
+            "item": "NYU LANGONE HOSPITAL-LONG ISLAND",
+            "count": "38698"
+          },
+          {
+            "item": "MONTEFIORE MEDICAL CENTER - HENRY & LUCY MOSES DIV",
+            "count": "37784"
+          },
+          {
+            "item": "ALBANY MEDICAL CENTER HOSPITAL",
+            "count": "36882"
+          },
+          {
+            "item": "STONY BROOK UNIVERSITY HOSPITAL",
+            "count": "36013"
+          },
+          {
+            "item": "STATEN ISLAND UNIVERSITY HOSP-NORTH",
+            "count": "32783"
+          },
+          {
+            "item": "MAIMONIDES MEDICAL CENTER",
+            "count": "32485"
+          },
+          {
+            "item": "LENOX HILL HOSPITAL",
+            "count": "31477"
+          },
+          {
+            "item": "NYU LANGONE HOSPITAL-BROOKLYN",
+            "count": "30163"
+          },
+          {
+            "item": "NEW YORK-PRESBYTERIAN HOSPITAL - NEW YORK WEILL CORNELL CENTER",
+            "count": "29759"
+          },
+          {
+            "item": "NEWYORK-PRESBYTERIAN/QUEENS",
+            "count": "29232"
+          },
+          {
+            "item": "NEWYORK-PRESBYTERIAN BROOKLYN METHODIST HOSPITAL",
+            "count": "28861"
+          },
+          {
+            "item": "ROCHESTER GENERAL HOSPITAL",
+            "count": "28682"
+          },
+          {
+            "item": "BELLEVUE HOSPITAL CENTER",
+            "count": "28630"
+          },
+          {
+            "item": "MOUNT SINAI WEST",
+            "count": "27491"
+          }
+        ],
+        "smallest": "ADIRONDACK MEDICAL CENTER-SARANAC LAKE SITE",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075085,
+      "name": "Age Group",
+      "dataTypeName": "text",
+      "description": "Age in years at time of admission.",
+      "fieldName": "age_group",
+      "position": 6,
+      "renderTypeName": "text",
+      "tableColumnId": 162421091,
+      "width": 180,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "70 or Older",
+        "null": "0",
+        "top": [
+          {
+            "item": "70 or Older",
+            "count": "706970"
+          },
+          {
+            "item": "50-69",
+            "count": "581333"
+          },
+          {
+            "item": "30-49",
+            "count": "423270"
+          },
+          {
+            "item": "0-17",
+            "count": "301927"
+          },
+          {
+            "item": "18-29",
+            "count": "183237"
+          }
+        ],
+        "smallest": "0-17",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075054,
+      "name": "Zip Code",
+      "dataTypeName": "text",
+      "description": "The first three digits of the patient's zip code.",
+      "fieldName": "zip_code",
+      "position": 7,
+      "renderTypeName": "text",
+      "tableColumnId": 162421060,
+      "width": 143,
+      "cachedContents": {
+        "non_null": "2154765",
+        "largest": "OOS",
+        "null": "41972",
+        "top": [
+          {
+            "item": "112",
+            "count": "266231"
+          },
+          {
+            "item": "104",
+            "count": "207886"
+          },
+          {
+            "item": "117",
+            "count": "188654"
+          },
+          {
+            "item": "100",
+            "count": "152265"
+          },
+          {
+            "item": "113",
+            "count": "111758"
+          },
+          {
+            "item": "114",
+            "count": "87826"
+          },
+          {
+            "item": "115",
+            "count": "87740"
+          },
+          {
+            "item": "OOS",
+            "count": "65078"
+          },
+          {
+            "item": "109",
+            "count": "59826"
+          },
+          {
+            "item": "105",
+            "count": "57920"
+          },
+          {
+            "item": "142",
+            "count": "57447"
+          },
+          {
+            "item": "103",
+            "count": "57402"
+          },
+          {
+            "item": "146",
+            "count": "55504"
+          },
+          {
+            "item": "125",
+            "count": "43969"
+          },
+          {
+            "item": "140",
+            "count": "38472"
+          },
+          {
+            "item": "130",
+            "count": "36275"
+          },
+          {
+            "item": "119",
+            "count": "34249"
+          },
+          {
+            "item": "145",
+            "count": "30436"
+          },
+          {
+            "item": "120",
+            "count": "29842"
+          },
+          {
+            "item": "144",
+            "count": "28047"
+          }
+        ],
+        "smallest": "100",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075081,
+      "name": "Gender",
+      "dataTypeName": "text",
+      "description": "Patient gender.",
+      "fieldName": "gender",
+      "position": 8,
+      "renderTypeName": "text",
+      "tableColumnId": 162421087,
+      "width": 160,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "U",
+        "null": "0",
+        "top": [
+          {
+            "item": "F",
+            "count": "1195617"
+          },
+          {
+            "item": "M",
+            "count": "1000735"
+          },
+          {
+            "item": "U",
+            "count": "385"
+          }
+        ],
+        "smallest": "F",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075063,
+      "name": "Race",
+      "dataTypeName": "text",
+      "description": "Patient race.",
+      "fieldName": "race",
+      "position": 9,
+      "renderTypeName": "text",
+      "tableColumnId": 162421069,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "White",
+        "null": "0",
+        "top": [
+          {
+            "item": "White",
+            "count": "1147354"
+          },
+          {
+            "item": "Other Race",
+            "count": "620872"
+          },
+          {
+            "item": "Black/African American",
+            "count": "395419"
+          },
+          {
+            "item": "Multi-racial",
+            "count": "33092"
+          }
+        ],
+        "smallest": "Black/African American",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075073,
+      "name": "Ethnicity",
+      "dataTypeName": "text",
+      "description": "Patient ethnicity.",
+      "fieldName": "ethnicity",
+      "position": 10,
+      "renderTypeName": "text",
+      "tableColumnId": 162421079,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Unknown",
+        "null": "0",
+        "top": [
+          {
+            "item": "Not Span/Hispanic",
+            "count": "1540538"
+          },
+          {
+            "item": "Spanish/Hispanic",
+            "count": "363988"
+          },
+          {
+            "item": "Unknown",
+            "count": "289643"
+          },
+          {
+            "item": "Multi-ethnic",
+            "count": "2568"
+          }
+        ],
+        "smallest": "Multi-ethnic",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075074,
+      "name": "Length of Stay",
+      "dataTypeName": "text",
+      "description": "The total number of patient days at an acute level and/or other than acute care level (excluding leave of absence days).",
+      "fieldName": "length_of_stay",
+      "position": 11,
+      "renderTypeName": "text",
+      "tableColumnId": 162421080,
+      "width": 174,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "99",
+        "null": "0",
+        "top": [
+          {
+            "item": "2",
+            "count": "464690"
+          },
+          {
+            "item": "1",
+            "count": "392917"
+          },
+          {
+            "item": "3",
+            "count": "334224"
+          },
+          {
+            "item": "4",
+            "count": "214203"
+          },
+          {
+            "item": "5",
+            "count": "149406"
+          },
+          {
+            "item": "6",
+            "count": "111585"
+          },
+          {
+            "item": "7",
+            "count": "88766"
+          },
+          {
+            "item": "8",
+            "count": "67129"
+          },
+          {
+            "item": "9",
+            "count": "51272"
+          },
+          {
+            "item": "10",
+            "count": "41454"
+          },
+          {
+            "item": "11",
+            "count": "34623"
+          },
+          {
+            "item": "12",
+            "count": "28348"
+          },
+          {
+            "item": "13",
+            "count": "25854"
+          },
+          {
+            "item": "14",
+            "count": "23822"
+          },
+          {
+            "item": "15",
+            "count": "19134"
+          },
+          {
+            "item": "16",
+            "count": "15089"
+          },
+          {
+            "item": "17",
+            "count": "12608"
+          },
+          {
+            "item": "18",
+            "count": "10837"
+          },
+          {
+            "item": "19",
+            "count": "9500"
+          },
+          {
+            "item": "21",
+            "count": "8803"
+          }
+        ],
+        "smallest": "1",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075068,
+      "name": "Type of Admission",
+      "dataTypeName": "text",
+      "description": "A description of the manner in which the patient was admitted to the health care facility.",
+      "fieldName": "type_of_admission",
+      "position": 12,
+      "renderTypeName": "text",
+      "tableColumnId": 162421074,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Urgent",
+        "null": "0",
+        "top": [
+          {
+            "item": "Emergency",
+            "count": "1460204"
+          },
+          {
+            "item": "Elective",
+            "count": "355896"
+          },
+          {
+            "item": "Newborn",
+            "count": "198219"
+          },
+          {
+            "item": "Urgent",
+            "count": "168716"
+          },
+          {
+            "item": "Trauma",
+            "count": "10050"
+          },
+          {
+            "item": "Not Available",
+            "count": "3652"
+          }
+        ],
+        "smallest": "Elective",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075061,
+      "name": "Patient Disposition",
+      "dataTypeName": "text",
+      "description": "The patient's destination or status upon discharge.",
+      "fieldName": "patient_disposition",
+      "position": 13,
+      "renderTypeName": "text",
+      "tableColumnId": 162421067,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Skilled Nursing Home",
+        "null": "0",
+        "top": [
+          {
+            "item": "Home or Self Care",
+            "count": "1441830"
+          },
+          {
+            "item": "Home w/ Home Health Services",
+            "count": "299705"
+          },
+          {
+            "item": "Skilled Nursing Home",
+            "count": "211258"
+          },
+          {
+            "item": "Left Against Medical Advice",
+            "count": "57701"
+          },
+          {
+            "item": "Expired",
+            "count": "54460"
+          },
+          {
+            "item": "Short-term Hospital",
+            "count": "38487"
+          },
+          {
+            "item": "Inpatient Rehabilitation Facility",
+            "count": "35860"
+          },
+          {
+            "item": "Hospice - Home",
+            "count": "11241"
+          },
+          {
+            "item": "Psychiatric Hospital or Unit of Hosp",
+            "count": "9954"
+          },
+          {
+            "item": "Hospice - Medical Facility",
+            "count": "9856"
+          },
+          {
+            "item": "Facility w/ Custodial/Supportive Care",
+            "count": "6528"
+          },
+          {
+            "item": "Another Type Not Listed",
+            "count": "5732"
+          },
+          {
+            "item": "Court/Law Enforcement",
+            "count": "4108"
+          },
+          {
+            "item": "Medicare Cert Long Term Care Hospital",
+            "count": "3066"
+          },
+          {
+            "item": "Medicaid Cert Nursing Facility",
+            "count": "2238"
+          },
+          {
+            "item": "Cancer Center or Childrens Hospital",
+            "count": "1873"
+          },
+          {
+            "item": "Hosp Basd Medicare Approved Swing Bed",
+            "count": "1858"
+          },
+          {
+            "item": "Federal Health Care Facility",
+            "count": "745"
+          },
+          {
+            "item": "Critical Access Hospital",
+            "count": "237"
+          }
+        ],
+        "smallest": "Another Type Not Listed",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075059,
+      "name": "Discharge Year",
+      "dataTypeName": "text",
+      "description": "The year of discharge.",
+      "fieldName": "discharge_year",
+      "position": 14,
+      "renderTypeName": "text",
+      "tableColumnId": 162421065,
+      "width": 170,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "2024",
+        "null": "0",
+        "top": [
+          {
+            "item": "2024",
+            "count": "2196737"
+          }
+        ],
+        "smallest": "2024",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075067,
+      "name": "CCSR Diagnosis Code",
+      "dataTypeName": "text",
+      "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-CM Diagnosis Category Code.",
+      "fieldName": "ccsr_diagnosis_code",
+      "position": 15,
+      "renderTypeName": "text",
+      "tableColumnId": 162421073,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "XXX000",
+        "null": "0",
+        "top": [
+          {
+            "item": "PNL001",
+            "count": "199274"
+          },
+          {
+            "item": "INF002",
+            "count": "163590"
+          },
+          {
+            "item": "CIR019",
+            "count": "62449"
+          },
+          {
+            "item": "END003",
+            "count": "43811"
+          },
+          {
+            "item": "MBD017",
+            "count": "39837"
+          },
+          {
+            "item": "RSP002",
+            "count": "37151"
+          },
+          {
+            "item": "CIR017",
+            "count": "37083"
+          },
+          {
+            "item": "PRG023",
+            "count": "37039"
+          },
+          {
+            "item": "MBD001",
+            "count": "36050"
+          },
+          {
+            "item": "GEN004",
+            "count": "33970"
+          },
+          {
+            "item": "MUS011",
+            "count": "31909"
+          },
+          {
+            "item": "CIR020",
+            "count": "31398"
+          },
+          {
+            "item": "SKN001",
+            "count": "29222"
+          },
+          {
+            "item": "MUS006",
+            "count": "28954"
+          },
+          {
+            "item": "CIR009",
+            "count": "27420"
+          },
+          {
+            "item": "GEN002",
+            "count": "26854"
+          },
+          {
+            "item": "PRG022",
+            "count": "26758"
+          },
+          {
+            "item": "NVS009",
+            "count": "25626"
+          },
+          {
+            "item": "END011",
+            "count": "25487"
+          },
+          {
+            "item": "RSP012",
+            "count": "25445"
+          }
+        ],
+        "smallest": "BLD001",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075060,
+      "name": "CCSR Diagnosis Description",
+      "dataTypeName": "text",
+      "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-CM Diagnosis Category Description.",
+      "fieldName": "ccsr_diagnosis_description",
+      "position": 16,
+      "renderTypeName": "text",
+      "tableColumnId": 162421066,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "VIRAL INFECTION",
+        "null": "0",
+        "top": [
+          {
+            "item": "LIVEBORN",
+            "count": "199274"
+          },
+          {
+            "item": "SEPTICEMIA",
+            "count": "163590"
+          },
+          {
+            "item": "HEART FAILURE",
+            "count": "62449"
+          },
+          {
+            "item": "DIABETES MELLITUS WITH COMPLICATION",
+            "count": "43811"
+          },
+          {
+            "item": "ALCOHOL-RELATED DISORDERS",
+            "count": "39837"
+          },
+          {
+            "item": "PNEUMONIA (EXCEPT THAT CAUSED BY TUBERCULOSIS)",
+            "count": "37151"
+          },
+          {
+            "item": "CARDIAC DYSRHYTHMIAS",
+            "count": "37083"
+          },
+          {
+            "item": "COMPLICATIONS SPECIFIED DURING CHILDBIRTH",
+            "count": "37039"
+          },
+          {
+            "item": "SCHIZOPHRENIA SPECTRUM AND OTHER PSYCHOTIC DISORDERS",
+            "count": "36050"
+          },
+          {
+            "item": "URINARY TRACT INFECTIONS",
+            "count": "33970"
+          },
+          {
+            "item": "SPONDYLOPATHIES/SPONDYLOARTHROPATHY (INCLUDING INFECTIVE)",
+            "count": "31909"
+          },
+          {
+            "item": "CEREBRAL INFARCTION",
+            "count": "31398"
+          },
+          {
+            "item": "SKIN AND SUBCUTANEOUS TISSUE INFECTIONS",
+            "count": "29222"
+          },
+          {
+            "item": "OSTEOARTHRITIS",
+            "count": "28954"
+          },
+          {
+            "item": "ACUTE MYOCARDIAL INFARCTION",
+            "count": "27420"
+          },
+          {
+            "item": "ACUTE AND UNSPECIFIED RENAL FAILURE",
+            "count": "26854"
+          },
+          {
+            "item": "PROLONGED PREGNANCY",
+            "count": "26758"
+          },
+          {
+            "item": "EPILEPSY; CONVULSIONS",
+            "count": "25626"
+          },
+          {
+            "item": "FLUID AND ELECTROLYTE DISORDERS",
+            "count": "25487"
+          },
+          {
+            "item": "RESPIRATORY FAILURE; INSUFFICIENCY; ARREST",
+            "count": "25445"
+          }
+        ],
+        "smallest": "ABDOMINAL HERNIA",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075064,
+      "name": "CCSR Procedure Code",
+      "dataTypeName": "text",
+      "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-PCS Procedure Category Code.",
+      "fieldName": "ccsr_procedure_code",
+      "position": 17,
+      "renderTypeName": "text",
+      "tableColumnId": 162421070,
+      "cachedContents": {
+        "non_null": "1552973",
+        "largest": "URN012",
+        "null": "643764",
+        "top": [
+          {
+            "item": "PGN002",
+            "count": "115706"
+          },
+          {
+            "item": "PGN003",
+            "count": "65817"
+          },
+          {
+            "item": "ADM010",
+            "count": "64265"
+          },
+          {
+            "item": "ESA004",
+            "count": "54012"
+          },
+          {
+            "item": "ADM021",
+            "count": "51708"
+          },
+          {
+            "item": "ADM015",
+            "count": "43394"
+          },
+          {
+            "item": "ADM001",
+            "count": "38452"
+          },
+          {
+            "item": "MRS001",
+            "count": "38159"
+          },
+          {
+            "item": "CAR024",
+            "count": "35384"
+          },
+          {
+            "item": "IMG008",
+            "count": "29807"
+          },
+          {
+            "item": "OTR004",
+            "count": "27966"
+          },
+          {
+            "item": "MAM011",
+            "count": "26669"
+          },
+          {
+            "item": "SUD001",
+            "count": "24869"
+          },
+          {
+            "item": "ESA001",
+            "count": "24551"
+          },
+          {
+            "item": "MAM005",
+            "count": "23955"
+          },
+          {
+            "item": "CAR004",
+            "count": "22062"
+          },
+          {
+            "item": "ADM017",
+            "count": "21831"
+          },
+          {
+            "item": "MST013",
+            "count": "21283"
+          },
+          {
+            "item": "ESA003",
+            "count": "21261"
+          },
+          {
+            "item": "MST006",
+            "count": "20989"
+          }
+        ],
+        "smallest": "ADM001",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075083,
+      "name": "CCSR Procedure Description",
+      "dataTypeName": "text",
+      "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-PCS Procedure Category Description.",
+      "fieldName": "ccsr_procedure_description",
+      "position": 18,
+      "renderTypeName": "text",
+      "tableColumnId": 162421089,
+      "cachedContents": {
+        "non_null": "1552973",
+        "largest": "VULVAR LACERATION REPAIR",
+        "null": "643764",
+        "top": [
+          {
+            "item": "SPONTANEOUS VAGINAL DELIVERY",
+            "count": "115706"
+          },
+          {
+            "item": "CESAREAN SECTION",
+            "count": "65817"
+          },
+          {
+            "item": "VACCINATIONS",
+            "count": "64265"
+          },
+          {
+            "item": "NON-INVASIVE VENTILATION",
+            "count": "54012"
+          },
+          {
+            "item": "ADMINISTRATION OF THERAPEUTIC SUBSTANCES, NEC",
+            "count": "51708"
+          },
+          {
+            "item": "ADMINISTRATION OF ANTIBIOTICS",
+            "count": "43394"
+          },
+          {
+            "item": "TRANSFUSION OF BLOOD AND BLOOD PRODUCTS",
+            "count": "38452"
+          },
+          {
+            "item": "CIRCUMCISION",
+            "count": "38159"
+          },
+          {
+            "item": "VENOUS AND ARTERIAL CATHETER PLACEMENT",
+            "count": "35384"
+          },
+          {
+            "item": "ULTRASONOGRAPHY",
+            "count": "29807"
+          },
+          {
+            "item": "ISOLATION PROCEDURES",
+            "count": "27966"
+          },
+          {
+            "item": "ELECTROENCEPHALOGRAM (EEG)",
+            "count": "26669"
+          },
+          {
+            "item": "SUBSTANCE USE DETOXIFICATION",
+            "count": "24869"
+          },
+          {
+            "item": "HEMODIALYSIS",
+            "count": "24551"
+          },
+          {
+            "item": "MEASUREMENT DURING CARDIAC CATHETERIZATION",
+            "count": "23955"
+          },
+          {
+            "item": "PERCUTANEOUS CORONARY INTERVENTIONS (PCI)",
+            "count": "22062"
+          },
+          {
+            "item": "ADMINISTRATION OF NUTRITIONAL AND ELECTROLYTIC SUBSTANCES",
+            "count": "21831"
+          },
+          {
+            "item": "SPINE FUSION",
+            "count": "21283"
+          },
+          {
+            "item": "MECHANICAL VENTILATION",
+            "count": "21261"
+          },
+          {
+            "item": "KNEE ARTHROPLASTY",
+            "count": "20989"
+          }
+        ],
+        "smallest": "ABDOMINAL WALL PROCEDURES, NEC",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075070,
+      "name": "APR DRG Code",
+      "dataTypeName": "text",
+      "description": "The All Patients Refined Diagnosis Related Groups (APR-DRG) Classification Code.",
+      "fieldName": "apr_drg_code",
+      "position": 19,
+      "renderTypeName": "text",
+      "tableColumnId": 162421076,
+      "width": 160,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "956",
+        "null": "0",
+        "top": [
+          {
+            "item": "640",
+            "count": "168494"
+          },
+          {
+            "item": "720",
+            "count": "144367"
+          },
+          {
+            "item": "560",
+            "count": "123398"
+          },
+          {
+            "item": "194",
+            "count": "60015"
+          },
+          {
+            "item": "540",
+            "count": "59419"
+          },
+          {
+            "item": "139",
+            "count": "33096"
+          },
+          {
+            "item": "463",
+            "count": "32638"
+          },
+          {
+            "item": "137",
+            "count": "30700"
+          },
+          {
+            "item": "750",
+            "count": "29639"
+          },
+          {
+            "item": "045",
+            "count": "27317"
+          },
+          {
+            "item": "469",
+            "count": "26063"
+          },
+          {
+            "item": "201",
+            "count": "25927"
+          },
+          {
+            "item": "383",
+            "count": "25180"
+          },
+          {
+            "item": "053",
+            "count": "24824"
+          },
+          {
+            "item": "133",
+            "count": "22720"
+          },
+          {
+            "item": "175",
+            "count": "22553"
+          },
+          {
+            "item": "420",
+            "count": "21332"
+          },
+          {
+            "item": "775",
+            "count": "20348"
+          },
+          {
+            "item": "140",
+            "count": "20262"
+          },
+          {
+            "item": "254",
+            "count": "19385"
+          }
+        ],
+        "smallest": "001",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075076,
+      "name": "APR DRG Description",
+      "dataTypeName": "text",
+      "description": "The APR-DRG Classification Code Description.",
+      "fieldName": "apr_drg_description",
+      "position": 20,
+      "renderTypeName": "text",
+      "tableColumnId": 162421082,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "VIRAL MENINGITIS",
+        "null": "0",
+        "top": [
+          {
+            "item": "NEONATE BIRTH WEIGHT > 2499 GRAMS, NORMAL NEWBORN OR NEONATE WITH OTHER PROBLEM",
+            "count": "168494"
+          },
+          {
+            "item": "SEPTICEMIA AND DISSEMINATED INFECTIONS",
+            "count": "144367"
+          },
+          {
+            "item": "VAGINAL DELIVERY",
+            "count": "123398"
+          },
+          {
+            "item": "HEART FAILURE",
+            "count": "60015"
+          },
+          {
+            "item": "CESAREAN SECTION WITHOUT STERILIZATION",
+            "count": "59419"
+          },
+          {
+            "item": "OTHER PNEUMONIA",
+            "count": "33096"
+          },
+          {
+            "item": "KIDNEY AND URINARY TRACT INFECTIONS",
+            "count": "32638"
+          },
+          {
+            "item": "MAJOR RESPIRATORY INFECTIONS AND INFLAMMATIONS",
+            "count": "30700"
+          },
+          {
+            "item": "SCHIZOPHRENIA",
+            "count": "29639"
+          },
+          {
+            "item": "CVA AND PRECEREBRAL OCCLUSION WITH INFARCTION",
+            "count": "27317"
+          },
+          {
+            "item": "ACUTE KIDNEY INJURY",
+            "count": "26063"
+          },
+          {
+            "item": "CARDIAC ARRHYTHMIA AND CONDUCTION DISORDERS",
+            "count": "25927"
+          },
+          {
+            "item": "CELLULITIS AND OTHER SKIN INFECTIONS",
+            "count": "25180"
+          },
+          {
+            "item": "SEIZURE",
+            "count": "24824"
+          },
+          {
+            "item": "RESPIRATORY FAILURE",
+            "count": "22720"
+          },
+          {
+            "item": "PERCUTANEOUS CARDIAC INTERVENTION WITHOUT AMI",
+            "count": "22553"
+          },
+          {
+            "item": "DIABETES",
+            "count": "21332"
+          },
+          {
+            "item": "ALCOHOL ABUSE AND DEPENDENCE",
+            "count": "20348"
+          },
+          {
+            "item": "CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
+            "count": "20262"
+          },
+          {
+            "item": "OTHER DIGESTIVE SYSTEM DIAGNOSES",
+            "count": "19385"
+          }
+        ],
+        "smallest": "ABDOMINAL PAIN",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075056,
+      "name": "APR MDC Code",
+      "dataTypeName": "text",
+      "description": "All Patient Refined Major Diagnostic Category (APR MDC) Code.",
+      "fieldName": "apr_mdc_code",
+      "position": 21,
+      "renderTypeName": "text",
+      "tableColumnId": 162421062,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "25",
+        "null": "0",
+        "top": [
+          {
+            "item": "05",
+            "count": "277625"
+          },
+          {
+            "item": "14",
+            "count": "219991"
+          },
+          {
+            "item": "15",
+            "count": "203604"
+          },
+          {
+            "item": "18",
+            "count": "183022"
+          },
+          {
+            "item": "04",
+            "count": "180502"
+          },
+          {
+            "item": "06",
+            "count": "172157"
+          },
+          {
+            "item": "08",
+            "count": "171033"
+          },
+          {
+            "item": "01",
+            "count": "162025"
+          },
+          {
+            "item": "11",
+            "count": "107160"
+          },
+          {
+            "item": "19",
+            "count": "87648"
+          },
+          {
+            "item": "10",
+            "count": "78803"
+          },
+          {
+            "item": "07",
+            "count": "64960"
+          },
+          {
+            "item": "20",
+            "count": "56468"
+          },
+          {
+            "item": "09",
+            "count": "48566"
+          },
+          {
+            "item": "16",
+            "count": "32621"
+          },
+          {
+            "item": "23",
+            "count": "29249"
+          },
+          {
+            "item": "03",
+            "count": "28876"
+          },
+          {
+            "item": "21",
+            "count": "26571"
+          },
+          {
+            "item": "17",
+            "count": "22872"
+          },
+          {
+            "item": "13",
+            "count": "16119"
+          }
+        ],
+        "smallest": "00",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075084,
+      "name": "APR MDC Description",
+      "dataTypeName": "text",
+      "description": "All Patient Refined Major Diagnostic Category (APR MDC) Description.",
+      "fieldName": "apr_mdc_description",
+      "position": 22,
+      "renderTypeName": "text",
+      "tableColumnId": 162421090,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "REHABILITATION AFTERCARE OTHER FACTORS INFLUENCING HEALTH STATUS AND OTHER HEALTH SERVICE CONTACTS",
+        "null": "0",
+        "top": [
+          {
+            "item": "DISEASES AND DISORDERS OF THE CIRCULATORY SYSTEM",
+            "count": "277625"
+          },
+          {
+            "item": "PREGNANCY, CHILDBIRTH AND THE PUERPERIUM",
+            "count": "219991"
+          },
+          {
+            "item": "NEWBORNS AND OTHER NEONATES WITH CONDTN ORIG IN PERINATAL PERIOD",
+            "count": "203604"
+          },
+          {
+            "item": "INFECTIOUS AND PARASITIC DISEASES, SYSTEMIC OR UNSPECIFIED SITES",
+            "count": "183022"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE RESPIRATORY SYSTEM",
+            "count": "180502"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE DIGESTIVE SYSTEM",
+            "count": "172157"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE MUSCULOSKELETAL SYSTEM AND CONN TISSUE",
+            "count": "171033"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE NERVOUS SYSTEM",
+            "count": "162025"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE KIDNEY AND URINARY TRACT",
+            "count": "107160"
+          },
+          {
+            "item": "MENTAL DISEASES AND DISORDERS",
+            "count": "87648"
+          },
+          {
+            "item": "ENDOCRINE NUTRITIONAL AND METABOLIC DISEASES AND DISORDERS",
+            "count": "78803"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE HEPATOBILIARY SYSTEM AND PANCREAS",
+            "count": "64960"
+          },
+          {
+            "item": "ALCOHOL/DRUG USE AND ALCOHOL/DRUG INDUCED ORGANIC MENTAL DISORDERS",
+            "count": "56468"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE SKIN SUBCUTANEOUS TISSUE AND BREAST",
+            "count": "48566"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF BLOOD BLOOD FORMING ORGANS AND IMMUNOLOG DISORD",
+            "count": "32621"
+          },
+          {
+            "item": "REHABILITATION AFTERCARE OTHER FACTORS INFLUENCING HEALTH STATUS AND OTHER HEALTH SERVICE CONTACTS",
+            "count": "29249"
+          },
+          {
+            "item": "EAR, NOSE, MOUTH, THROAT AND CRANIOFACIAL DISEASES AND DISORDERS",
+            "count": "28876"
+          },
+          {
+            "item": "POISONINGS, TOXIC EFFECTS OTHER INJURIES AND OTHER COMPLICATIONS OF TREATMENT",
+            "count": "26571"
+          },
+          {
+            "item": "LYMPHATIC, HEMATOPOIETIC, OTHER MALIGNANCIES, CHEMOTHERAPY AND RADIOTHERAPY",
+            "count": "22872"
+          },
+          {
+            "item": "DISEASES AND DISORDERS OF THE FEMALE REPRODUCTIVE SYSTEM",
+            "count": "16119"
+          }
+        ],
+        "smallest": "ALCOHOL/DRUG USE AND ALCOHOL/DRUG INDUCED ORGANIC MENTAL DISORDERS",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075071,
+      "name": "APR Severity of Illness Code",
+      "dataTypeName": "text",
+      "description": "The APR-DRG Severity of Illness Code.",
+      "fieldName": "apr_severity_of_illness_code",
+      "position": 23,
+      "renderTypeName": "text",
+      "tableColumnId": 162421077,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "4",
+        "null": "0",
+        "top": [
+          {
+            "item": "2",
+            "count": "820465"
+          },
+          {
+            "item": "1",
+            "count": "619207"
+          },
+          {
+            "item": "3",
+            "count": "573480"
+          },
+          {
+            "item": "4",
+            "count": "183129"
+          },
+          {
+            "item": "0",
+            "count": "456"
+          }
+        ],
+        "smallest": "0",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075078,
+      "name": "APR Severity of Illness Description",
+      "dataTypeName": "text",
+      "description": "The APR-DRG Severity of Illness Description.",
+      "fieldName": "apr_severity_of_illness",
+      "position": 24,
+      "renderTypeName": "text",
+      "tableColumnId": 162421084,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Undetermined",
+        "null": "0",
+        "top": [
+          {
+            "item": "Moderate",
+            "count": "820465"
+          },
+          {
+            "item": "Minor",
+            "count": "619207"
+          },
+          {
+            "item": "Major",
+            "count": "573480"
+          },
+          {
+            "item": "Extreme",
+            "count": "183129"
+          },
+          {
+            "item": "Undetermined",
+            "count": "456"
+          }
+        ],
+        "smallest": "Extreme",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075079,
+      "name": "APR Risk of Mortality",
+      "dataTypeName": "text",
+      "description": "All Patient Refined Risk of Mortality (APR ROM) Description.",
+      "fieldName": "apr_risk_of_mortality",
+      "position": 25,
+      "renderTypeName": "text",
+      "tableColumnId": 162421085,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Undetermined",
+        "null": "0",
+        "top": [
+          {
+            "item": "Minor",
+            "count": "1108093"
+          },
+          {
+            "item": "Moderate",
+            "count": "477108"
+          },
+          {
+            "item": "Major",
+            "count": "440239"
+          },
+          {
+            "item": "Extreme",
+            "count": "170841"
+          },
+          {
+            "item": "Undetermined",
+            "count": "456"
+          }
+        ],
+        "smallest": "Extreme",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075058,
+      "name": "APR Medical Surgical Description",
+      "dataTypeName": "text",
+      "description": "The APR-DRG specific classification of Medical, Surgical or Not Applicable.",
+      "fieldName": "apr_medical_surgical",
+      "position": 26,
+      "renderTypeName": "text",
+      "tableColumnId": 162421064,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Surgical",
+        "null": "0",
+        "top": [
+          {
+            "item": "Medical",
+            "count": "1686244"
+          },
+          {
+            "item": "Surgical",
+            "count": "510037"
+          },
+          {
+            "item": "Not Applicable",
+            "count": "456"
+          }
+        ],
+        "smallest": "Medical",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075069,
+      "name": "Payment Typology 1",
+      "dataTypeName": "text",
+      "description": "A description of the source of payment provided for the discharge.",
+      "fieldName": "payment_typology_1",
+      "position": 27,
+      "renderTypeName": "text",
+      "tableColumnId": 162421075,
+      "cachedContents": {
+        "non_null": "2196510",
+        "largest": "Self-Pay",
+        "null": "227",
+        "top": [
+          {
+            "item": "Medicare",
+            "count": "929267"
+          },
+          {
+            "item": "Medicaid",
+            "count": "635606"
+          },
+          {
+            "item": "Private Health Insurance",
+            "count": "317827"
+          },
+          {
+            "item": "Blue Cross/Blue Shield",
+            "count": "204165"
+          },
+          {
+            "item": "Self-Pay",
+            "count": "34786"
+          },
+          {
+            "item": "Managed Care, Unspecified",
+            "count": "30320"
+          },
+          {
+            "item": "Miscellaneous/Other",
+            "count": "21764"
+          },
+          {
+            "item": "Federal/State/Local/VA",
+            "count": "21140"
+          },
+          {
+            "item": "Department of Corrections",
+            "count": "1635"
+          }
+        ],
+        "smallest": "Blue Cross/Blue Shield",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075072,
+      "name": "Payment Typology 2",
+      "dataTypeName": "text",
+      "description": "A description of the source of payment provided for the discharge.",
+      "fieldName": "payment_typology_2",
+      "position": 28,
+      "renderTypeName": "text",
+      "tableColumnId": 162421078,
+      "cachedContents": {
+        "non_null": "992329",
+        "largest": "Self-Pay",
+        "null": "1204408",
+        "top": [
+          {
+            "item": "Medicaid",
+            "count": "420954"
+          },
+          {
+            "item": "Medicare",
+            "count": "168543"
+          },
+          {
+            "item": "Private Health Insurance",
+            "count": "153534"
+          },
+          {
+            "item": "Self-Pay",
+            "count": "121540"
+          },
+          {
+            "item": "Blue Cross/Blue Shield",
+            "count": "105859"
+          },
+          {
+            "item": "Federal/State/Local/VA",
+            "count": "13178"
+          },
+          {
+            "item": "Managed Care, Unspecified",
+            "count": "5527"
+          },
+          {
+            "item": "Miscellaneous/Other",
+            "count": "3081"
+          },
+          {
+            "item": "Department of Corrections",
+            "count": "113"
+          }
+        ],
+        "smallest": "Blue Cross/Blue Shield",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075077,
+      "name": "Payment Typology 3",
+      "dataTypeName": "text",
+      "description": "A description of the source of payment provided for the discharge.",
+      "fieldName": "payment_typology_3",
+      "position": 29,
+      "renderTypeName": "text",
+      "tableColumnId": 162421083,
+      "cachedContents": {
+        "non_null": "240038",
+        "largest": "Self-Pay",
+        "null": "1956699",
+        "top": [
+          {
+            "item": "Self-Pay",
+            "count": "124253"
+          },
+          {
+            "item": "Medicaid",
+            "count": "67477"
+          },
+          {
+            "item": "Private Health Insurance",
+            "count": "19825"
+          },
+          {
+            "item": "Blue Cross/Blue Shield",
+            "count": "13845"
+          },
+          {
+            "item": "Medicare",
+            "count": "11800"
+          },
+          {
+            "item": "Federal/State/Local/VA",
+            "count": "2061"
+          },
+          {
+            "item": "Managed Care, Unspecified",
+            "count": "470"
+          },
+          {
+            "item": "Miscellaneous/Other",
+            "count": "288"
+          },
+          {
+            "item": "Department of Corrections",
+            "count": "19"
+          }
+        ],
+        "smallest": "Blue Cross/Blue Shield",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075053,
+      "name": "Birth Weight",
+      "dataTypeName": "text",
+      "description": "The neonate birth weight in grams; rounded to nearest 100 g (gram).",
+      "fieldName": "birth_weight",
+      "position": 30,
+      "renderTypeName": "text",
+      "tableColumnId": 162421059,
+      "width": 155,
+      "cachedContents": {
+        "non_null": "207822",
+        "largest": "UNKN",
+        "null": "1988915",
+        "top": [
+          {
+            "item": "3200",
+            "count": "17427"
+          },
+          {
+            "item": "3300",
+            "count": "17035"
+          },
+          {
+            "item": "3400",
+            "count": "16364"
+          },
+          {
+            "item": "3100",
+            "count": "16257"
+          },
+          {
+            "item": "3000",
+            "count": "14660"
+          },
+          {
+            "item": "3500",
+            "count": "14412"
+          },
+          {
+            "item": "2900",
+            "count": "12501"
+          },
+          {
+            "item": "3600",
+            "count": "12357"
+          },
+          {
+            "item": "2800",
+            "count": "10558"
+          },
+          {
+            "item": "3700",
+            "count": "10238"
+          },
+          {
+            "item": "2700",
+            "count": "8254"
+          },
+          {
+            "item": "3800",
+            "count": "7977"
+          },
+          {
+            "item": "2600",
+            "count": "6413"
+          },
+          {
+            "item": "3900",
+            "count": "6111"
+          },
+          {
+            "item": "2500",
+            "count": "4842"
+          },
+          {
+            "item": "4000",
+            "count": "4403"
+          },
+          {
+            "item": "2400",
+            "count": "4367"
+          },
+          {
+            "item": "4100",
+            "count": "3056"
+          },
+          {
+            "item": "2300",
+            "count": "2830"
+          },
+          {
+            "item": "2200",
+            "count": "2210"
+          }
+        ],
+        "smallest": "1000",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075062,
+      "name": "Emergency Department Indicator",
+      "dataTypeName": "text",
+      "description": "The Emergency Department Indicator is set based on the submitted revenue codes.",
+      "fieldName": "emergency_department_indicator",
+      "position": 31,
+      "renderTypeName": "text",
+      "tableColumnId": 162421068,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "Y",
+        "null": "0",
+        "top": [
+          {
+            "item": "Y",
+            "count": "1377141"
+          },
+          {
+            "item": "N",
+            "count": "819596"
+          }
+        ],
+        "smallest": "N",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {}
+    },
+    {
+      "id": 619075057,
+      "name": "Total Charges",
+      "dataTypeName": "text",
+      "description": "Total charges for the discharge.",
+      "fieldName": "total_charges",
+      "position": 32,
+      "renderTypeName": "text",
+      "tableColumnId": 162421063,
+      "width": 161,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "99999.98",
+        "null": "0",
+        "top": [
+          {
+            "item": "13890",
+            "count": "349"
+          },
+          {
+            "item": "36318.11",
+            "count": "282"
+          },
+          {
+            "item": "14111.82",
+            "count": "275"
+          },
+          {
+            "item": "20116.86",
+            "count": "267"
+          },
+          {
+            "item": "12737.46",
+            "count": "257"
+          },
+          {
+            "item": "6453.46",
+            "count": "256"
+          },
+          {
+            "item": "14094.45",
+            "count": "244"
+          },
+          {
+            "item": "4230.59",
+            "count": "229"
+          },
+          {
+            "item": "20768.86",
+            "count": "218"
+          },
+          {
+            "item": "5761.36",
+            "count": "218"
+          },
+          {
+            "item": "17171",
+            "count": "212"
+          },
+          {
+            "item": "20116.6",
+            "count": "207"
+          },
+          {
+            "item": "35223.6",
+            "count": "204"
+          },
+          {
+            "item": "21423.86",
+            "count": "200"
+          },
+          {
+            "item": "35702.08",
+            "count": "194"
+          },
+          {
+            "item": "15943.27",
+            "count": "194"
+          },
+          {
+            "item": "12333",
+            "count": "181"
+          },
+          {
+            "item": "22933",
+            "count": "177"
+          },
+          {
+            "item": "5961.36",
+            "count": "169"
+          },
+          {
+            "item": "20768.6",
+            "count": "169"
+          }
+        ],
+        "smallest": "0",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "precisionStyle": "currency",
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    },
+    {
+      "id": 619075080,
+      "name": "Total Costs",
+      "dataTypeName": "text",
+      "description": "Total estimated cost for the discharge.",
+      "fieldName": "total_costs",
+      "position": 33,
+      "renderTypeName": "text",
+      "tableColumnId": 162421086,
+      "width": 158,
+      "cachedContents": {
+        "non_null": "2196737",
+        "largest": "9999.98",
+        "null": "0",
+        "top": [
+          {
+            "item": "3191.05",
+            "count": "393"
+          },
+          {
+            "item": "2324.28",
+            "count": "349"
+          },
+          {
+            "item": "3271.86",
+            "count": "347"
+          },
+          {
+            "item": "13232.54",
+            "count": "282"
+          },
+          {
+            "item": "1867.41",
+            "count": "260"
+          },
+          {
+            "item": "3702.62",
+            "count": "257"
+          },
+          {
+            "item": "6587.03",
+            "count": "255"
+          },
+          {
+            "item": "1731.91",
+            "count": "254"
+          },
+          {
+            "item": "1850.55",
+            "count": "229"
+          },
+          {
+            "item": "9076.11",
+            "count": "226"
+          },
+          {
+            "item": "2571.77",
+            "count": "209"
+          },
+          {
+            "item": "12297.75",
+            "count": "204"
+          },
+          {
+            "item": "4091.61",
+            "count": "197"
+          },
+          {
+            "item": "13162.07",
+            "count": "194"
+          },
+          {
+            "item": "2917.19",
+            "count": "190"
+          },
+          {
+            "item": "1812.72",
+            "count": "190"
+          },
+          {
+            "item": "1103.09",
+            "count": "179"
+          },
+          {
+            "item": "1840.09",
+            "count": "173"
+          },
+          {
+            "item": "9410.58",
+            "count": "172"
+          },
+          {
+            "item": "3220.66",
+            "count": "161"
+          }
+        ],
+        "smallest": "0",
+        "count": "2196737",
+        "cardinality": "2196737"
+      },
+      "format": {
+        "decimalSeparator": ".",
+        "groupSeparator": ","
+      }
+    }
+  ],
+  "grants": [
+    {
+      "inherited": false,
+      "type": "viewer",
+      "flags": [
+        "public"
+      ]
+    }
+  ],
+  "license": {
+    "name": "See Terms of Use"
+  },
+  "metadata": {
+    "attachments": [
+      {
+        "filename": "NYSDOH_SPARCS_De-Identified_Overview_2024.pdf",
+        "assetId": "4569ea58-f227-4251-8d10-869f070c0444",
+        "name": "NYSDOH_SPARCS_De-Identified_Overview_2024.pdf"
+      },
+      {
+        "filename": "NYSDOH_SPARCS_De-Identified_Data_Dictionary_2024.pdf",
+        "assetId": "a768e7f9-db7a-42ce-bedc-e2c88186c687",
+        "name": "NYSDOH_SPARCS_De-Identified_Data_Dictionary_2024.pdf"
+      },
+      {
+        "filename": "NYSDOH_SPARCS_De-Identified_Release_Notes_Beg_2023.xlsx",
+        "assetId": "51682576-a3d1-405b-a988-4d82b3a3a354",
+        "name": "NYSDOH_SPARCS_De-Identified_Release_Notes_Beg_2023.xlsx"
+      }
+    ],
+    "custom_fields": {
+      "Dataset Summary": {
+        "Posting Frequency": "Yearly",
+        "Time Period": "2024",
+        "Office/Division": "Office of Health Services Quality and Analytics",
+        "Coverage": "Statewide",
+        "Granularity": "Discharge",
+        "Dataset Owner": "Center for Health Data Innovation"
+      },
+      "Disclaimers": {
+        "Limitations": "DISCLAIMER: The de-identified data file contains basic record level detail; it does not contain data that is protected health information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA). The health information contained in the file is not individually identifiable; all data elements that are considered identifiable have been redacted. Individual secondary diagnoses and procedures, as well as revenue codes have been excluded from this file.  LIMITATIONS: Note: Data is subject to change. At the time of this open dataset release, there are facilities that are not in full compliance with applicable reporting requirements. Users are encouraged to read the Overview, Data Dictionary, and Release Notes prior to using the data for analysis. Those materials will describe how the datasets were developed, the exclusions applied, basic descriptive statistics, and other important data considerations. For more information visit: https://www.health.ny.gov/statistics/sparcs/"
+      },
+      "Notes": {
+        "Notes": "Discharges that are identified as abortion will have some information redacted; PFI, Facility Name, Health Service Area, Hospital County, and Operating Certificate. Patient zip code is limited to the first three digits. However, in cases where the population size for the zip code is less than 20,000, if the cell size on patient classification strata is less than 10, or if the record is an abortion, then the zip code is blank. The code \u201cOOS\u201d indicates Out of State zip codes. Patient age is presented in age groups: 0 to 17, 18 to 29, 30 to 49, 50 to 69, and 70 or Older. For years beginning with 2011, the variable indicating the type of insurance expected to pay for the discharge has changed. Originally it was the Source of Payment. Effective December 2015, it is now the Payment Typology."
+      },
+      "Dataset Information": {
+        "Agency": "Health, Department of"
+      }
+    },
+    "availableDisplayTypes": [
+      "table",
+      "fatrow",
+      "page"
+    ]
+  },
+  "owner": {
+    "id": "s9j2-nqmr",
+    "displayName": "Open Data NY - DOH",
+    "profileImageUrlLarge": "/api/users/s9j2-nqmr/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/s9j2-nqmr/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/s9j2-nqmr/profile_images/TINY",
+    "screenName": "Open Data NY - DOH",
+    "type": "interactive",
+    "flags": [
+      "mayBeStoriesCoOwner"
+    ]
+  },
+  "query": {},
+  "rights": [
+    "read"
+  ],
+  "tableAuthor": {
+    "id": "s9j2-nqmr",
+    "displayName": "Open Data NY - DOH",
+    "profileImageUrlLarge": "/api/users/s9j2-nqmr/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/s9j2-nqmr/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/s9j2-nqmr/profile_images/TINY",
+    "screenName": "Open Data NY - DOH",
+    "type": "interactive",
+    "flags": [
+      "mayBeStoriesCoOwner"
+    ]
+  },
+  "tags": [
+    "sparcs",
+    "de-identified",
+    "inpatient",
+    "hospital",
+    "discharges",
+    "ip-d",
+    "2024"
+  ],
+  "flags": [
+    "default",
+    "ownerMayBeContacted",
+    "restorable",
+    "restorePossibleForType"
+  ]
+}

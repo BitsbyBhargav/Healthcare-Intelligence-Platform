@@ -1,0 +1,77 @@
+BLOCK A - INITIAL SOURCE COMPATIBILITY REVIEW
+Checked: 22 November 2026
+Status: Initial research checkpoint, superseded by DATA_DESIGN.txt and the
+data_preparation reports. Full 2023/2024 SPARCS acquisition is now selected.
+
+USER DIRECTION
+More records from similar healthcare data, modeled around the existing
+healthcare/readmission project. No numeric volume target was given.
+Use real public data first. User has created the Snowflake account.
+
+BASE DATA PREPARED
+Official UCI download:
+https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip
+Official dataset description:
+https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+
+Saved the official diabetic_data.csv and IDS_mapping.csv under
+final jury/data/raw/uci_diabetes, with SHA-256 hashes in source_assessment.json.
+Verified 101,766 rows and 50 CSV columns. All 101,766 encounter IDs correspond
+to the existing project source. File bytes differ: the existing source has
+blank strings where the official file contains '?' or 'None'. Those are the
+only observed value-change pairs (192,849 and 181,168 cells respectively).
+Retain the official raw tokens so missing values and tests not performed
+can be interpreted explicitly during new preprocessing.
+These are the same encounters and must not be counted as new expansion rows.
+
+CANDIDATE 1: SPARCS DISCHARGES, 2023
+Publisher: New York State Department of Health
+https://health.data.ny.gov/d/46xm-urtu
+Count returned by official API: 2,125,754 discharge records.
+Downloaded metadata and 50 sample records only; not the complete dataset.
+
+CANDIDATE 2: SPARCS DISCHARGES, 2024
+Publisher: New York State Department of Health
+https://health.data.ny.gov/d/sf4k-39ay
+Count returned by official API: 2,196,737 discharge records.
+Downloaded metadata and 50 sample records only; not the complete dataset.
+
+SHARED POTENTIAL
+SPARCS and UCI both describe hospital encounters and contain age groups,
+gender, race, admission categories, discharge disposition, diagnoses, and
+length of stay. SPARCS adds facility/geographic detail and charges/costs.
+This makes SPARCS a candidate for expanded encounter and resource analysis,
+subject to cohort selection and semantic harmonization.
+
+COMPATIBILITY LIMITS TO RESOLVE BEFORE SELECTION
+- Neither SPARCS candidate's published field list contains a readmission
+  outcome or patient linkage identifier. They cannot directly increase
+  labeled readmission training volume or support inferred patient matching.
+- UCI and SPARCS cover different periods and populations. Do not present
+  pooled rates as like-for-like comparisons without cohort restrictions.
+- UCI uses ICD-9 diagnosis fields; these SPARCS files publish CCSR diagnosis
+  categories. Diagnosis integration needs a documented coarse grouping or
+  separate coding-system dimensions, not equality of raw codes.
+- Age bands differ. Establish a valid shared representation or keep the
+  original source bands, rather than imply exact ages are known.
+- Investigate the precise length-of-stay conventions and top-coding before
+  combining bed-day totals or filtering comparable encounters.
+- 2023 and 2024 have schema name differences, including service-area and ZIP
+  fields. Normalize documented meanings and validate each file separately.
+- Hospital identifiers in SPARCS are not available as identified hospital
+  keys in the UCI data; do not assign UCI encounters to SPARCS facilities.
+- Only a field-level/sample review has been completed. No merged volume,
+  validation result, model improvement, or completed warehouse is claimed.
+
+PROVISIONAL MODELING OPTION
+An integrated warehouse could support common encounter analysis, with
+source-specific facts for readmission outcomes and hospital costs. The
+readmission model would use legitimately labeled encounters; expansion
+records could support broader clustering and operational analysis where
+their fields are suitable. This remains an option, not a locked design.
+
+NEXT CHECKPOINT
+Compare these candidates against accessible sources with actual readmission
+labels before selecting the final expansion route. Then document the
+business decision, exact source coverage, fact grain, schema, transformations,
+and measured row counts. Snowflake account setup does not block this work.

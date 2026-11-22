@@ -1,0 +1,12 @@
+{
+  "same_column_order": true,
+  "same_column_set": true,
+  "existing_rows": 101766,
+  "official_rows": 101766,
+  "equal_records_in_order": false,
+  "existing_sha256": "cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964",
+  "official_sha256": "0689e7ec031237dc63031b938805c48377748761a3b26acab621567afa24df97",
+  "equal_record_multisets": false,
+  "existing_only_record_count": 101766,
+  "official_only_record_count": 101766
+}

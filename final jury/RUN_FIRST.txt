@@ -1,0 +1,60 @@
+FINAL JURY - INDEPENDENT DATA PREPARATION
+
+Single final warehouse CSV: modelled.csv (UCI + SPARCS, 4,424,257 real rows).
+To regenerate it after source preparation and the UCI split manifest exist:
+  python tools\export_integrated_data.py
+Do not use the UCI-only augmentation CSV as the final combined warehouse data.
+That separate experiment remains under data/processed/augmentation_pilot.
+
+From the final jury folder in PowerShell, using Python 3.14:
+  python -m venv .venv
+  .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+  .\.venv\Scripts\python.exe tools\prepare_data.py download
+  .\.venv\Scripts\python.exe tools\prepare_data.py prepare
+  .\.venv\Scripts\python.exe tools\prepare_data.py verify
+  .\.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+For the already installed repository environment, run from repository root:
+  .\.venv\Scripts\python.exe "final jury\tools\prepare_data.py" download
+  .\.venv\Scripts\python.exe "final jury\tools\prepare_data.py" prepare
+  .\.venv\Scripts\python.exe "final jury\tools\prepare_data.py" verify
+  .\.venv\Scripts\python.exe -m unittest discover -s "final jury\tests" -v
+
+No previous jury code or artifacts are imported. The existing environment is
+only an optional source of installed Python libraries. All final jury inputs,
+outputs, manifests, tests, and code stay below this folder.
+
+The downloader acquires the official UCI dataset and complete SPARCS 2023 and
+2024 public files. It stores compressed, checksummed pages and resumes from
+valid pages after interruption. It refuses changed source snapshots or page
+sizes in an existing raw folder. Internet access is needed for acquisition;
+prepare/verify work locally after acquisition finishes.
+
+Keep the default page size when resuming the same snapshot. Do not run two
+download jobs against the same source folder concurrently.
+
+Prepared data:
+  data\processed\encounters\source=...\part_*.parquet
+      Common typed encounter contract; source-specific unavailable fields
+      remain null. These partitions are ready for warehouse staging.
+  data\processed\uci_supervised.parquet
+      Original UCI columns with '?' normalized to null. Literal 'None' test
+      results remain distinct. This is a clean dataset, not a fitted model;
+      feature selection, split, eligibility, and fitting belong to Block C.
+  data\processed\validation_keys.sqlite
+      Unique-key validation index only; not the analytical warehouse.
+
+Evidence:
+  A_warehouse_design\data_preparation\preparation_report.json
+  A_warehouse_design\data_preparation\verification_report.json
+  A_warehouse_design\data_preparation\DATA_PREPARATION_SUMMARY.txt
+  A_warehouse_design\DATA_DESIGN.txt
+
+Raw/processed CSV and Parquet data and the key-validation index are excluded
+from Git. Download code, source manifests, documentation, and verification
+reports preserve reproducibility. The raw and prepared data remain available
+locally for Snowflake loading in Block B.
+
+Readmission labels exist only for UCI encounters. Expanded SPARCS records
+must not be described as additional labeled readmission training examples.
+See the completed reports for actual counts, data-quality findings, and limits.

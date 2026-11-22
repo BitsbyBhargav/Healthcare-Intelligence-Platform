@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "patient-disjoint saved splits",
+    "synthetic provenance flags and keys",
+    "unique combined record keys",
+    "training row-count reconciliation",
+    "real test membership",
+    "no training/validation patients in test"
+  ],
+  "synthetic_rows": 34815,
+  "combined_training_rows": 94380,
+  "real_test_rows": 19861,
+  "synthetic_class_counts": {
+    "<30": 24660,
+    ">30": 10155
+  }
+}

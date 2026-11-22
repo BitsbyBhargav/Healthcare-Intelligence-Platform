@@ -1,0 +1,53 @@
+FINAL JURY - TEN-MINUTE REHEARSAL
+
+OPENING (30 seconds)
+Our project advances hospital readmission analytics through a source-traceable
+UCI-SPARCS warehouse. We integrated 4,424,257 real encounters into 51 fields,
+deployed the star schema to Snowflake, and compared mining, classification,
+and clustering methods. Different sources retain their outcome availability.
+
+A/B (90 seconds)
+Show the star diagram: one encounter per fact row, seven dimensions. Explain
+PK/FK joins, typed measures, null-safe handling, source-qualified record keys.
+Show Snowflake PASS: 4,424,257 facts, seven dimensions, zero failed checks.
+Use 07_demo_queries.sql for live source counts and slices. Batch loading,
+not streaming. Snowflake platform and star schema are different concepts.
+
+C/E/F/J (3 minutes)
+UCI has 101,766 records; exclude 2,423 death/hospice encounters. Patient-group
+split: 59,565 training, 19,917 validation, 19,861 test. Nineteen predictors.
+Compare Logistic Regression, Decision Tree and Random Forest under the same
+preprocessing and partitions. Validation macro F1 selects Random Forest.
+Test: accuracy 0.5212, macro F1 0.4382, early-readmission recall 0.2988,
+macro ROC AUC 0.6555. Accuracy is below the majority-class baseline; explain
+the minority-detection tradeoff. In Block F, enter the patient profile manually
+(age, admission, stay, prior visits, medication and lab results); click Predict
+readmission. Explain the largest-probability class, then show the matrix in J.
+Discharge-time variables mean this is not an admission-time prediction model.
+
+D (1 minute)
+15,000 real training transactions; Apriori and FP-Growth both returned 445
+frequent itemsets and 348 filtered rules. Support 3%, confidence 35%, lift
+above 1.05, max length 3. Explain support/confidence/lift using a displayed rule.
+Association is not causation. Same inputs and thresholds give matching itemsets.
+
+G/H/I (3 minutes)
+Clustering uses SPARCS resource variables, without readmission labels.
+Reproducible 5,000-record sample; log stay, log estimated cost, severity and
+one-hot age bands. Compare K-Means, Ward hierarchical, GMM and DBSCAN on the
+same data. K=2..6 searched. K-Means K=2, silhouette 0.3122, assigns all rows.
+DBSCAN yields 14 clusters and 136 noise rows; its scores exclude noise.
+PCA display explains 73.24% of representation variance and is only a display.
+K-Means cluster 0: 1,903 records, mean stay 10.77 days, cost $47,723.
+Cluster 1: 3,097 records, mean stay 2.41 days, cost $10,787.
+Explain these as observed resource-use groups, not clinical patient types.
+
+CLOSING (30 seconds)
+We demonstrate real integration, deployment and reproducible measured models.
+SPARCS adds encounter volume but does not supply observed readmission labels.
+Future work includes external labeled cohorts, calibrated probabilities,
+prospective evaluation and source-year sensitivity analysis.
+
+IF A QUESTION IS DIFFICULT
+State the actual data/method, explain the limitation, and show the measured
+evidence. Do not claim unmeasured accuracy, live occupancy or clinical benefit.

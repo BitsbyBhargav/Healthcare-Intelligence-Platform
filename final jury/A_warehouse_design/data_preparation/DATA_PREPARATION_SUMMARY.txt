@@ -1,0 +1,47 @@
+FINAL JURY - VERIFIED DATA PREPARATION
+
+Status: Complete
+
+Total source encounter records: 4,424,257
+Unique source-qualified encounter keys: 4,424,257
+Volume relative to original UCI source: 43.47x
+Encounters with observed readmission labels: 101,766
+Synthetic records: 0
+
+SOURCE COUNTS
+UCI_DIABETES: 101,766 records; 101,766 readmission labels
+SPARCS_2023: 2,125,754 records; 0 readmission labels
+SPARCS_2024: 2,196,737 records; 0 readmission labels
+
+QUALITY FINDINGS
+UCI_DIABETES: missing_los=0; top_coded_los=0; unknown_age=0; missing_facility=101,766; negative_costs=0; negative_charges=0; zero_los=0; invalid_los_tokens=0; invalid_cost_tokens=0; invalid_charge_tokens=0
+SPARCS_2023: missing_los=0; top_coded_los=2,290; unknown_age=0; missing_facility=5,333; negative_costs=0; negative_charges=0; zero_los=0; invalid_los_tokens=0; invalid_cost_tokens=0; invalid_charge_tokens=0
+SPARCS_2024: missing_los=0; top_coded_los=2,404; unknown_age=0; missing_facility=5,295; negative_costs=0; negative_charges=0; zero_los=0; invalid_los_tokens=0; invalid_cost_tokens=0; invalid_charge_tokens=0
+
+VERIFICATION
+raw/processed reconciliation
+processed SHA-256 integrity
+explicit Parquet schema
+no fabricated SPARCS readmission labels/patient IDs
+no invented UCI dates/costs/facilities
+valid common age bands with no unmapped published categories
+all original UCI target classes retained
+publisher 120 + caps preserved as 120-day lower bounds
+original UCI test-not-performed tokens preserved
+raw page SHA-256 integrity
+
+No classifiers or clusterers were trained in this preparation step.
+The expansion increases warehouse/operational data volume; it does not
+increase labeled readmission training examples. Sources have different
+cohorts, years, diagnosis systems, and LOS definitions; retain source filters.
+
+DELIVERABLES
+data/processed/encounters: typed common Parquet partitions
+data/processed/uci_supervised.parquet: clean original-column dataset
+data/processed/validation_keys.sqlite: uniqueness validation index only
+data_preparation/preparation_report.json: counts and hashes
+data_preparation/verification_report.json: completed integrity checks
+data_preparation/data_contract.json: field types and null/outcome policies
+data_preparation/encounter_preview.csv: 10 convenience rows per source
+
+Snowflake loading and analytical warehouse demonstration remain next steps.

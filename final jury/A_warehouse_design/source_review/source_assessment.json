@@ -1,0 +1,513 @@
+{
+  "checked_at_utc": "2026-11-22T12:34:20.775502+00:00",
+  "uci": {
+    "diabetic_data.csv": {
+      "bytes": 19159383,
+      "sha256": "0689e7ec031237dc63031b938805c48377748761a3b26acab621567afa24df97"
+    },
+    "IDS_mapping.csv": {
+      "bytes": 2547,
+      "sha256": "f1bb82b471cb34649352597572c9b1fb00bd27f77b9f5a22a03dc3eb1039749e"
+    },
+    "source": "https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip",
+    "row_count": 101766,
+    "column_count": 50,
+    "columns": [
+      "encounter_id",
+      "patient_nbr",
+      "race",
+      "gender",
+      "age",
+      "weight",
+      "admission_type_id",
+      "discharge_disposition_id",
+      "admission_source_id",
+      "time_in_hospital",
+      "payer_code",
+      "medical_specialty",
+      "num_lab_procedures",
+      "num_procedures",
+      "num_medications",
+      "number_outpatient",
+      "number_emergency",
+      "number_inpatient",
+      "diag_1",
+      "diag_2",
+      "diag_3",
+      "number_diagnoses",
+      "max_glu_serum",
+      "A1Cresult",
+      "metformin",
+      "repaglinide",
+      "nateglinide",
+      "chlorpropamide",
+      "glimepiride",
+      "acetohexamide",
+      "glipizide",
+      "glyburide",
+      "tolbutamide",
+      "pioglitazone",
+      "rosiglitazone",
+      "acarbose",
+      "miglitol",
+      "troglitazone",
+      "tolazamide",
+      "examide",
+      "citoglipton",
+      "insulin",
+      "glyburide-metformin",
+      "glipizide-metformin",
+      "glimepiride-pioglitazone",
+      "metformin-rosiglitazone",
+      "metformin-pioglitazone",
+      "change",
+      "diabetesMed",
+      "readmitted"
+    ],
+    "unique_encounters": 101766,
+    "unique_patient_linkage_ids": 71518,
+    "target_counts": {
+      "<30": 11357,
+      ">30": 35545,
+      "NO": 54864
+    },
+    "matches_original_source_bytes": false
+  },
+  "candidates": [
+    {
+      "year": 2023,
+      "dataset_id": "46xm-urtu",
+      "title": "Hospital Inpatient Discharges (SPARCS De-Identified): 2023",
+      "source": "https://health.data.ny.gov/d/46xm-urtu",
+      "api": "https://health.data.ny.gov/resource/46xm-urtu.json",
+      "publisher": "New York State Department of Health",
+      "license": "SEE_TERMS_OF_USE",
+      "reported_count": [
+        {
+          "count": "2125754"
+        }
+      ],
+      "fields": [
+        {
+          "name": "Hospital Service Area",
+          "field": "hospital_service_area",
+          "type": "text",
+          "description": "A description of the Health Service Area (HSA) in which the hospital is located. Blank for enhanced de-identification records.  Capital/Adirondack, CentralNY, Finger Lakes, Hudson Valley, Long Island, New  York City, Southern Tier, Western NY."
+        },
+        {
+          "name": "Hospital County",
+          "field": "hospital_county",
+          "type": "text",
+          "description": "A description of the county in which the hospital is located. Blank for records with enhanced de-identification."
+        },
+        {
+          "name": "Operating Certificate Number",
+          "field": "operating_certificate_number",
+          "type": "text",
+          "description": "The facility Operating Certificate Number  assigned by NYS Department of Health. Blank for records with  enhanced de-identification."
+        },
+        {
+          "name": "Permanent Facility Id",
+          "field": "permanent_facility_id",
+          "type": "text",
+          "description": "Permanent Facility Identifier. Blank for records with  enhanced de-identification."
+        },
+        {
+          "name": "Facility Name",
+          "field": "facility_name",
+          "type": "text",
+          "description": "The name of the facility where services were performed based on the Permanent Facility Identifier (PFI), as maintained by the NYSDOH Division of Health Facility Planning. For records with enhanced  de-identification, \u2018Redacted for Confidentiality\u2019 appears."
+        },
+        {
+          "name": "Age Group",
+          "field": "age_group",
+          "type": "text",
+          "description": "Age in years at time of admission/visit. Grouped into the following age groups: 0 to 17, 18 to 29, 30 to 49, 50 to 69, and 70 or Older."
+        },
+        {
+          "name": "Zip Code - 3 digits",
+          "field": "zip_code_3_digits",
+          "type": "text",
+          "description": "The first three digits of the patient's zip code."
+        },
+        {
+          "name": "Gender",
+          "field": "gender",
+          "type": "text",
+          "description": "Patient gender."
+        },
+        {
+          "name": "Race",
+          "field": "race",
+          "type": "text",
+          "description": "Patient race."
+        },
+        {
+          "name": "Ethnicity",
+          "field": "ethnicity",
+          "type": "text",
+          "description": "Patient ethnicity."
+        },
+        {
+          "name": "Length of Stay",
+          "field": "length_of_stay",
+          "type": "text",
+          "description": "The total number of patient days at an acute level and/or other than acute care level (excluding leave of absence days)."
+        },
+        {
+          "name": "Type of Admission",
+          "field": "type_of_admission",
+          "type": "text",
+          "description": "A description of the manner in which the patient was admitted to the health care facility."
+        },
+        {
+          "name": "Patient Disposition",
+          "field": "patient_disposition",
+          "type": "text",
+          "description": "The patient's destination or status upon discharge."
+        },
+        {
+          "name": "Discharge Year",
+          "field": "discharge_year",
+          "type": "text",
+          "description": "The year (CCYY) of discharge."
+        },
+        {
+          "name": "CCSR Diagnosis Code",
+          "field": "ccsr_diagnosis_code",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined (CCSR) Diagnosis Category Code."
+        },
+        {
+          "name": "CCSR Diagnosis Description",
+          "field": "ccsr_diagnosis_description",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined  (CCSR) Diagnosis Category Description."
+        },
+        {
+          "name": "CCSR Procedure Code",
+          "field": "ccsr_procedure_code",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined  (CCSR) ICD-10 Procedure Category Code."
+        },
+        {
+          "name": "CCSR Procedure Description",
+          "field": "ccsr_procedure_description",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined  (CCSR) ICD-10 Procedure Category Description."
+        },
+        {
+          "name": "APR DRG Code",
+          "field": "apr_drg_code",
+          "type": "text",
+          "description": "The All Patients Refined Diagnosis Related Groups (APR-DRG) Classification Code."
+        },
+        {
+          "name": "APR DRG Description",
+          "field": "apr_drg_description",
+          "type": "text",
+          "description": "The APR-DRG Classification Code Description."
+        },
+        {
+          "name": "APR MDC Code",
+          "field": "apr_mdc_code",
+          "type": "text",
+          "description": ". All Patient Refined Major Diagnostic Category (APR MDC) Code."
+        },
+        {
+          "name": "APR MDC Description",
+          "field": "apr_mdc_description",
+          "type": "text",
+          "description": "All Patient Refined Major Diagnostic Category (APR MDC) Description."
+        },
+        {
+          "name": "APR Severity of Illness Code",
+          "field": "apr_severity_of_illness_code",
+          "type": "text",
+          "description": "The APR-DRG Severity of Illness Code."
+        },
+        {
+          "name": "APR Severity of Illness Description",
+          "field": "apr_severity_of_illness",
+          "type": "text",
+          "description": "All Patient Refined Severity of Illness (APR SOI) Description."
+        },
+        {
+          "name": "APR Risk of Mortality",
+          "field": "apr_risk_of_mortality",
+          "type": "text",
+          "description": "All Patient Refined Risk of Mortality (APR ROM) Description."
+        },
+        {
+          "name": "APR Medical Surgical Description",
+          "field": "apr_medical_surgical",
+          "type": "text",
+          "description": "The APR-DRG specific classification of Medical, Surgical or Not Applicable."
+        },
+        {
+          "name": "Payment Typology 1",
+          "field": "payment_typology_1",
+          "type": "text",
+          "description": "A description of the type of payment for this occurrence."
+        },
+        {
+          "name": "Payment Typology 2",
+          "field": "payment_typology_2",
+          "type": "text",
+          "description": "A description of the type of payment for this occurrence."
+        },
+        {
+          "name": "Payment Typology 3",
+          "field": "payment_typology_3",
+          "type": "text",
+          "description": "A description of the type of payment for this occurrence."
+        },
+        {
+          "name": "Birth Weight",
+          "field": "birth_weight",
+          "type": "text",
+          "description": "The neonate birth weight in grams."
+        },
+        {
+          "name": "Emergency Department Indicator",
+          "field": "emergency_department_indicator",
+          "type": "text",
+          "description": "The Emergency Department Indicator is set based on the submitted revenue codes."
+        },
+        {
+          "name": "Total Charges",
+          "field": "total_charges",
+          "type": "text",
+          "description": "Total charges for the discharge."
+        },
+        {
+          "name": "Total Costs",
+          "field": "total_costs",
+          "type": "text",
+          "description": "Total estimated cost for the discharge."
+        }
+      ],
+      "sample_rows_downloaded": 50,
+      "has_readmission_field": false,
+      "has_patient_identifier_field": false
+    },
+    {
+      "year": 2024,
+      "dataset_id": "sf4k-39ay",
+      "title": "Hospital Inpatient Discharges (SPARCS De-Identified): 2024",
+      "source": "https://health.data.ny.gov/d/sf4k-39ay",
+      "api": "https://health.data.ny.gov/resource/sf4k-39ay.json",
+      "publisher": "New York State Department of Health",
+      "license": "SEE_TERMS_OF_USE",
+      "reported_count": [
+        {
+          "count": "2196737"
+        }
+      ],
+      "fields": [
+        {
+          "name": "Health Service Area",
+          "field": "health_service_area",
+          "type": "text",
+          "description": "A description of the Health Service Area (HSA) in which the hospital is located."
+        },
+        {
+          "name": "Hospital County",
+          "field": "hospital_county",
+          "type": "text",
+          "description": "A description of the county in which the hospital is located."
+        },
+        {
+          "name": "Operating Certificate Number",
+          "field": "operating_certificate_number",
+          "type": "text",
+          "description": "The facility Operating Certificate Number assigned by NYS Department of Health."
+        },
+        {
+          "name": "Permanent Facility Id",
+          "field": "permanent_facility_id",
+          "type": "text",
+          "description": "Permanent Facility Identifier."
+        },
+        {
+          "name": "Facility Name",
+          "field": "facility_name",
+          "type": "text",
+          "description": "The name of the facility where services were performed based on the Permanent Facility Identifier (PFI), as maintained by the NYSDOH Division of Health Facility Planning."
+        },
+        {
+          "name": "Age Group",
+          "field": "age_group",
+          "type": "text",
+          "description": "Age in years at time of admission."
+        },
+        {
+          "name": "Zip Code",
+          "field": "zip_code",
+          "type": "text",
+          "description": "The first three digits of the patient's zip code."
+        },
+        {
+          "name": "Gender",
+          "field": "gender",
+          "type": "text",
+          "description": "Patient gender."
+        },
+        {
+          "name": "Race",
+          "field": "race",
+          "type": "text",
+          "description": "Patient race."
+        },
+        {
+          "name": "Ethnicity",
+          "field": "ethnicity",
+          "type": "text",
+          "description": "Patient ethnicity."
+        },
+        {
+          "name": "Length of Stay",
+          "field": "length_of_stay",
+          "type": "text",
+          "description": "The total number of patient days at an acute level and/or other than acute care level (excluding leave of absence days)."
+        },
+        {
+          "name": "Type of Admission",
+          "field": "type_of_admission",
+          "type": "text",
+          "description": "A description of the manner in which the patient was admitted to the health care facility."
+        },
+        {
+          "name": "Patient Disposition",
+          "field": "patient_disposition",
+          "type": "text",
+          "description": "The patient's destination or status upon discharge."
+        },
+        {
+          "name": "Discharge Year",
+          "field": "discharge_year",
+          "type": "text",
+          "description": "The year of discharge."
+        },
+        {
+          "name": "CCSR Diagnosis Code",
+          "field": "ccsr_diagnosis_code",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-CM Diagnosis Category Code."
+        },
+        {
+          "name": "CCSR Diagnosis Description",
+          "field": "ccsr_diagnosis_description",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-CM Diagnosis Category Description."
+        },
+        {
+          "name": "CCSR Procedure Code",
+          "field": "ccsr_procedure_code",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-PCS Procedure Category Code."
+        },
+        {
+          "name": "CCSR Procedure Description",
+          "field": "ccsr_procedure_description",
+          "type": "text",
+          "description": "AHRQ Clinical Classification Software Refined (CCSR) ICD-10-PCS Procedure Category Description."
+        },
+        {
+          "name": "APR DRG Code",
+          "field": "apr_drg_code",
+          "type": "text",
+          "description": "The All Patients Refined Diagnosis Related Groups (APR-DRG) Classification Code."
+        },
+        {
+          "name": "APR DRG Description",
+          "field": "apr_drg_description",
+          "type": "text",
+          "description": "The APR-DRG Classification Code Description."
+        },
+        {
+          "name": "APR MDC Code",
+          "field": "apr_mdc_code",
+          "type": "text",
+          "description": "All Patient Refined Major Diagnostic Category (APR MDC) Code."
+        },
+        {
+          "name": "APR MDC Description",
+          "field": "apr_mdc_description",
+          "type": "text",
+          "description": "All Patient Refined Major Diagnostic Category (APR MDC) Description."
+        },
+        {
+          "name": "APR Severity of Illness Code",
+          "field": "apr_severity_of_illness_code",
+          "type": "text",
+          "description": "The APR-DRG Severity of Illness Code."
+        },
+        {
+          "name": "APR Severity of Illness Description",
+          "field": "apr_severity_of_illness",
+          "type": "text",
+          "description": "The APR-DRG Severity of Illness Description."
+        },
+        {
+          "name": "APR Risk of Mortality",
+          "field": "apr_risk_of_mortality",
+          "type": "text",
+          "description": "All Patient Refined Risk of Mortality (APR ROM) Description."
+        },
+        {
+          "name": "APR Medical Surgical Description",
+          "field": "apr_medical_surgical",
+          "type": "text",
+          "description": "The APR-DRG specific classification of Medical, Surgical or Not Applicable."
+        },
+        {
+          "name": "Payment Typology 1",
+          "field": "payment_typology_1",
+          "type": "text",
+          "description": "A description of the source of payment provided for the discharge."
+        },
+        {
+          "name": "Payment Typology 2",
+          "field": "payment_typology_2",
+          "type": "text",
+          "description": "A description of the source of payment provided for the discharge."
+        },
+        {
+          "name": "Payment Typology 3",
+          "field": "payment_typology_3",
+          "type": "text",
+          "description": "A description of the source of payment provided for the discharge."
+        },
+        {
+          "name": "Birth Weight",
+          "field": "birth_weight",
+          "type": "text",
+          "description": "The neonate birth weight in grams; rounded to nearest 100 g (gram)."
+        },
+        {
+          "name": "Emergency Department Indicator",
+          "field": "emergency_department_indicator",
+          "type": "text",
+          "description": "The Emergency Department Indicator is set based on the submitted revenue codes."
+        },
+        {
+          "name": "Total Charges",
+          "field": "total_charges",
+          "type": "text",
+          "description": "Total charges for the discharge."
+        },
+        {
+          "name": "Total Costs",
+          "field": "total_costs",
+          "type": "text",
+          "description": "Total estimated cost for the discharge."
+        }
+      ],
+      "sample_rows_downloaded": 50,
+      "has_readmission_field": false,
+      "has_patient_identifier_field": false
+    }
+  ],
+  "status": "Candidates only; no external records merged and no expanded row count claimed."
+}

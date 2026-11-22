@@ -1,0 +1,31 @@
+MANUAL SNOWFLAKE UPLOAD AND LOAD
+
+Current checkpoint: user confirmed successful staging-object creation, with
+a screenshot showing STAGING_COLUMN_COUNT = 51. No upload or load is confirmed.
+
+1. In Snowflake, select Ingestion > Add Data > Load files into a Stage.
+2. Select all nine .csv.gz packages from:
+   final jury/B_snowflake_deployment/upload_packages
+   Keep them compressed; these are transport copies of the one master CSV.
+3. Destination:
+   Database: HEALTHCARE_FINAL_JURY
+   Schema: STAGING
+   Stage: MODELLED_STAGE
+   Use the stage root without an additional folder prefix.
+4. Complete the upload, then run:
+   LIST @HEALTHCARE_FINAL_JURY.STAGING.MODELLED_STAGE;
+   Expected: exactly modelled_part_001.csv.gz through modelled_part_009.csv.gz.
+5. Run 03_validate_uploaded_files.sql. It validates all nine named files and
+   should return zero error rows. This step does not insert records.
+6. After successful validation, run 04_load_staging.sql. Expected: all nine
+   files loaded, zero errors, total 4,424,257 records.
+7. Run 05_verify_staging.sql and compare against the stated expected counts.
+
+The load script uses ON_ERROR=ABORT_STATEMENT, FORCE=FALSE, PURGE=FALSE.
+Keep source filenames unchanged. Stage files remain available after loading.
+Do not infer success from a prepared script; record actual execution results.
+The facts/dimensions and DW transformations follow staging reconciliation.
+
+Official guidance:
+https://docs.snowflake.com/en/user-guide/data-load-local-file-system-stage-ui
+https://docs.snowflake.com/en/sql-reference/sql/copy-into-table

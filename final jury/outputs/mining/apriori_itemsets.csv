@@ -1,0 +1,446 @@
+support,itemsets
+0.0398,A1Cresult=>7
+0.0786,A1Cresult=>8
+0.8324666666666667,A1Cresult=None
+0.049133333333333334,A1Cresult=Norm
+0.0368,age=[30-40)
+0.0974,age=[40-50)
+0.17293333333333333,age=[50-60)
+0.21446666666666667,age=[60-70)
+0.25893333333333335,age=[70-80)
+0.1664,age=[80-90)
+0.46673333333333333,change=Ch
+0.5332666666666667,change=No
+0.22726666666666667,diabetesMed=No
+0.7727333333333334,diabetesMed=Yes
+0.3005333333333333,diagnosis_group=Circulatory
+0.08793333333333334,diagnosis_group=Diabetes
+0.0912,diagnosis_group=Digestive
+0.04906666666666667,diagnosis_group=Genitourinary
+0.0664,diagnosis_group=Injury
+0.0516,diagnosis_group=Musculoskeletal
+0.10053333333333334,diagnosis_group=Respiratory
+0.0752,diagnosis_group=Symptoms
+0.12193333333333334,insulin=Down
+0.4658,insulin=No
+0.30086666666666667,insulin=Steady
+0.1114,insulin=Up
+0.11333333333333333,readmitted=<30
+0.36386666666666667,readmitted=>30
+0.5228,readmitted=NO
+0.0326,A1Cresult=>7 & diabetesMed=Yes
+0.05106666666666667,A1Cresult=>8 & change=Ch
+0.07113333333333334,A1Cresult=>8 & diabetesMed=Yes
+0.043,A1Cresult=>8 & readmitted=NO
+0.07546666666666667,A1Cresult=None & age=[40-50)
+0.139,A1Cresult=None & age=[50-60)
+0.17933333333333334,A1Cresult=None & age=[60-70)
+0.22433333333333333,A1Cresult=None & age=[70-80)
+0.14573333333333333,A1Cresult=None & age=[80-90)
+0.37233333333333335,A1Cresult=None & change=Ch
+0.46013333333333334,A1Cresult=None & change=No
+0.2012,A1Cresult=None & diabetesMed=No
+0.6312666666666666,A1Cresult=None & diabetesMed=Yes
+0.249,A1Cresult=None & diagnosis_group=Circulatory
+0.0624,A1Cresult=None & diagnosis_group=Diabetes
+0.08093333333333333,A1Cresult=None & diagnosis_group=Digestive
+0.04206666666666667,A1Cresult=None & diagnosis_group=Genitourinary
+0.05873333333333333,A1Cresult=None & diagnosis_group=Injury
+0.04633333333333333,A1Cresult=None & diagnosis_group=Musculoskeletal
+0.08373333333333334,A1Cresult=None & diagnosis_group=Respiratory
+0.06026666666666667,A1Cresult=None & diagnosis_group=Symptoms
+0.0956,A1Cresult=None & insulin=Down
+0.40586666666666665,A1Cresult=None & insulin=No
+0.24473333333333333,A1Cresult=None & insulin=Steady
+0.08626666666666667,A1Cresult=None & insulin=Up
+0.09826666666666667,A1Cresult=None & readmitted=<30
+0.3066,A1Cresult=None & readmitted=>30
+0.4276,A1Cresult=None & readmitted=NO
+0.037733333333333334,A1Cresult=Norm & diabetesMed=Yes
+0.0466,age=[40-50) & change=Ch
+0.0508,age=[40-50) & change=No
+0.07386666666666666,age=[40-50) & diabetesMed=Yes
+0.0418,age=[40-50) & insulin=No
+0.033,age=[40-50) & readmitted=>30
+0.05346666666666667,age=[40-50) & readmitted=NO
+0.08386666666666667,age=[50-60) & change=Ch
+0.08906666666666667,age=[50-60) & change=No
+0.03966666666666667,age=[50-60) & diabetesMed=No
+0.13326666666666667,age=[50-60) & diabetesMed=Yes
+0.0502,age=[50-60) & diagnosis_group=Circulatory
+0.07793333333333333,age=[50-60) & insulin=No
+0.0542,age=[50-60) & insulin=Steady
+0.0604,age=[50-60) & readmitted=>30
+0.09746666666666666,age=[50-60) & readmitted=NO
+0.10273333333333333,age=[60-70) & change=Ch
+0.11173333333333334,age=[60-70) & change=No
+0.04593333333333333,age=[60-70) & diabetesMed=No
+0.16853333333333334,age=[60-70) & diabetesMed=Yes
+0.0746,age=[60-70) & diagnosis_group=Circulatory
+0.0984,age=[60-70) & insulin=No
+0.06706666666666666,age=[60-70) & insulin=Steady
+0.07893333333333333,age=[60-70) & readmitted=>30
+0.11233333333333333,age=[60-70) & readmitted=NO
+0.11973333333333333,age=[70-80) & change=Ch
+0.1392,age=[70-80) & change=No
+0.05586666666666667,age=[70-80) & diabetesMed=No
+0.20306666666666667,age=[70-80) & diabetesMed=Yes
+0.09026666666666666,age=[70-80) & diagnosis_group=Circulatory
+0.12913333333333332,age=[70-80) & insulin=No
+0.07686666666666667,age=[70-80) & insulin=Steady
+0.03266666666666666,age=[70-80) & readmitted=<30
+0.09606666666666666,age=[70-80) & readmitted=>30
+0.1302,age=[70-80) & readmitted=NO
+0.0734,age=[80-90) & change=Ch
+0.093,age=[80-90) & change=No
+0.03966666666666667,age=[80-90) & diabetesMed=No
+0.12673333333333334,age=[80-90) & diabetesMed=Yes
+0.0532,age=[80-90) & diagnosis_group=Circulatory
+0.08373333333333334,age=[80-90) & insulin=No
+0.0464,age=[80-90) & insulin=Steady
+0.0672,age=[80-90) & readmitted=>30
+0.07853333333333333,age=[80-90) & readmitted=NO
+0.46673333333333333,change=Ch & diabetesMed=Yes
+0.14113333333333333,change=Ch & diagnosis_group=Circulatory
+0.049466666666666666,change=Ch & diagnosis_group=Diabetes
+0.030333333333333334,change=Ch & diagnosis_group=Digestive
+0.03186666666666667,change=Ch & diagnosis_group=Injury
+0.056,change=Ch & diagnosis_group=Respiratory
+0.12193333333333334,change=Ch & insulin=Down
+0.08853333333333334,change=Ch & insulin=No
+0.14486666666666667,change=Ch & insulin=Steady
+0.1114,change=Ch & insulin=Up
+0.0572,change=Ch & readmitted=<30
+0.177,change=Ch & readmitted=>30
+0.23253333333333334,change=Ch & readmitted=NO
+0.22726666666666667,change=No & diabetesMed=No
+0.306,change=No & diabetesMed=Yes
+0.1594,change=No & diagnosis_group=Circulatory
+0.03846666666666667,change=No & diagnosis_group=Diabetes
+0.060866666666666666,change=No & diagnosis_group=Digestive
+0.03453333333333333,change=No & diagnosis_group=Injury
+0.044533333333333334,change=No & diagnosis_group=Respiratory
+0.0468,change=No & diagnosis_group=Symptoms
+0.37726666666666664,change=No & insulin=No
+0.156,change=No & insulin=Steady
+0.056133333333333334,change=No & readmitted=<30
+0.18686666666666665,change=No & readmitted=>30
+0.2902666666666667,change=No & readmitted=NO
+0.06506666666666666,diabetesMed=No & diagnosis_group=Circulatory
+0.031133333333333332,diabetesMed=No & diagnosis_group=Digestive
+0.22726666666666667,diabetesMed=No & insulin=No
+0.07433333333333333,diabetesMed=No & readmitted=>30
+0.13,diabetesMed=No & readmitted=NO
+0.23546666666666666,diabetesMed=Yes & diagnosis_group=Circulatory
+0.07326666666666666,diabetesMed=Yes & diagnosis_group=Diabetes
+0.060066666666666664,diabetesMed=Yes & diagnosis_group=Digestive
+0.038266666666666664,diabetesMed=Yes & diagnosis_group=Genitourinary
+0.05046666666666667,diabetesMed=Yes & diagnosis_group=Injury
+0.0418,diabetesMed=Yes & diagnosis_group=Musculoskeletal
+0.08313333333333334,diabetesMed=Yes & diagnosis_group=Respiratory
+0.054066666666666666,diabetesMed=Yes & diagnosis_group=Symptoms
+0.12193333333333334,diabetesMed=Yes & insulin=Down
+0.23853333333333335,diabetesMed=Yes & insulin=No
+0.30086666666666667,diabetesMed=Yes & insulin=Steady
+0.1114,diabetesMed=Yes & insulin=Up
+0.0904,diabetesMed=Yes & readmitted=<30
+0.2895333333333333,diabetesMed=Yes & readmitted=>30
+0.3928,diabetesMed=Yes & readmitted=NO
+0.034466666666666666,diagnosis_group=Circulatory & insulin=Down
+0.14406666666666668,diagnosis_group=Circulatory & insulin=No
+0.09086666666666667,diagnosis_group=Circulatory & insulin=Steady
+0.031133333333333332,diagnosis_group=Circulatory & insulin=Up
+0.03526666666666667,diagnosis_group=Circulatory & readmitted=<30
+0.1108,diagnosis_group=Circulatory & readmitted=>30
+0.15446666666666667,diagnosis_group=Circulatory & readmitted=NO
+0.034,diagnosis_group=Diabetes & readmitted=>30
+0.04273333333333333,diagnosis_group=Diabetes & readmitted=NO
+0.04593333333333333,diagnosis_group=Digestive & insulin=No
+0.0332,diagnosis_group=Digestive & readmitted=>30
+0.04906666666666667,diagnosis_group=Digestive & readmitted=NO
+0.03166666666666667,diagnosis_group=Injury & insulin=No
+0.03646666666666667,diagnosis_group=Injury & readmitted=NO
+0.0302,diagnosis_group=Musculoskeletal & readmitted=NO
+0.03886666666666667,diagnosis_group=Respiratory & insulin=No
+0.0312,diagnosis_group=Respiratory & insulin=Steady
+0.042466666666666666,diagnosis_group=Respiratory & readmitted=>30
+0.04733333333333333,diagnosis_group=Respiratory & readmitted=NO
+0.045,diagnosis_group=Symptoms & insulin=No
+0.04153333333333333,diagnosis_group=Symptoms & readmitted=NO
+0.048133333333333334,insulin=Down & readmitted=>30
+0.0562,insulin=Down & readmitted=NO
+0.046266666666666664,insulin=No & readmitted=<30
+0.1656,insulin=No & readmitted=>30
+0.25393333333333334,insulin=No & readmitted=NO
+0.03333333333333333,insulin=Steady & readmitted=<30
+0.1074,insulin=Steady & readmitted=>30
+0.16013333333333332,insulin=Steady & readmitted=NO
+0.04273333333333333,insulin=Up & readmitted=>30
+0.052533333333333335,insulin=Up & readmitted=NO
+0.05106666666666667,A1Cresult=>8 & change=Ch & diabetesMed=Yes
+0.039,A1Cresult=>8 & diabetesMed=Yes & readmitted=NO
+0.03386666666666667,A1Cresult=None & age=[40-50) & change=Ch
+0.0416,A1Cresult=None & age=[40-50) & change=No
+0.05566666666666667,A1Cresult=None & age=[40-50) & diabetesMed=Yes
+0.03473333333333333,A1Cresult=None & age=[40-50) & insulin=No
+0.0406,A1Cresult=None & age=[40-50) & readmitted=NO
+0.06386666666666667,A1Cresult=None & age=[50-60) & change=Ch
+0.07513333333333333,A1Cresult=None & age=[50-60) & change=No
+0.03453333333333333,A1Cresult=None & age=[50-60) & diabetesMed=No
+0.10446666666666667,A1Cresult=None & age=[50-60) & diabetesMed=Yes
+0.039266666666666665,A1Cresult=None & age=[50-60) & diagnosis_group=Circulatory
+0.06653333333333333,A1Cresult=None & age=[50-60) & insulin=No
+0.0432,A1Cresult=None & age=[50-60) & insulin=Steady
+0.048933333333333336,A1Cresult=None & age=[50-60) & readmitted=>30
+0.07753333333333333,A1Cresult=None & age=[50-60) & readmitted=NO
+0.08326666666666667,A1Cresult=None & age=[60-70) & change=Ch
+0.09606666666666666,A1Cresult=None & age=[60-70) & change=No
+0.04086666666666667,A1Cresult=None & age=[60-70) & diabetesMed=No
+0.13846666666666665,A1Cresult=None & age=[60-70) & diabetesMed=Yes
+0.0618,A1Cresult=None & age=[60-70) & diagnosis_group=Circulatory
+0.08466666666666667,A1Cresult=None & age=[60-70) & insulin=No
+0.0556,A1Cresult=None & age=[60-70) & insulin=Steady
+0.0672,A1Cresult=None & age=[60-70) & readmitted=>30
+0.09246666666666667,A1Cresult=None & age=[60-70) & readmitted=NO
+0.10086666666666666,A1Cresult=None & age=[70-80) & change=Ch
+0.12346666666666667,A1Cresult=None & age=[70-80) & change=No
+0.05046666666666667,A1Cresult=None & age=[70-80) & diabetesMed=No
+0.17386666666666667,A1Cresult=None & age=[70-80) & diabetesMed=Yes
+0.07633333333333334,A1Cresult=None & age=[70-80) & diagnosis_group=Circulatory
+0.1156,A1Cresult=None & age=[70-80) & insulin=No
+0.06426666666666667,A1Cresult=None & age=[70-80) & insulin=Steady
+0.084,A1Cresult=None & age=[70-80) & readmitted=>30
+0.11113333333333333,A1Cresult=None & age=[70-80) & readmitted=NO
+0.062,A1Cresult=None & age=[80-90) & change=Ch
+0.08373333333333334,A1Cresult=None & age=[80-90) & change=No
+0.03626666666666667,A1Cresult=None & age=[80-90) & diabetesMed=No
+0.10946666666666667,A1Cresult=None & age=[80-90) & diabetesMed=Yes
+0.046266666666666664,A1Cresult=None & age=[80-90) & diagnosis_group=Circulatory
+0.07493333333333334,A1Cresult=None & age=[80-90) & insulin=No
+0.040266666666666666,A1Cresult=None & age=[80-90) & insulin=Steady
+0.0594,A1Cresult=None & age=[80-90) & readmitted=>30
+0.06753333333333333,A1Cresult=None & age=[80-90) & readmitted=NO
+0.37233333333333335,A1Cresult=None & change=Ch & diabetesMed=Yes
+0.1116,A1Cresult=None & change=Ch & diagnosis_group=Circulatory
+0.03333333333333333,A1Cresult=None & change=Ch & diagnosis_group=Diabetes
+0.04613333333333333,A1Cresult=None & change=Ch & diagnosis_group=Respiratory
+0.0956,A1Cresult=None & change=Ch & insulin=Down
+0.07373333333333333,A1Cresult=None & change=Ch & insulin=No
+0.11673333333333333,A1Cresult=None & change=Ch & insulin=Steady
+0.08626666666666667,A1Cresult=None & change=Ch & insulin=Up
+0.0486,A1Cresult=None & change=Ch & readmitted=<30
+0.14246666666666666,A1Cresult=None & change=Ch & readmitted=>30
+0.18126666666666666,A1Cresult=None & change=Ch & readmitted=NO
+0.2012,A1Cresult=None & change=No & diabetesMed=No
+0.25893333333333335,A1Cresult=None & change=No & diabetesMed=Yes
+0.1374,A1Cresult=None & change=No & diagnosis_group=Circulatory
+0.05513333333333333,A1Cresult=None & change=No & diagnosis_group=Digestive
+0.0314,A1Cresult=None & change=No & diagnosis_group=Injury
+0.0376,A1Cresult=None & change=No & diagnosis_group=Respiratory
+0.038,A1Cresult=None & change=No & diagnosis_group=Symptoms
+0.33213333333333334,A1Cresult=None & change=No & insulin=No
+0.128,A1Cresult=None & change=No & insulin=Steady
+0.049666666666666665,A1Cresult=None & change=No & readmitted=<30
+0.16413333333333333,A1Cresult=None & change=No & readmitted=>30
+0.24633333333333332,A1Cresult=None & change=No & readmitted=NO
+0.0572,A1Cresult=None & diabetesMed=No & diagnosis_group=Circulatory
+0.2012,A1Cresult=None & diabetesMed=No & insulin=No
+0.06646666666666666,A1Cresult=None & diabetesMed=No & readmitted=>30
+0.11406666666666666,A1Cresult=None & diabetesMed=No & readmitted=NO
+0.1918,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Circulatory
+0.05046666666666667,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Diabetes
+0.05193333333333333,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Digestive
+0.032266666666666666,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Genitourinary
+0.0438,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Injury
+0.037333333333333336,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Musculoskeletal
+0.06866666666666667,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Respiratory
+0.043133333333333336,A1Cresult=None & diabetesMed=Yes & diagnosis_group=Symptoms
+0.0956,A1Cresult=None & diabetesMed=Yes & insulin=Down
+0.20466666666666666,A1Cresult=None & diabetesMed=Yes & insulin=No
+0.24473333333333333,A1Cresult=None & diabetesMed=Yes & insulin=Steady
+0.08626666666666667,A1Cresult=None & diabetesMed=Yes & insulin=Up
+0.0776,A1Cresult=None & diabetesMed=Yes & readmitted=<30
+0.24013333333333334,A1Cresult=None & diabetesMed=Yes & readmitted=>30
+0.31353333333333333,A1Cresult=None & diabetesMed=Yes & readmitted=NO
+0.12533333333333332,A1Cresult=None & diagnosis_group=Circulatory & insulin=No
+0.0734,A1Cresult=None & diagnosis_group=Circulatory & insulin=Steady
+0.09366666666666666,A1Cresult=None & diagnosis_group=Circulatory & readmitted=>30
+0.1256,A1Cresult=None & diagnosis_group=Circulatory & readmitted=NO
+0.0422,A1Cresult=None & diagnosis_group=Digestive & insulin=No
+0.043666666666666666,A1Cresult=None & diagnosis_group=Digestive & readmitted=NO
+0.031933333333333334,A1Cresult=None & diagnosis_group=Injury & readmitted=NO
+0.03266666666666666,A1Cresult=None & diagnosis_group=Respiratory & insulin=No
+0.035866666666666665,A1Cresult=None & diagnosis_group=Respiratory & readmitted=>30
+0.03846666666666667,A1Cresult=None & diagnosis_group=Respiratory & readmitted=NO
+0.0368,A1Cresult=None & diagnosis_group=Symptoms & insulin=No
+0.033,A1Cresult=None & diagnosis_group=Symptoms & readmitted=NO
+0.03726666666666666,A1Cresult=None & insulin=Down & readmitted=>30
+0.04326666666666667,A1Cresult=None & insulin=Down & readmitted=NO
+0.0408,A1Cresult=None & insulin=No & readmitted=<30
+0.14633333333333334,A1Cresult=None & insulin=No & readmitted=>30
+0.21873333333333334,A1Cresult=None & insulin=No & readmitted=NO
+0.08993333333333334,A1Cresult=None & insulin=Steady & readmitted=>30
+0.12613333333333332,A1Cresult=None & insulin=Steady & readmitted=NO
+0.03306666666666667,A1Cresult=None & insulin=Up & readmitted=>30
+0.039466666666666664,A1Cresult=None & insulin=Up & readmitted=NO
+0.0466,age=[40-50) & change=Ch & diabetesMed=Yes
+0.03553333333333333,age=[40-50) & change=No & insulin=No
+0.03,age=[40-50) & change=No & readmitted=NO
+0.039,age=[40-50) & diabetesMed=Yes & readmitted=NO
+0.08386666666666667,age=[50-60) & change=Ch & diabetesMed=Yes
+0.030466666666666666,age=[50-60) & change=Ch & readmitted=>30
+0.0456,age=[50-60) & change=Ch & readmitted=NO
+0.03966666666666667,age=[50-60) & change=No & diabetesMed=No
+0.0494,age=[50-60) & change=No & diabetesMed=Yes
+0.06133333333333333,age=[50-60) & change=No & insulin=No
+0.051866666666666665,age=[50-60) & change=No & readmitted=NO
+0.03966666666666667,age=[50-60) & diabetesMed=No & insulin=No
+0.03933333333333333,age=[50-60) & diabetesMed=Yes & diagnosis_group=Circulatory
+0.038266666666666664,age=[50-60) & diabetesMed=Yes & insulin=No
+0.0542,age=[50-60) & diabetesMed=Yes & insulin=Steady
+0.046933333333333334,age=[50-60) & diabetesMed=Yes & readmitted=>30
+0.07406666666666667,age=[50-60) & diabetesMed=Yes & readmitted=NO
+0.04613333333333333,age=[50-60) & insulin=No & readmitted=NO
+0.03133333333333333,age=[50-60) & insulin=Steady & readmitted=NO
+0.10273333333333333,age=[60-70) & change=Ch & diabetesMed=Yes
+0.03666666666666667,age=[60-70) & change=Ch & diagnosis_group=Circulatory
+0.03326666666666667,age=[60-70) & change=Ch & insulin=Steady
+0.039933333333333335,age=[60-70) & change=Ch & readmitted=>30
+0.0518,age=[60-70) & change=Ch & readmitted=NO
+0.04593333333333333,age=[60-70) & change=No & diabetesMed=No
+0.0658,age=[60-70) & change=No & diabetesMed=Yes
+0.03793333333333333,age=[60-70) & change=No & diagnosis_group=Circulatory
+0.07793333333333333,age=[60-70) & change=No & insulin=No
+0.0338,age=[60-70) & change=No & insulin=Steady
+0.039,age=[60-70) & change=No & readmitted=>30
+0.060533333333333335,age=[60-70) & change=No & readmitted=NO
+0.04593333333333333,age=[60-70) & diabetesMed=No & insulin=No
+0.0588,age=[60-70) & diabetesMed=Yes & diagnosis_group=Circulatory
+0.05246666666666667,age=[60-70) & diabetesMed=Yes & insulin=No
+0.06706666666666666,age=[60-70) & diabetesMed=Yes & insulin=Steady
+0.06346666666666667,age=[60-70) & diabetesMed=Yes & readmitted=>30
+0.08693333333333333,age=[60-70) & diabetesMed=Yes & readmitted=NO
+0.0336,age=[60-70) & diagnosis_group=Circulatory & insulin=No
+0.04,age=[60-70) & diagnosis_group=Circulatory & readmitted=NO
+0.035866666666666665,age=[60-70) & insulin=No & readmitted=>30
+0.0528,age=[60-70) & insulin=No & readmitted=NO
+0.036066666666666664,age=[60-70) & insulin=Steady & readmitted=NO
+0.11973333333333333,age=[70-80) & change=Ch & diabetesMed=Yes
+0.041466666666666666,age=[70-80) & change=Ch & diagnosis_group=Circulatory
+0.03953333333333333,age=[70-80) & change=Ch & insulin=Steady
+0.045733333333333334,age=[70-80) & change=Ch & readmitted=>30
+0.058,age=[70-80) & change=Ch & readmitted=NO
+0.05586666666666667,age=[70-80) & change=No & diabetesMed=No
+0.08333333333333333,age=[70-80) & change=No & diabetesMed=Yes
+0.0488,age=[70-80) & change=No & diagnosis_group=Circulatory
+0.10186666666666666,age=[70-80) & change=No & insulin=No
+0.037333333333333336,age=[70-80) & change=No & insulin=Steady
+0.050333333333333334,age=[70-80) & change=No & readmitted=>30
+0.0722,age=[70-80) & change=No & readmitted=NO
+0.05586666666666667,age=[70-80) & diabetesMed=No & insulin=No
+0.031266666666666665,age=[70-80) & diabetesMed=No & readmitted=NO
+0.07126666666666667,age=[70-80) & diabetesMed=Yes & diagnosis_group=Circulatory
+0.07326666666666666,age=[70-80) & diabetesMed=Yes & insulin=No
+0.07686666666666667,age=[70-80) & diabetesMed=Yes & insulin=Steady
+0.07833333333333334,age=[70-80) & diabetesMed=Yes & readmitted=>30
+0.09893333333333333,age=[70-80) & diabetesMed=Yes & readmitted=NO
+0.04593333333333333,age=[70-80) & diagnosis_group=Circulatory & insulin=No
+0.03493333333333333,age=[70-80) & diagnosis_group=Circulatory & readmitted=>30
+0.043,age=[70-80) & diagnosis_group=Circulatory & readmitted=NO
+0.046266666666666664,age=[70-80) & insulin=No & readmitted=>30
+0.0682,age=[70-80) & insulin=No & readmitted=NO
+0.03793333333333333,age=[70-80) & insulin=Steady & readmitted=NO
+0.0734,age=[80-90) & change=Ch & diabetesMed=Yes
+0.031466666666666664,age=[80-90) & change=Ch & readmitted=>30
+0.0314,age=[80-90) & change=Ch & readmitted=NO
+0.03966666666666667,age=[80-90) & change=No & diabetesMed=No
+0.05333333333333334,age=[80-90) & change=No & diabetesMed=Yes
+0.06993333333333333,age=[80-90) & change=No & insulin=No
+0.03573333333333333,age=[80-90) & change=No & readmitted=>30
+0.04713333333333333,age=[80-90) & change=No & readmitted=NO
+0.03966666666666667,age=[80-90) & diabetesMed=No & insulin=No
+0.0414,age=[80-90) & diabetesMed=Yes & diagnosis_group=Circulatory
+0.044066666666666664,age=[80-90) & diabetesMed=Yes & insulin=No
+0.0464,age=[80-90) & diabetesMed=Yes & insulin=Steady
+0.053066666666666665,age=[80-90) & diabetesMed=Yes & readmitted=>30
+0.05653333333333333,age=[80-90) & diabetesMed=Yes & readmitted=NO
+0.0328,age=[80-90) & insulin=No & readmitted=>30
+0.0418,age=[80-90) & insulin=No & readmitted=NO
+0.14113333333333333,change=Ch & diabetesMed=Yes & diagnosis_group=Circulatory
+0.049466666666666666,change=Ch & diabetesMed=Yes & diagnosis_group=Diabetes
+0.030333333333333334,change=Ch & diabetesMed=Yes & diagnosis_group=Digestive
+0.03186666666666667,change=Ch & diabetesMed=Yes & diagnosis_group=Injury
+0.056,change=Ch & diabetesMed=Yes & diagnosis_group=Respiratory
+0.12193333333333334,change=Ch & diabetesMed=Yes & insulin=Down
+0.08853333333333334,change=Ch & diabetesMed=Yes & insulin=No
+0.14486666666666667,change=Ch & diabetesMed=Yes & insulin=Steady
+0.1114,change=Ch & diabetesMed=Yes & insulin=Up
+0.0572,change=Ch & diabetesMed=Yes & readmitted=<30
+0.177,change=Ch & diabetesMed=Yes & readmitted=>30
+0.23253333333333334,change=Ch & diabetesMed=Yes & readmitted=NO
+0.034466666666666666,change=Ch & diagnosis_group=Circulatory & insulin=Down
+0.046066666666666665,change=Ch & diagnosis_group=Circulatory & insulin=Steady
+0.031133333333333332,change=Ch & diagnosis_group=Circulatory & insulin=Up
+0.0544,change=Ch & diagnosis_group=Circulatory & readmitted=>30
+0.069,change=Ch & diagnosis_group=Circulatory & readmitted=NO
+0.048133333333333334,change=Ch & insulin=Down & readmitted=>30
+0.0562,change=Ch & insulin=Down & readmitted=NO
+0.03326666666666667,change=Ch & insulin=No & readmitted=>30
+0.0474,change=Ch & insulin=No & readmitted=NO
+0.052866666666666666,change=Ch & insulin=Steady & readmitted=>30
+0.0764,change=Ch & insulin=Steady & readmitted=NO
+0.04273333333333333,change=Ch & insulin=Up & readmitted=>30
+0.052533333333333335,change=Ch & insulin=Up & readmitted=NO
+0.06506666666666666,change=No & diabetesMed=No & diagnosis_group=Circulatory
+0.031133333333333332,change=No & diabetesMed=No & diagnosis_group=Digestive
+0.22726666666666667,change=No & diabetesMed=No & insulin=No
+0.07433333333333333,change=No & diabetesMed=No & readmitted=>30
+0.13,change=No & diabetesMed=No & readmitted=NO
+0.09433333333333334,change=No & diabetesMed=Yes & diagnosis_group=Circulatory
+0.15,change=No & diabetesMed=Yes & insulin=No
+0.156,change=No & diabetesMed=Yes & insulin=Steady
+0.0332,change=No & diabetesMed=Yes & readmitted=<30
+0.11253333333333333,change=No & diabetesMed=Yes & readmitted=>30
+0.16026666666666667,change=No & diabetesMed=Yes & readmitted=NO
+0.1146,change=No & diagnosis_group=Circulatory & insulin=No
+0.0448,change=No & diagnosis_group=Circulatory & insulin=Steady
+0.0564,change=No & diagnosis_group=Circulatory & readmitted=>30
+0.08546666666666666,change=No & diagnosis_group=Circulatory & readmitted=NO
+0.042333333333333334,change=No & diagnosis_group=Digestive & insulin=No
+0.03373333333333333,change=No & diagnosis_group=Digestive & readmitted=NO
+0.030666666666666665,change=No & diagnosis_group=Respiratory & insulin=No
+0.03666666666666667,change=No & diagnosis_group=Symptoms & insulin=No
+0.0384,change=No & insulin=No & readmitted=<30
+0.13233333333333333,change=No & insulin=No & readmitted=>30
+0.20653333333333335,change=No & insulin=No & readmitted=NO
+0.054533333333333336,change=No & insulin=Steady & readmitted=>30
+0.08373333333333334,change=No & insulin=Steady & readmitted=NO
+0.06506666666666666,diabetesMed=No & diagnosis_group=Circulatory & insulin=No
+0.0368,diabetesMed=No & diagnosis_group=Circulatory & readmitted=NO
+0.031133333333333332,diabetesMed=No & diagnosis_group=Digestive & insulin=No
+0.07433333333333333,diabetesMed=No & insulin=No & readmitted=>30
+0.13,diabetesMed=No & insulin=No & readmitted=NO
+0.034466666666666666,diabetesMed=Yes & diagnosis_group=Circulatory & insulin=Down
+0.079,diabetesMed=Yes & diagnosis_group=Circulatory & insulin=No
+0.09086666666666667,diabetesMed=Yes & diagnosis_group=Circulatory & insulin=Steady
+0.031133333333333332,diabetesMed=Yes & diagnosis_group=Circulatory & insulin=Up
+0.0892,diabetesMed=Yes & diagnosis_group=Circulatory & readmitted=>30
+0.11766666666666667,diabetesMed=Yes & diagnosis_group=Circulatory & readmitted=NO
+0.03673333333333333,diabetesMed=Yes & diagnosis_group=Diabetes & readmitted=NO
+0.031133333333333332,diabetesMed=Yes & diagnosis_group=Digestive & readmitted=NO
+0.0312,diabetesMed=Yes & diagnosis_group=Respiratory & insulin=Steady
+0.03673333333333333,diabetesMed=Yes & diagnosis_group=Respiratory & readmitted=>30
+0.0378,diabetesMed=Yes & diagnosis_group=Respiratory & readmitted=NO
+0.048133333333333334,diabetesMed=Yes & insulin=Down & readmitted=>30
+0.0562,diabetesMed=Yes & insulin=Down & readmitted=NO
+0.09126666666666666,diabetesMed=Yes & insulin=No & readmitted=>30
+0.12393333333333334,diabetesMed=Yes & insulin=No & readmitted=NO
+0.03333333333333333,diabetesMed=Yes & insulin=Steady & readmitted=<30
+0.1074,diabetesMed=Yes & insulin=Steady & readmitted=>30
+0.16013333333333332,diabetesMed=Yes & insulin=Steady & readmitted=NO
+0.04273333333333333,diabetesMed=Yes & insulin=Up & readmitted=>30
+0.052533333333333335,diabetesMed=Yes & insulin=Up & readmitted=NO
+0.052,diagnosis_group=Circulatory & insulin=No & readmitted=>30
+0.07773333333333333,diagnosis_group=Circulatory & insulin=No & readmitted=NO
+0.0346,diagnosis_group=Circulatory & insulin=Steady & readmitted=>30
+0.0458,diagnosis_group=Circulatory & insulin=Steady & readmitted=NO

@@ -1,0 +1,5 @@
+-r requirements.txt
+scikit-learn==1.9.1
+scipy==1.18.1
+imbalanced-learn==0.14.2
+sklearn-compat==0.1.6

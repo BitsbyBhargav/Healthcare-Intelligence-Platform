@@ -1,0 +1,40 @@
+{
+  "recorded_at_utc": "2026-11-22T17:26:40.754409+00:00",
+  "technical_blocks": "A-J implemented",
+  "dashboard_url": "http://127.0.0.1:8540",
+  "dashboard_checks": "All 10 pages pass AppTest; all 19 manual inputs verified against three saved held-out predictions covering every output class",
+  "analytics_checks": {
+    "status": "passed",
+    "checks": [
+      "all three classifier metrics independently recomputed from 19861 saved real test predictions",
+      "saved classifier reproduces 30 recorded predictions",
+      "all 445 itemsets and support values agree across mining algorithms",
+      "association-rule lift arithmetic reconciles",
+      "5000 unique common clustering records with all four assignments",
+      "saved K-Means reproduces all 5000 assignments"
+    ]
+  },
+  "snowflake": {
+    "status": "PASS",
+    "fact_rows": 4424257,
+    "dimension_tables": 7,
+    "failed_checks": 0,
+    "evidence": "User reported final Snowflake SQL output in chat",
+    "recorded_at_utc": "2026-11-22T17:16:12.691600+00:00"
+  },
+  "report": "reports/Final_Jury_Report.pdf",
+  "report_pages": 12,
+  "visual_qa": "All 12 pages rendered and reviewed; updated warehouse page reviewed separately",
+  "remaining": [
+    "User rehearsal",
+    "Actual institutional submission and confirmation of its format/deadline",
+    "Official attendance/assignment records"
+  ],
+  "publication": "Git tracks implementation, fitted models, measured results, report and evidence. Large source/master data, local environments and upload packages stay local. College submission remains outstanding.",
+  "ui_update": {
+    "theme": "Navy sidebar, teal gradient header, violet and amber metric accents",
+    "classifier": "Manual 19-predictor form with submitted class and probabilities",
+    "recorded_at_utc": "2026-11-22T17:37:35.975248+00:00",
+    "visual_qa": "Desktop and mobile screenshots reviewed; no horizontal overflow or browser exceptions"
+  }
+}

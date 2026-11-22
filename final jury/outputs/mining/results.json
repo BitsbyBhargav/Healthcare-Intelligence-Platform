@@ -1,0 +1,23 @@
+{
+  "rows": 15000,
+  "seed": 42,
+  "source": "Real UCI training encounters only",
+  "min_support": 0.03,
+  "min_confidence": 0.35,
+  "min_lift": 1.05,
+  "max_itemset_length": 3,
+  "algorithms": {
+    "Apriori": {
+      "itemsets": 445,
+      "rules": 348,
+      "seconds": 0.05110219999914989
+    },
+    "FP-Growth": {
+      "itemsets": 445,
+      "rules": 348,
+      "seconds": 0.13483710000218707
+    }
+  },
+  "itemsets_agree": true,
+  "limits": "Associations are descriptive; common categories can dominate. No causal effects are inferred."
+}

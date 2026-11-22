@@ -1,0 +1,23 @@
+FINAL JURY - DATA INTEGRATION TEST RESULTS
+Recorded from the successful unittest run on 22 November 2026.
+
+Command:
+python -m unittest discover -s "final jury/tests" -v
+
+Tests run: 9
+Failures: 0
+Errors: 0
+Status: PASSED
+
+Behavior covered:
+- Both 2023 worded and 2024 hyphenated age-band formats.
+- Coarse age alignment without invented exact ages.
+- Capped length of stay, including the publisher's "120 +" spelling.
+- Invalid durations retained as missing instead of fabricated values.
+- Money separators, missing amounts, zero, and negative values.
+- No inherited/fabricated SPARCS readmission outcomes or patient links.
+- Source-qualified record identifiers prevent cross-source collisions.
+- No invented UCI discharge year, facility, or cost.
+- Explicit Parquet types for nullable fields across sources.
+
+Full-source verification is recorded separately in verification_report.json.

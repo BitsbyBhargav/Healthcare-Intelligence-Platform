@@ -1,0 +1,391 @@
+{
+  "snapshot": {
+    "year": 2023,
+    "dataset_id": "46xm-urtu",
+    "rows_updated_at": 1749048995,
+    "row_count": 2125754,
+    "fields": [
+      [
+        "hospital_service_area",
+        "text"
+      ],
+      [
+        "hospital_county",
+        "text"
+      ],
+      [
+        "operating_certificate_number",
+        "text"
+      ],
+      [
+        "permanent_facility_id",
+        "text"
+      ],
+      [
+        "facility_name",
+        "text"
+      ],
+      [
+        "age_group",
+        "text"
+      ],
+      [
+        "zip_code_3_digits",
+        "text"
+      ],
+      [
+        "gender",
+        "text"
+      ],
+      [
+        "race",
+        "text"
+      ],
+      [
+        "ethnicity",
+        "text"
+      ],
+      [
+        "length_of_stay",
+        "text"
+      ],
+      [
+        "type_of_admission",
+        "text"
+      ],
+      [
+        "patient_disposition",
+        "text"
+      ],
+      [
+        "discharge_year",
+        "text"
+      ],
+      [
+        "ccsr_diagnosis_code",
+        "text"
+      ],
+      [
+        "ccsr_diagnosis_description",
+        "text"
+      ],
+      [
+        "ccsr_procedure_code",
+        "text"
+      ],
+      [
+        "ccsr_procedure_description",
+        "text"
+      ],
+      [
+        "apr_drg_code",
+        "text"
+      ],
+      [
+        "apr_drg_description",
+        "text"
+      ],
+      [
+        "apr_mdc_code",
+        "text"
+      ],
+      [
+        "apr_mdc_description",
+        "text"
+      ],
+      [
+        "apr_severity_of_illness_code",
+        "text"
+      ],
+      [
+        "apr_severity_of_illness",
+        "text"
+      ],
+      [
+        "apr_risk_of_mortality",
+        "text"
+      ],
+      [
+        "apr_medical_surgical",
+        "text"
+      ],
+      [
+        "payment_typology_1",
+        "text"
+      ],
+      [
+        "payment_typology_2",
+        "text"
+      ],
+      [
+        "payment_typology_3",
+        "text"
+      ],
+      [
+        "birth_weight",
+        "text"
+      ],
+      [
+        "emergency_department_indicator",
+        "text"
+      ],
+      [
+        "total_charges",
+        "text"
+      ],
+      [
+        "total_costs",
+        "text"
+      ]
+    ]
+  },
+  "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+  "page_size": 100000,
+  "status": "complete",
+  "started_at_utc": "2026-11-22T12:58:59.073430+00:00",
+  "completed_at_utc": "2026-11-22T13:06:53.183654+00:00",
+  "pages": [
+    {
+      "year": 2023,
+      "offset": 0,
+      "rows": 100000,
+      "first_id": "row-qhzu_x2ux-4qat",
+      "last_id": "row-z6qp-5prx-ca2z",
+      "sha256": "b9ffd5fb8f632c296f889cf7f713325496ee5c6e5b20ef1984e6585993288f9c",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T12:59:48.016202+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00000000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 100000,
+      "rows": 100000,
+      "first_id": "row-ipg6.yyge~ghuj",
+      "last_id": "row-xmgs~5cq6~va9u",
+      "sha256": "5fb44ed1e33db14ba63edcdf53e67f05b540f37664e770ccf83990a7b82c8479",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T12:59:56.403268+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00100000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 200000,
+      "rows": 100000,
+      "first_id": "row-2an2~9i8i~s2f4",
+      "last_id": "row-e3x7-yhtx-q7yd",
+      "sha256": "594ab3b8c713d029d9f955043a78bf806aae8626ec2f668ded6e36e082637168",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:00:36.496535+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00200000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 300000,
+      "rows": 100000,
+      "first_id": "row-gmbg~jpjf-5uzy",
+      "last_id": "row-5bmg~gjt9~rib6",
+      "sha256": "48585f40a0dc7e97748e60abae3678738e77cd375f76444c400d2c2240aa30a1",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:01:01.964588+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00300000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 400000,
+      "rows": 100000,
+      "first_id": "row-x4dk_n4nz.nmj6",
+      "last_id": "row-wd72~7ist.eb4p",
+      "sha256": "ccd58459e73d108435f1c451f1f54c2fe807fbd38ca93680c0128b479909cca7",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:00:39.685549+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00400000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 500000,
+      "rows": 100000,
+      "first_id": "row-rgus-59jh.kygp",
+      "last_id": "row-mhrk~bpqq~f5gt",
+      "sha256": "c3c982f73ce0b0684d0404f01167dcd23a4e409344b51e8c695b07167cb5e0cd",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:01:49.058260+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00500000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 600000,
+      "rows": 100000,
+      "first_id": "row-iumb~cndx_g7i6",
+      "last_id": "row-4ium~ru2b~n3n6",
+      "sha256": "51f2b588897f3562ba766a30ccd57e22461fbcefb65e8622b4e455a0cf9049a0",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:01:57.561622+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00600000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 700000,
+      "rows": 100000,
+      "first_id": "row-yn48-wwhb.qb7k",
+      "last_id": "row-ws2h_mpj9-fvdf",
+      "sha256": "9a500e18f2bd8ecc68040e602908dfc8d4945a1e64631c255051d3813008474c",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:02:33.410852+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00700000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 800000,
+      "rows": 100000,
+      "first_id": "row-34nd-jdfy.idzg",
+      "last_id": "row-64fb_4uvq_6mye",
+      "sha256": "989165a21ed0a85e7b7de80cf215cbc9b1836cd02537808c9f13c3d7286978b4",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:02:42.007325+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00800000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 900000,
+      "rows": 100000,
+      "first_id": "row-zwv3_mgdz.iw8w",
+      "last_id": "row-5588.k2yy~zdmv",
+      "sha256": "d4a2bec42ce29ee24a4b705b3f6eb4ccfd0265872490d7aad239e6ee6d8e8035",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:03:25.034509+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_00900000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1000000,
+      "rows": 100000,
+      "first_id": "row-a3b9~yjzh_2w44",
+      "last_id": "row-m2tt.9cqj~bdtz",
+      "sha256": "070ecc54ce8ffc6608540c2c383b50837a3a8626417c535c8b98e01cf939a095",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:03:10.768393+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01000000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1100000,
+      "rows": 100000,
+      "first_id": "row-7nwk.j2mk~8zcj",
+      "last_id": "row-6v6i.3jex-em3b",
+      "sha256": "878f6cc317b98030442cc2139d48ea903ae7e4a3d95ee921c9eaf8ba0429301f",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:03:38.806490+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01100000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1200000,
+      "rows": 100000,
+      "first_id": "row-p7rh~dyh8-zsh3",
+      "last_id": "row-bk4t_t3wa.7wgq",
+      "sha256": "4678223914816e18a1aef6ffc37e9315597d75a2f07b13a1e23a41c0baebf2cf",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:05:16.484944+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01200000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1300000,
+      "rows": 100000,
+      "first_id": "row-ghaq.yxrx~pusr",
+      "last_id": "row-f46i_ppp6~7qzk",
+      "sha256": "52bc866c58212f2db40161094814541abe4f93e3709ddc0fd0a5df77875ca76b",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:04:20.622158+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01300000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1400000,
+      "rows": 100000,
+      "first_id": "row-gfjr-zkju.c62c",
+      "last_id": "row-wacq.bacr_e73g",
+      "sha256": "a006e4af283c0d6d17643b64e216cee06082431c8a23f7270052c2c60938105b",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:04:24.687364+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01400000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1500000,
+      "rows": 100000,
+      "first_id": "row-8ini~h3wv.rkz6",
+      "last_id": "row-rbbd~tksk.b2bs",
+      "sha256": "1c50eb70cf26df0d100aa15e1154d5498fcd536510eab8deba2f42caa720ff5e",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:05:21.730553+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01500000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1600000,
+      "rows": 100000,
+      "first_id": "row-2387_84iu.a9fd",
+      "last_id": "row-6y3p.q44w~twhm",
+      "sha256": "fffcbee5443eea4ea0447b791e337f40924aaf5fbc22e8777176b9824fe5d190",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:05:07.995487+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01600000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1700000,
+      "rows": 100000,
+      "first_id": "row-q6n9-gykt.ttd9",
+      "last_id": "row-ivxt~rtr7~53xr",
+      "sha256": "3b7b916e0032bbf17196a050c99fa5078d790d086bcad52cf047e38e1112f372",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:05:51.849982+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01700000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1800000,
+      "rows": 100000,
+      "first_id": "row-4ni7_cbnu-hfi4",
+      "last_id": "row-c2np~igpt-g937",
+      "sha256": "a6ab43825179afcee2900de44cde15c5c112608daed67082059704ec972f9bb9",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:06:41.662325+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01800000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 1900000,
+      "rows": 100000,
+      "first_id": "row-xrts~5rid_uw9b",
+      "last_id": "row-egvc.aivp-5uhe",
+      "sha256": "1978b46569f124222f27b3625c7ae231fd1a6098a16e7f7ba483bb023d75c797",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:06:49.876615+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_01900000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 2000000,
+      "rows": 100000,
+      "first_id": "row-74qx_9tmh.kam5",
+      "last_id": "row-hceg~xpqk-ggma",
+      "sha256": "5e8e781679cba781d1f5fda5c7c4d03f378533eab72801c1788ddc4f6485ae5b",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:06:23.946531+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_02000000.csv.gz"
+    },
+    {
+      "year": 2023,
+      "offset": 2100000,
+      "rows": 25754,
+      "first_id": "row-72fn.ciyj.icen",
+      "last_id": "row-tunu.envn-9i7i",
+      "sha256": "4541519482ae8e73ab294db640f257092c5365e5dc98a162b312ec71fac940e7",
+      "snapshot_hash": "3ef2e06c8ccca92e477c116d861089a9d64e1d24baee5c8762dce39c707433c6",
+      "downloaded_at_utc": "2026-11-22T13:06:48.609462+00:00",
+      "file": "data\\raw\\sparcs_2023\\part_02100000.csv.gz"
+    }
+  ]
+}

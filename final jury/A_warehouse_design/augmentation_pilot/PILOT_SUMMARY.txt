@@ -1,0 +1,31 @@
+SYNTHETIC AUGMENTATION PILOT - ACTUAL RESULTS
+
+Eligible real encounters: 99,343; excluded death/hospice: 2,423
+Real split counts: {'train': 59565, 'validation': 19917, 'test': 19861}
+Patient overlap across splits: 0
+Generated training-only rows: 34,815
+Training after augmentation: 94,380
+Synthetic validation/test records: 0
+
+VALIDATION RESULTS
+Real_only: macro F1=0.3655; early-readmission recall=0.0000
+Real_class_weighted: macro F1=0.4308; early-readmission recall=0.2865
+Real_plus_SMOTENC: macro F1=0.4071; early-readmission recall=0.3678
+
+Selected using validation only: Real_class_weighted
+
+REAL TEST RESULTS
+Real_only: macro F1=0.3709; accuracy=0.5775; early-readmission recall=0.0004
+Real_class_weighted: macro F1=0.4382; accuracy=0.5212; early-readmission recall=0.2988
+
+LIMITATIONS
+One prespecified split and one model family; exploratory, not clinical validation.
+Synthetic labels are method-assigned, not additional observed outcomes.
+No SPARCS data or predicted SPARCS readmission labels were used.
+Published NO means no recorded readmission; complete follow-up is not established.
+Discharge-stage features; not an admission-time prediction experiment.
+No test-set tuning; no guaranteed improvement or new real patients.
+
+This pilot does not complete the later classification jury blocks.
+Retain generated data with explicit synthetic provenance; do not present
+the augmented training count as additional real clinical encounters.

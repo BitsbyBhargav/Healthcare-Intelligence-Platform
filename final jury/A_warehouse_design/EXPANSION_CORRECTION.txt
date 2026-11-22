@@ -1,0 +1,35 @@
+EXPANSION STRATEGY CORRECTION
+Recorded: 22 November 2026
+
+The SPARCS acquisition expanded operational discharge records, not the
+readmission training dataset. The assistant's source choice did not satisfy
+the intended expansion of the existing readmission-centered project.
+
+Actual labeled readmission volume remains 101,766 UCI encounters.
+SPARCS 2023/2024 have no public patient linkage or readmission target in the
+downloaded files. Their operational value does not replace this requirement.
+
+The files and technical audit remain preserved. Do not use their 4.42-million
+combined record count as proof of a larger readmission model dataset. Treat
+SPARCS as optional supporting data until its role is explicitly settled.
+
+Correct next step: assess genuinely distinct real encounter sources with
+observed readmission outcomes, or documented patient linkage and dates from
+which an equivalent outcome can be derived with adequate follow-up. Verify
+access, licensing, source overlap, populations, and target definitions before
+claiming compatibility. Restricted data require legitimately granted access;
+public mirrors of UCI do not add records. The user subsequently requested a
+synthetic augmentation feasibility experiment. That training-only pilot is
+recorded under augmentation_pilot; it does not convert generated records
+into additional observed clinical encounters or resolve real-source expansion.
+
+The earlier preparation report remains valid for technical data integrity;
+it is not a validation of the source strategy or a model improvement claim.
+
+SUBSEQUENT USER CLARIFICATION
+The user explicitly wants UCI-SPARCS integration through aligned factors and
+the result stored in modelled.csv only. That direction supersedes treating
+SPARCS as excluded/optional for the final warehouse dataset. Integration and
+possible unlabeled learning are valid goals; observed readmission ground
+truth is still unavailable in SPARCS. Preserve the distinction rather than
+rejecting the integration or claiming more scored readmission test examples.

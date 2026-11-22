@@ -1,18 +1,25 @@
 FINAL JURY - BLOCK-BY-BLOCK PROJECT PLAN
 Prepared: 22 November 2026 (Asia/Calcutta)
-Status: Planning complete; implementation has not started.
+Status: A-J technical implementation is ready for the final jury. Snowflake
+star build passed with 4,424,257 fact rows, 7 dimensions and zero failed
+checks (user-confirmed SQL result). All ten dashboard pages and saved
+analytics were checked. The 12-page report and viva guide are ready.
+Remaining: user rehearsal, institutional submission and official records.
 
 USER'S WORKING RULES
 1. Keep all final jury work inside this folder: final jury.
-2. Build this as an independent project. Do not copy or import Jury 1,
-   Jury 2, or HealthLine code, databases, trained models, results, reports,
-   screenshots, or dashboards. Do not depend on sibling project folders.
-3. Obtain and document source data independently for this project. Do not
-   silently reuse the earlier dataset or assume a new dataset is mandated
-   by the PDF. Dataset selection belongs to Block A planning.
+2. Preserve the existing healthcare/readmission foundation and advance it,
+   as clarified by the user. Keep the final jury implementation and outputs
+   separate from Jury 1, Jury 2, and HealthLine. Do not import their code,
+   databases, trained models, results, reports, screenshots, or dashboards.
+3. The original raw UCI diabetes encounter dataset may be the base source.
+   Keep a documented, hash-verified copy inside final jury when preparing
+   the data; avoid runtime dependencies on sibling project folders. Find
+   additional compatible data to address the faculty's volume/integration
+   advice. Validate compatibility before selecting a merge strategy.
 4. Complete blocks in the PDF's A-to-J order. At the end of each block,
    verify its outputs, save evidence, and prepare a short oral explanation.
-5. This turn covers the plan and folder setup only.
+5. Planning is complete. The user has now requested work on Block A.
 
 REFERENCE AND INTERPRETATION
 Reference: reference/END-SEMESTER  DWDM JURY GUIDELINES.pdf (six pages).
@@ -36,11 +43,28 @@ Section J explicitly lists classification metrics only. Clustering metrics
 below are our proposed supporting analysis, not an extra quoted PDF rule.
 
 PROJECT APPROACH (PROPOSED, TO FINALIZE IN BLOCK A)
-Retain healthcare as the application domain unless the user changes it,
-while designing and implementing the final jury project independently.
-Choose a public, documented dataset with a meaningful classification target
-and useful numeric features for interpretable clustering. Confirm its
-warehouse, mining, and learning suitability before locking the design.
+Advance the existing healthcare/readmission project rather than replace it
+with a different domain or unrelated hospital business problem. Retain the
+original raw diabetes encounter data as the foundation and evaluate similar
+additional sources. Implement the final jury work separately.
+
+Faculty feedback relayed by the user: increase dataset volume, integrate
+similar data, and develop a new business solution from that expanded base.
+Proposed extension: readmission risk segmentation and follow-up planning,
+with hospital resource analysis supported by actual available fields. This
+is an academic decision-support prototype; no reduction in readmissions or
+clinical effectiveness is claimed.
+
+Do not append duplicate mirrors of the UCI dataset as new encounters. Do not
+join unrelated people across sources using similar demographics or colliding
+IDs. Retain source-specific keys, units, outcome definitions, and provenance.
+Different-source data need a justified common schema and compatibility checks.
+Keep synthetic data explicitly separate in provenance and evaluation if it
+is approved. Count unique encounters separately from other warehouse rows.
+Missing readmission labels must not be invented. Added hospital activity
+data can support operations analysis without becoming labeled readmission
+training examples. Confirm warehouse, mining, classification, and clustering
+suitability before locking the schema.
 
 Use one new local dashboard with A-J navigation in rubric order, independent
 SQL/ETL scripts, and reproducible training/mining scripts. Proposed tools:
@@ -77,7 +101,8 @@ Save: setup/load/query SQL, count and join checks, query outputs, and real
       Snowflake screenshots. Keep credentials out of saved evidence.
 Done when: the actual Snowflake tables contain verified data and queries run.
 Dependency: an accessible Snowflake account with suitable create/load/query
-            permissions. Check access during Block A to avoid a late delay.
+            permissions. User has created an account; authenticated access
+            and required privileges remain to be checked in Block B.
             Prepared SQL alone does not complete this deployment criterion.
 
 BLOCK C - DASHBOARD 3: SUPERVISED DATASET | 1 MARK | PDF PAGES 2-3
@@ -230,20 +255,49 @@ CURRENT CHECKLIST
 [x] Read all six PDF pages and inspect the rendered document.
 [x] Establish a separate final jury folder and save this plan.
 [x] Preserve a reference copy of the supplied PDF.
-[ ] A  Warehouse design
-[ ] B  Snowflake deployment
-[ ] C  Supervised dataset
-[ ] D  Apriori and FP-Growth
-[ ] E  Classification comparison and validation
-[ ] F  Classification implementation
-[ ] G  Unsupervised dataset
-[ ] H  Four clustering algorithms and comparison
-[ ] I  Selected clustering implementation
-[ ] J  Performance metrics
+[x] Acquire and technically verify 4,424,257 source records (UCI + optional SPARCS).
+[x] Preserve 101,766 genuine readmission labels; add no synthetic records.
+[x] Pass nine integration tests and the complete 45-partition integrity audit.
+[ ] Find additional genuinely distinct encounters with compatible observed
+    readmission labels, or legitimate patient/date linkage to derive them.
+[x] A  Warehouse design
+[x] B  Snowflake deployment
+[x] C  Supervised dataset
+[x] D  Apriori and FP-Growth
+[x] E  Classification comparison and validation
+[x] F  Classification implementation
+[x] G  Unsupervised dataset
+[x] H  Four clustering algorithms and comparison
+[x] I  Selected clustering implementation
+[x] J  Performance metrics
 [ ] Final report, evidence index, independent launch check, and rehearsal
 [ ] Assignment submission requirements and official attendance check
 
 NEXT SESSION ACTION
-Begin Block A: finalize the business problem and source dataset, then define
-the fact grain and schema. Check Snowflake access early as a dependency,
-while keeping deployment implementation in Block B.
+Rehearse the A-J dashboard at http://127.0.0.1:8540. Keep Snowflake signed in
+and use 07_demo_queries.sql for live demonstrations. Read VIVA_REHEARSAL.txt
+first, then submit the required institutional artifacts in the specified format.
+
+FINAL DATASET NAMING
+The user requested the single final CSV to be named modelled.csv. This
+replaces the earlier Modelled data.csv filename and its UCI-only augmentation
+contents. The earlier synthetic experiment remains in its existing Parquet
+artifacts; its generated rows are not part of the real UCI-SPARCS union.
+
+SYNTHETIC AUGMENTATION FEASIBILITY PILOT
+The user subsequently requested whether synthetic combination could improve
+results. A separate, training-only SMOTENC pilot was run on the original UCI
+cohort, with patient-disjoint real validation/test partitions. SPARCS was not
+used to invent readmission labels. See A_warehouse_design/augmentation_pilot.
+Synthetic augmentation improved this pilot's validation macro F1 over its
+unweighted baseline, but class weighting scored higher and was selected.
+This is not a matched comparison to the old Jury 2 model, a guaranteed model
+improvement, an increase in real clinical observations, or completion of the
+later classification blocks. Real and synthetic counts must remain separate.
+
+FINAL IMPLEMENTATION CHECKPOINT
+A-J technical implementation is ready for demonstration. Dashboard 8540 has
+ten tested pages. The 12-page report and viva notes are in reports/. Cloud
+warehouse PASS was reported by the user: 4,424,257 fact rows, 7 dimensions,
+0 failed checks. All analytics use measured saved outputs. Official submission,
+attendance confirmation, and the user's final morning rehearsal remain.

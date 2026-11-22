@@ -1,0 +1,154 @@
+FINAL JURY - DATA PREPARATION AND WAREHOUSE DESIGN DECISIONS
+Project: Healthcare Intelligence Platform - Readmission and Resource Planning
+Prepared: 22 November 2026
+
+CURRENT AUTHORITATIVE CSV
+The user clarified that the final warehouse dataset must integrate UCI and
+SPARCS through aligned factors. That real-record integration is now stored
+only as modelled.csv: 4,424,257 rows and 51 columns. The earlier Modelled
+data.csv name and its UCI-only synthetic contents have been superseded.
+Source and outcome availability remain explicit. Source-only UCI clinical
+fields are retained with a uci_ prefix and are blank for SPARCS, rather than
+filled by matching unrelated patients. See modelled_csv_manifest.json for
+measured source counts and the candidate/real split roles. No synthetic rows
+or generated outcomes are included in this final combined CSV.
+
+Common Parquet's readmission_observed flag is named
+readmission_label_available in the CSV to clarify that it means a published
+label is available, not that the patient necessarily had a readmission.
+SPARCS 2023/2024 candidate roles permit future unlabeled-learning or source
+shift experiments. They do not provide readmission ground truth. Supervised
+readmission scoring remains on UCI TEST_LABELED records only.
+
+BUSINESS PROBLEM
+Extend the existing hospital/readmission project with a larger, real-data
+warehouse supporting two linked management questions:
+1. Within the labeled diabetes cohort, which discharge profiles are associated
+   with subsequent readmission and merit follow-up review in a demonstration?
+2. Across the expanded hospital discharge data, which case-mix groups consume
+   more inpatient stay and estimated cost, and how do facilities differ within
+   each source year?
+
+Intended users: hospital analytics staff and care-management planners.
+Outputs planned for later blocks: readmission classifier comparison, patient
+or encounter segmentation, association rules, and source-filtered resource
+analysis. These are academic analyses, not validated clinical recommendations.
+No reduction in readmissions, cost savings, or live occupancy forecast is claimed.
+
+SOURCE SELECTION
+Keep the UCI diabetes encounter foundation and integrate complete public
+SPARCS inpatient discharge files for 2023 and 2024 as additional encounter
+sources. Avoid duplicate UCI mirrors and unapproved synthetic expansion.
+Actual downloaded and verified counts belong to preparation_report.json,
+not to this design document's expectations.
+
+Official sources:
+UCI: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
+SPARCS 2023: https://health.data.ny.gov/d/46xm-urtu
+SPARCS 2024: https://health.data.ny.gov/d/sf4k-39ay
+SPARCS public-data access: https://www.health.ny.gov/statistics/sparcs/access/
+Socrata record identifiers: https://dev.socrata.com/docs/system-fields
+
+Alternative-source assessment: MIMIC requires credentialing/training and a
+data-use agreement; HCUP NRD is restricted access. They are not being used
+without existing approved access. DE-SynPUF is explicitly synthetic and is
+not used. The selected public SPARCS data expand operational encounters,
+while UCI remains the legitimately labeled readmission cohort.
+
+INTEGRATION STRATEGY
+Use a schema-aligned UNION of encounter sources, not a patient-to-patient
+join. Retain original source snapshots and all fields in compressed raw CSV
+pages; write a typed common Parquet contract for Snowflake staging.
+
+Grain: one published hospital encounter/discharge record per source snapshot.
+Key: source_key + ':' + source_row_id. UCI uses its encounter_id; SPARCS uses
+the publisher platform's record ID (:id) for snapshot record traceability.
+The platform ID is not a patient identifier or a longitudinal admission ID.
+Keep source-specific patient keys only where the source provides them.
+The two new years do not overlap the UCI observation period.
+
+IMPLEMENTED FACTS AND DIMENSIONS FOR BLOCK A
+The deployed design is a star schema with FACT_ENCOUNTER and seven dimensions.
+It supersedes the earlier proposed separate readmission/cost facts. Nullable
+source-specific measures and labels are retained in the common fact table.
+
+FACT_ENCOUNTER primary key: ENCOUNTER_KEY (one source-qualified record).
+Seven numeric surrogate foreign keys reference the dimensions below.
+DIM_SOURCE: SOURCE_KEY, DIABETES_COHORT_DEFINITION.
+DIM_PERIOD: PERIOD, DISCHARGE_YEAR.
+DIM_DEMOGRAPHIC: SOURCE_KEY, AGE_BAND_RAW, AGE_BAND_COMMON, GENDER, RACE_RAW, ETHNICITY_RAW.
+DIM_ADMISSION: SOURCE_KEY, ADMISSION_TYPE_RAW, ADMISSION_TYPE_COMMON, DISPOSITION_RAW, PAYMENT_TYPE, UCI_ADMISSION_SOURCE_ID.
+DIM_DIAGNOSIS: SOURCE_KEY, DIAGNOSIS_SYSTEM, DIAGNOSIS_CODE, DIAGNOSIS_DESCRIPTION, APR_DRG_CODE.
+DIM_FACILITY: SOURCE_KEY, FACILITY_KEY, FACILITY_NAME, HOSPITAL_COUNTY, SERVICE_AREA.
+DIM_TREATMENT: SOURCE_KEY, UCI_INSULIN, UCI_CHANGE, UCI_DIABETESMED, UCI_A1CRESULT, UCI_MAX_GLU_SERUM.
+
+All 51 source fields are reconstructed by V_ENCOUNTER_ANALYTICS. Null-safe
+joins retain unknown/redacted fields without dropping or inventing records.
+The typed ETL snapshot precedes dimensional loading. V_WAREHOUSE_CHECKS
+checks counts, unique keys, orphan keys, source boundaries and type conversions.
+The user confirmed Snowflake PASS, 4,424,257 fact rows, seven dimensions and
+zero failed checks. V_SOURCE_SUMMARY and 07_demo_queries.sql support analysis.
+
+HARMONIZATION
+- Preserve raw source fields and missingness. Never replace unknown targets
+  with NO, and never match unrelated patients across sources.
+- Map UCI's decade age bands and SPARCS bands to 0-29, 30-49, 50-69, 70+.
+  This coarser representation is exact for the reported bands; no age or
+  age midpoint is invented.
+  The 2024 records use hyphenated labels (e.g. 50-69), while 2023 uses
+  wording such as 50 to 69. Both documented representations are mapped.
+- Normalize M/F to Male/Female; keep unknown/missing values visible.
+- Map admission IDs using the official UCI IDS_mapping.csv, not numeric
+  proximity. Retain original and common categories.
+- Keep ICD-9-CM and CCSR ICD-10-CM as distinct diagnosis systems. Do not join
+  matching-looking codes or pretend that an exact crosswalk was performed.
+- Preserve source periods. UCI has no encounter dates or discharge year;
+  these remain null. No trend line or future readmission interval is inferred.
+- SPARCS 120+ length-of-stay records are lower bounds, not exact 120-day stays.
+  Mark them explicitly. The SPARCS dictionary defines LOS using discharge
+  minus admission plus one, excluding leave-of-absence days. UCI documents
+  time_in_hospital differently and restricts stays to 1-14 days. Therefore,
+  compare LOS within source, and do not report a pooled stay estimate as a
+  like-for-like clinical comparison.
+- Parse dollar/comma formatting for charges and estimated costs. Zero is
+  retained as zero; missing remains null. Negative values are retained and
+  counted for review, not silently discarded. The raw financial strings are
+  authoritative. Parquet numeric values use float64; aggregate presentation
+  should round to cents or cast to fixed decimal in Snowflake.
+- SPARCS estimated cost uses facility cost-to-charge ratios, not observed
+  patient payments, insurer reimbursement, or demonstrated savings. The 2023
+  overview describes 2019 audited ratios used for its 2023 cost estimates.
+  The 2024 overview uses 2021 audited ratios. Disclose this difference when
+  comparing estimated costs between the two years.
+- Redacted/missing facilities and demographics stay unknown. Hospital-level
+  analyses must report their coverage rather than reassign these records.
+
+MODELING BOUNDARIES FOR LATER BLOCKS
+Classification: UCI labeled encounters only until another source with an
+equivalent observed outcome becomes available. Retain all original target
+classes. Select a justified eligible training cohort in Block C; review
+death/hospice discharge dispositions before modeling readmission.
+Use patient-disjoint splits; identifiers and targets cannot be predictors.
+Discharge-time fields support a discharge-stage model, not admission-time
+prediction. Fit imputers/encoders/scalers on training data only.
+
+Clustering: the expanded real discharge data may support case-mix/resource
+segmentation. Select a documented common cohort and features in Block G;
+inspect missing costs, redactions, top-coded stays and source effects before
+fitting. Compare the four algorithms on the same prepared records and features.
+Do not mix source-specific diagnosis codes into numeric distances.
+
+QUALITY AND PROVENANCE
+- Stable row ordering and source snapshot checks before/after pagination.
+- Raw page and processed partition SHA-256 hashes and row-count reconciliation.
+- Unique source-qualified encounter IDs across the entire acquisition.
+- Explicit Parquet schema including nullable source-specific fields.
+- Audit missing/invalid duration and money values, age mappings, facility
+  coverage, negative amounts, and capped length of stay.
+- Assertions against fabricated dates, facilities, patient links, or labels.
+- Original Jury 1/Jury 2/HealthLine data, code and artifacts remain unchanged.
+
+CURRENT SCOPE
+This work prepares data and a documented warehouse model. Snowflake creation,
+loading, and SQL execution evidence belong to Block B. Account creation was
+confirmed by the user, but no authenticated connection or deployment is claimed.

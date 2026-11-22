@@ -1,0 +1,189 @@
+{
+  "grain": "One published encounter/discharge record from a frozen source snapshot",
+  "primary_key": "encounter_key = source_key + ':' + source_row_id",
+  "fields": [
+    {
+      "name": "encounter_key",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "source_key",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "source_row_id",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "patient_key",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "period",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "discharge_year",
+      "arrow_type": "int16",
+      "nullable": true
+    },
+    {
+      "name": "facility_key",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "facility_name",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "hospital_county",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "service_area",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "age_band_raw",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "age_band_common",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "gender",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "race_raw",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "ethnicity_raw",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "admission_type_raw",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "admission_type_common",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "disposition_raw",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "diagnosis_system",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "diagnosis_code",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "diagnosis_description",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "los_raw",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "los_days_lower_bound",
+      "arrow_type": "int32",
+      "nullable": true
+    },
+    {
+      "name": "los_top_coded",
+      "arrow_type": "bool",
+      "nullable": true
+    },
+    {
+      "name": "total_charges_usd",
+      "arrow_type": "double",
+      "nullable": true
+    },
+    {
+      "name": "total_costs_usd",
+      "arrow_type": "double",
+      "nullable": true
+    },
+    {
+      "name": "severity_code",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "severity_description",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "apr_drg_code",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "payment_type",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "readmission_label",
+      "arrow_type": "string",
+      "nullable": true
+    },
+    {
+      "name": "readmission_observed",
+      "arrow_type": "bool",
+      "nullable": true
+    },
+    {
+      "name": "diabetes_cohort_definition",
+      "arrow_type": "string",
+      "nullable": true
+    }
+  ],
+  "age_band_common": [
+    "0-29",
+    "30-49",
+    "50-69",
+    "70+"
+  ],
+  "original_target_classes": [
+    "NO",
+    ">30",
+    "<30"
+  ],
+  "readmission_training_source": "UCI_DIABETES",
+  "unavailable_target_policy": "Null with readmission_observed=false; never recode to NO",
+  "dates_policy": "No invented encounter dates or UCI discharge years",
+  "identifier_policy": "Source-qualified row IDs; no cross-source patient linkage",
+  "cost_policy": "SPARCS estimated costs and charges, not insurer payments",
+  "los_policy": "Source-specific definition; capped SPARCS LOS stored as a lower bound with flag",
+  "preview_policy": "Ten convenience rows per source, not a representative analytical sample"
+}

@@ -1,0 +1,22 @@
+{
+  "verified_at_utc": "2026-11-22T13:21:56.836631+00:00",
+  "status": "passed",
+  "counts": {
+    "UCI_DIABETES": 101766,
+    "SPARCS_2023": 2125754,
+    "SPARCS_2024": 2196737
+  },
+  "files_checked": 45,
+  "checks": [
+    "raw/processed reconciliation",
+    "processed SHA-256 integrity",
+    "explicit Parquet schema",
+    "no fabricated SPARCS readmission labels/patient IDs",
+    "no invented UCI dates/costs/facilities",
+    "valid common age bands with no unmapped published categories",
+    "all original UCI target classes retained",
+    "publisher 120 + caps preserved as 120-day lower bounds",
+    "original UCI test-not-performed tokens preserved",
+    "raw page SHA-256 integrity"
+  ]
+}

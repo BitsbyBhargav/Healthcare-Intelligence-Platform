@@ -1,0 +1,299 @@
+{
+  "prepared_at_utc": "2026-11-22T13:21:41.828581+00:00",
+  "status": "complete",
+  "total_encounters": 4424257,
+  "unique_source_encounter_keys": 4424257,
+  "source_statistics": [
+    {
+      "rows": 101766,
+      "labels": 101766,
+      "missing_los": 0,
+      "top_coded_los": 0,
+      "unknown_age": 0,
+      "missing_facility": 101766,
+      "negative_costs": 0,
+      "negative_charges": 0,
+      "zero_los": 0,
+      "invalid_los_tokens": 0,
+      "invalid_cost_tokens": 0,
+      "invalid_charge_tokens": 0,
+      "source": "UCI_DIABETES",
+      "unique_patients": 71518,
+      "original_columns": 50,
+      "raw_sha256": "0689e7ec031237dc63031b938805c48377748761a3b26acab621567afa24df97",
+      "class_counts": {
+        "NO": 54864,
+        ">30": 35545,
+        "<30": 11357
+      }
+    },
+    {
+      "source": "SPARCS_2023",
+      "rows": 2125754,
+      "labels": 0,
+      "missing_los": 0,
+      "top_coded_los": 2290,
+      "unknown_age": 0,
+      "missing_facility": 5333,
+      "negative_costs": 0,
+      "negative_charges": 0,
+      "zero_los": 0,
+      "invalid_los_tokens": 0,
+      "invalid_cost_tokens": 0,
+      "invalid_charge_tokens": 0
+    },
+    {
+      "source": "SPARCS_2024",
+      "rows": 2196737,
+      "labels": 0,
+      "missing_los": 0,
+      "top_coded_los": 2404,
+      "unknown_age": 0,
+      "missing_facility": 5295,
+      "negative_costs": 0,
+      "negative_charges": 0,
+      "zero_los": 0,
+      "invalid_los_tokens": 0,
+      "invalid_cost_tokens": 0,
+      "invalid_charge_tokens": 0
+    }
+  ],
+  "volume_factor_vs_original": 43.474804944677004,
+  "synthetic_records": 0,
+  "readmission_labeled_rows": 101766,
+  "outputs": [
+    {
+      "file": "data\\processed\\encounters\\source=UCI_DIABETES\\part_00000000.parquet",
+      "rows": 101766,
+      "sha256": "c198e6b38b03b68db8b22ce23d8c6d16a43f450fc1bed9d9ed76058ec88ab110"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00000000.parquet",
+      "rows": 100000,
+      "sha256": "ba8308f5aad87b72c5b43a0a9fd0f033467f82e543ecda3aa14d5782753904c4"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00100000.parquet",
+      "rows": 100000,
+      "sha256": "bee504e774afa40a6f96192c2901a046a4177c0ca31e84b2ef2fd055b22e75ed"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00200000.parquet",
+      "rows": 100000,
+      "sha256": "1ad3a539e35551c4ba7d30baf35062d938c3a5be7cfd519037b1d3ce90123a7c"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00300000.parquet",
+      "rows": 100000,
+      "sha256": "7b7a95be81fc3e98a16510d95ff346d30d6d8ae530f244984c7777a8e2f30d77"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00400000.parquet",
+      "rows": 100000,
+      "sha256": "43e3842edaba8da68aacca731dc56dc44d4407681be11cf6ad7f2252b6e18927"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00500000.parquet",
+      "rows": 100000,
+      "sha256": "89fe496164ccf7e1b7095406df77b4bfe7a002de206c60b46babdae4394267bc"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00600000.parquet",
+      "rows": 100000,
+      "sha256": "af7cb87eda3801e586e4056e8f8afeb028b5c0621ca8c8a14fdf58ef835245e3"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00700000.parquet",
+      "rows": 100000,
+      "sha256": "ede0e90d737ca7867e5991757f4bdb0d6a46bb3d476f5b2e2c5b8c3a00395233"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00800000.parquet",
+      "rows": 100000,
+      "sha256": "e794634ad22ca8875742fff53a6d52f6504cb0ad8a4f79b313ebeea880b2486a"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_00900000.parquet",
+      "rows": 100000,
+      "sha256": "1475f897ccc7efe49b67d59fd528ec91a68c2a505e5010b65c10e9657f25dc3c"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01000000.parquet",
+      "rows": 100000,
+      "sha256": "9a2e92fd63b0a70657faad00fb259769fd90a24c6874ec7ad674d270e214244f"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01100000.parquet",
+      "rows": 100000,
+      "sha256": "6199472660e971ba837be862394606f5a2864cb719ea8f1d7940295a42bb5a93"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01200000.parquet",
+      "rows": 100000,
+      "sha256": "bdfe5483df46b0f3de5c18488a43b94420104f68fabd4da8164bd5dd4b46fcab"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01300000.parquet",
+      "rows": 100000,
+      "sha256": "cdd4f8e6b6b9b8164a72752789c395ca305e13fe11c6a881df751344c8d7196c"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01400000.parquet",
+      "rows": 100000,
+      "sha256": "6aef78b4e76019cb26df6b58dd0b1bff4fec0b4964e1288a33e46790a1a94a38"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01500000.parquet",
+      "rows": 100000,
+      "sha256": "1d92786d75d594761cfdf64382ebcf5faa94e57d23ae960ef5c836c459525fd5"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01600000.parquet",
+      "rows": 100000,
+      "sha256": "1c5eb48e8abc2e164cc52578c6bff028f354fb80b0c2683540e6dcb1d07e624c"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01700000.parquet",
+      "rows": 100000,
+      "sha256": "3b01316048fe9008f4f350433dae404bc90e938cbe10c0e3b3a27ddd30c2deb4"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01800000.parquet",
+      "rows": 100000,
+      "sha256": "2e3094f6db7442b4d235e79a9df68f17cbe3f5acc38d0351dc0441b021080512"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_01900000.parquet",
+      "rows": 100000,
+      "sha256": "7171f9e3db1295ab197de6ad193f105f86e6ea0aaeea488554ba9ab0dea4c2c9"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_02000000.parquet",
+      "rows": 100000,
+      "sha256": "45143a78e7c1858626e2a8312c0d4abb31c09a9c60e251bab86a1166bfc23b5e"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2023\\part_02100000.parquet",
+      "rows": 25754,
+      "sha256": "f081f2aa83398eb4b10432d871922bb97ded2bd2c49708888662dd0322dca04b"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00000000.parquet",
+      "rows": 100000,
+      "sha256": "9224e0c4615be4a787e16f7b931cb6afb6deffdcf0b3579e57351236939d1de9"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00100000.parquet",
+      "rows": 100000,
+      "sha256": "6d42c28f52b27f072d80559a468abf72e4fb7e4f689c5dc5e41e4a5766753bf0"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00200000.parquet",
+      "rows": 100000,
+      "sha256": "6981891568aa31fcb9b901fa90ab5123feb7f35556a1ab17f70628377c8ccd82"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00300000.parquet",
+      "rows": 100000,
+      "sha256": "e516ff952e6b55dd26dffd501161a81bb8931547c82b8e111311f1b6dbf630f4"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00400000.parquet",
+      "rows": 100000,
+      "sha256": "d5863b8e3013ad2bad5549e8df92af33d7f87272125d5d3650964fd3868c8348"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00500000.parquet",
+      "rows": 100000,
+      "sha256": "ac08bb8d65045fed63b85784af1b9e2aed5dc74e94a62f258fca24b10787ce1d"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00600000.parquet",
+      "rows": 100000,
+      "sha256": "0c33b122e2611d402d0137e66bf254f90ae8fa0cb4119d65787aee7cc0e1badf"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00700000.parquet",
+      "rows": 100000,
+      "sha256": "cd8780508df94f70ad625114908b403bf5ff22b532dbbb27bd40740311e12521"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00800000.parquet",
+      "rows": 100000,
+      "sha256": "accf67fb3c11942bf30071f4080f6488a1945aa0dcfad2e355d5d2dea4a31a21"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_00900000.parquet",
+      "rows": 100000,
+      "sha256": "7082f345900fe6ad4dc4f3255eca3dc2d4f1c12fb27c18909f3d00b89d685348"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01000000.parquet",
+      "rows": 100000,
+      "sha256": "c45dd683ec400d7718ebbbc41d1579424c9da7dbb002d7af6f8f5f7ff40d2a26"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01100000.parquet",
+      "rows": 100000,
+      "sha256": "971a50ee0034f62a981cff804dd24b1db68a109d11fae32c570b1bffe7cba78b"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01200000.parquet",
+      "rows": 100000,
+      "sha256": "81f7763f6b0bcd6199a0efce6ce2e889895e175fd22fa1cef936de7b2e910aa3"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01300000.parquet",
+      "rows": 100000,
+      "sha256": "63259225bb950b29e59be12ff231adfeca31b874945b117f2e953d1b65eb11a6"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01400000.parquet",
+      "rows": 100000,
+      "sha256": "dae6c3a2ac35278292ad187078a891e94d8dcb7fb378816bfd6384c684f04eb4"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01500000.parquet",
+      "rows": 100000,
+      "sha256": "9839cc84026d98a4f237335c4ece35c108b42c811a30dae24fb8250ea7ab0336"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01600000.parquet",
+      "rows": 100000,
+      "sha256": "55a18e13c7eb09a8348758fe7759b585cc8f03bb7769645fc589618e59dc93c6"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01700000.parquet",
+      "rows": 100000,
+      "sha256": "ac8f1ecca184f4da08625dd9c089781499b25aa0850a5dce9b2f92664bf619a4"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01800000.parquet",
+      "rows": 100000,
+      "sha256": "13ed1ac0cfcec50d833d98ba9a9001315473706a892f1b7593a9a954fa084d0d"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_01900000.parquet",
+      "rows": 100000,
+      "sha256": "915fb49ccd73239b649d406797c6fe3a712255cd7d01296ea2f74de0da8866a5"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_02000000.parquet",
+      "rows": 100000,
+      "sha256": "7ca7f73e469dea338eaed8595d0e1d0f8a9b8d5fc50991ebda265740b20da022"
+    },
+    {
+      "file": "data\\processed\\encounters\\source=SPARCS_2024\\part_02100000.parquet",
+      "rows": 96737,
+      "sha256": "36e5243c2447cf0c2fa748a41036c145131a4345ecc1367cd091762e4e7c6b31"
+    }
+  ],
+  "schema": "encounter_key: string\nsource_key: string\nsource_row_id: string\npatient_key: string\nperiod: string\ndischarge_year: int16\nfacility_key: string\nfacility_name: string\nhospital_county: string\nservice_area: string\nage_band_raw: string\nage_band_common: string\ngender: string\nrace_raw: string\nethnicity_raw: string\nadmission_type_raw: string\nadmission_type_common: string\ndisposition_raw: string\ndiagnosis_system: string\ndiagnosis_code: string\ndiagnosis_description: string\nlos_raw: string\nlos_days_lower_bound: int32\nlos_top_coded: bool\ntotal_charges_usd: double\ntotal_costs_usd: double\nseverity_code: string\nseverity_description: string\napr_drg_code: string\npayment_type: string\nreadmission_label: string\nreadmission_observed: bool\ndiabetes_cohort_definition: string",
+  "notes": [
+    "No cross-source patient matching.",
+    "SPARCS has no readmission labels.",
+    "No model fitting or measured performance improvement is claimed.",
+    "Top-coded stays are lower bounds, never exact totals.",
+    "Cross-source populations and time periods differ; filter analyses by source."
+  ]
+}

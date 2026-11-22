@@ -1,0 +1,15 @@
+numpy==2.5.3
+pandas==2.3.3
+pyarrow==25.0.1
+requests==2.34.2
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+streamlit==1.65.0
+matplotlib==3.11.2
+mlxtend==0.25.0
+reportlab==5.0.1
+pypdf==6.21.1
+imbalanced-learn==0.14.2
+sklearn-compat==0.1.6

@@ -1,0 +1,57 @@
+FINAL JURY - START HERE
+
+The dashboard is currently running at:
+http://127.0.0.1:8540
+
+To restart from the repository root in PowerShell:
+  .\.venv\Scripts\python.exe -m streamlit run "final jury\app.py" --server.port 8540 --server.address 127.0.0.1
+
+All implementation files and results live inside final jury. No earlier jury
+modules, trained models, databases, or dashboards are imported.
+
+REHEARSAL
+1. Read reports/VIVA_REHEARSAL.txt (ten-minute walkthrough).
+2. Open the dashboard and follow A -> B -> C -> D -> E -> F -> G -> H -> I -> J.
+   Block F now has a manual patient form with all 19 editable predictors.
+   Click Predict readmission to show the outcome and three model probabilities.
+3. Keep Snowflake signed in. Use B_snowflake_deployment/07_demo_queries.sql
+   to show the live dimensional tables and queries.
+4. Read reports/Final_Jury_Report.pdf for the full rubric-ordered explanation.
+
+CURRENT RESULTS
+Snowflake build confirmed by user: PASS; 4,424,257 fact rows; 7 dimensions;
+zero failed integrity checks. Raw-file upload/validation/load screenshots
+are under B_snowflake_deployment/evidence.
+
+Three classifiers were compared on real patient-disjoint partitions. Random
+Forest won by validation macro F1. Real test macro F1 0.4382, accuracy 0.5212,
+early-readmission recall 0.2988, ROC AUC 0.6555. Accuracy is below the
+majority-class baseline; do not present this as clinical-grade performance.
+
+Apriori and FP-Growth: same 15,000 real training transactions, 445 matching
+frequent itemsets, 348 filtered rules each. Support 3%, confidence 35%, lift
+above 1.05, maximum itemset length 3.
+
+Four clustering methods were compared on the same reproducible 5,000-row
+SPARCS sample. K-Means K=2 selected for full-coverage segmentation; silhouette
+0.3122. PCA display explains 73.24% of representation variance. No clinical
+validation is claimed, and DBSCAN noise is explicitly reported.
+
+DATA BOUNDARIES
+modelled.csv is the one combined master: 4,424,257 real UCI-SPARCS records,
+51 columns. SPARCS has no observed readmission labels; its candidate holdout
+roles do not create supervised readmission test ground truth. The exploratory
+synthetic pilot remains separate and was not used for final classifier claims.
+
+REPRODUCTION
+Data: tools/prepare_data.py and tools/export_integrated_data.py.
+SQL: B_snowflake_deployment/01 through 07.
+Analytics: python tools/complete_analytics.py
+Report: python tools/build_final_report.py
+Fresh standalone environment: install requirements-final.txt inside final jury.
+
+Submission destination/format, attendance marks and the institution's exact
+assignment requirements must still be checked by the user. College submission
+has not been performed. Git excludes the large master CSV, source downloads,
+processed source data, local environments, and upload packages; keep those
+local files or regenerate them using the documented preparation scripts.
