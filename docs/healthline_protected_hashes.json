@@ -1,0 +1,5 @@
+{
+  "data/diabetes_130_us.csv": "cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964",
+  "data/healthcare_dw.db": "c893b7a9b0898f4ee4301f2a3eb425d0f21a105fa61e65143ad6b14976085b13",
+  "jury_2_dw/outputs/best_model.joblib": "4a4f8961a20f509b0464e61102012df6e892b865a4ddae776ff587c31b13b48a"
+}

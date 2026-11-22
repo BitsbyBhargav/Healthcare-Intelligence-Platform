@@ -1,0 +1,44 @@
+ M .gitignore
+ M README.md
+ M RUN_FIRST.txt
+ M deliverables/Jury2_Healthcare_Intelligence_Implementation_Report.pdf
+ M deliverables/Jury2_Three_Dashboard_Evidence.pdf
+ M deliverables/figures/architecture.png
+ M deliverables/figures/mining_workflow.png
+ M deliverables/figures/model_workflow.png
+ M deliverables/logs/pdf_validation.json
+ M deliverables/logs/pdf_validation.log
+ M docs/FINAL_COMPLETION_REPORT.md
+ M docs/PDF_VISUAL_REVIEW.md
+ M jury_2_dw/app.py
+ M jury_2_dw/mine_associations.py
+ M jury_2_dw/outputs/apriori_itemsets.csv
+ M jury_2_dw/outputs/apriori_rules.csv
+ M jury_2_dw/outputs/fp_growth_itemsets.csv
+ M jury_2_dw/outputs/fp_growth_rules.csv
+ M jury_2_dw/outputs/mining_summary.json
+ M jury_2_dw/outputs/top_association_rules.png
+ M tests/test_platform.py
+ M tools/build_reports.py
+ M tools/validate_deliverables.py
+?? .streamlit/
+?? app.py
+?? deliverables/healthline_evidence/
+?? deliverables/logs/healthline_all_tests.xml
+?? deliverables/logs/healthline_pytest.xml
+?? deliverables/logs/pdf_architecture_update.json
+?? deliverables/logs/pdf_identity_update.json
+?? deliverables/logs/pdf_institution_removal.json
+?? deliverables/logs/pdf_typography_update.json
+?? deliverables/report_assets/
+?? docs/HEALTHLINE_DEMO.md
+?? docs/HEALTHLINE_REVIEW.md
+?? docs/JURY2_README.md
+?? docs/healthline_preexisting_work.json
+?? docs/healthline_protected_hashes.json
+?? docs/healthline_verification.json
+?? healthline/
+?? tests/healthline_browser.py
+?? tests/test_healthline.py
+?? tools/build_jury2_diagrams.py
+?? tools/verify_healthline.py

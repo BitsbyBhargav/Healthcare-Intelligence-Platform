@@ -36,7 +36,11 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.utils.class_weight import compute_sample_weight
-from xgboost import XGBClassifier
+
+try:
+    from xgboost import XGBClassifier
+except ModuleNotFoundError:  # pragma: no cover - optional dependency for benchmark demos.
+    XGBClassifier = None
 
 from jury2_features import CATEGORICAL, FEATURES, LABELS, NUMERIC, build_features
 
@@ -92,7 +96,7 @@ def preprocessing():
 
 
 def classifiers():
-    return {
+    models = {
         "Decision Tree": DecisionTreeClassifier(
             max_depth=12, min_samples_leaf=30, random_state=SEED),
         "Naive Bayes": GaussianNB(),
@@ -100,12 +104,15 @@ def classifiers():
         "Random Forest": RandomForestClassifier(
             n_estimators=140, max_depth=18, min_samples_leaf=4,
             n_jobs=4, random_state=SEED),
-        "XGBoost": XGBClassifier(
+    }
+    if XGBClassifier is not None:
+        models["XGBoost"] = XGBClassifier(
             n_estimators=150, max_depth=5, learning_rate=0.07,
             subsample=0.85, colsample_bytree=0.85, tree_method="hist",
             objective="multi:softprob", eval_metric="mlogloss", n_jobs=4,
-            random_state=SEED),
-    }
+            random_state=SEED,
+        )
+    return models
 
 
 def fit_model(name, estimator, X, y):

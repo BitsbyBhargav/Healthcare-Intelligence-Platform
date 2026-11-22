@@ -1,0 +1,38 @@
+[
+  {
+    "file": "Jury2_Healthcare_Intelligence_Implementation_Report.pdf",
+    "pages": 35,
+    "embedded_fonts": [
+      "AAAAAA+TimesNewRomanPS-BoldMT",
+      "AAAAAA+TimesNewRomanPSMT"
+    ],
+    "actual_times_new_roman_embedded": true,
+    "normal_text_pt": 12,
+    "heading_sizes_pt": [
+      10,
+      12,
+      19,
+      25
+    ],
+    "institution_removed": true,
+    "neutral_document_styles": true
+  },
+  {
+    "file": "Jury2_Three_Dashboard_Evidence.pdf",
+    "pages": 7,
+    "embedded_fonts": [
+      "AAAAAA+TimesNewRomanPS-BoldMT",
+      "AAAAAA+TimesNewRomanPSMT"
+    ],
+    "actual_times_new_roman_embedded": true,
+    "normal_text_pt": 12,
+    "heading_sizes_pt": [
+      10,
+      12,
+      19,
+      25
+    ],
+    "institution_removed": true,
+    "neutral_document_styles": true
+  }
+]

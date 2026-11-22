@@ -1,0 +1,20 @@
+{
+  "Apriori": {
+    "seconds": 0.089,
+    "frequent_itemsets": 85,
+    "cross_domain_rules": 23
+  },
+  "FP-Growth": {
+    "seconds": 0.256,
+    "frequent_itemsets": 85,
+    "cross_domain_rules": 23
+  },
+  "settings": {
+    "sampled_encounters": 101766,
+    "unique_items": 33,
+    "min_support": 0.03,
+    "min_confidence": 0.35,
+    "min_lift": 1.0,
+    "max_itemset_len": 3
+  }
+}

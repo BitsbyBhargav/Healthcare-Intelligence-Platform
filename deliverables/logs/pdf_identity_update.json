@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-22",
+  "team": [
+    {
+      "name": "Bhargav Sonawane",
+      "enrollment": "ADT24SOCB0313",
+      "roll": 9
+    },
+    {
+      "name": "Chetan Bhapkar",
+      "enrollment": "ADT24SOCB0336",
+      "roll": 11
+    }
+  ],
+  "checks": [
+    {
+      "file": "Jury2_Three_Dashboard_Evidence.pdf",
+      "pages": 7,
+      "body_text_and_render_unchanged": true,
+      "navigation_preserved": true,
+      "sha256": "bfd241255bef30532a5a7a2987a16f9b35900b7ebf50e61619aa4d865a6fa24d"
+    },
+    {
+      "file": "Jury2_Healthcare_Intelligence_Implementation_Report.pdf",
+      "pages": 30,
+      "body_text_and_render_unchanged": true,
+      "navigation_preserved": true,
+      "sha256": "92ecbdcb1043be2b729663baa0d78712ecb1b3577c1b8e58157342d0a15d7b4d"
+    }
+  ]
+}

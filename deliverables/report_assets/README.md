@@ -1,0 +1,1 @@
+These files preserve the verified full-cohort mining run used by the Jury 2 PDFs (101,766 encounters, 85 itemsets and 23 rules per algorithm). They are retained separately so formatting revisions do not substitute a later sampled local experiment. Source: publication commit 807c3f55368ca043fc60e8f9c66d34ac03660a69.

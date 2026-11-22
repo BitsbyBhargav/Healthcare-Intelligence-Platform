@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "page": "Executive Command Center",
+      "status": "passed"
+    },
+    {
+      "page": "Live Pipeline Studio",
+      "status": "passed"
+    },
+    {
+      "interaction": "Real historical replay committed",
+      "status": "passed"
+    },
+    {
+      "page": "Data Warehouse Explorer",
+      "status": "passed"
+    },
+    {
+      "page": "Patient Clustering",
+      "status": "passed"
+    },
+    {
+      "page": "Live Risk Studio",
+      "status": "passed"
+    },
+    {
+      "interaction": "Saved three-class model inference",
+      "status": "passed"
+    },
+    {
+      "page": "Operational Scenario Lab",
+      "status": "passed"
+    },
+    {
+      "page": "Architecture & Evidence",
+      "status": "passed"
+    }
+  ],
+  "page_errors": [],
+  "external_http_blocked": true,
+  "blocked_request_count": 0,
+  "capture": "Actual Chrome screenshots of local Streamlit; no reconstructed UI"
+}

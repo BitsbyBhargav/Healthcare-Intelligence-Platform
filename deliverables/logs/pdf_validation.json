@@ -2,14 +2,14 @@
   {
     "file": "Jury2_Three_Dashboard_Evidence.pdf",
     "pages": 7,
-    "bytes": 940237,
-    "sha256": "c0afe60c91e8ce49664635078a719b007ef5ae8deb5945bac5d0525fc70c9cea",
+    "bytes": 1030008,
+    "sha256": "e406f615bb307081ed307f178db8968fce68b80668376c3510759b98ae7626b7",
     "all_pages_rendered": true,
     "text_and_bounds_pass": true,
     "page_details": [
       {
         "page": 1,
-        "characters": 1300,
+        "characters": 898,
         "images": 0,
         "out_of_bounds": []
       },
@@ -53,21 +53,21 @@
   },
   {
     "file": "Jury2_Healthcare_Intelligence_Implementation_Report.pdf",
-    "pages": 30,
-    "bytes": 2274889,
-    "sha256": "3d2b3a4ee8d7bc8942e4bead8c1febc6095aa09b50d9210aa127455a8ca4a62b",
+    "pages": 35,
+    "bytes": 2729696,
+    "sha256": "e7890dd8c2b2e34b3ef7f34b6f092c54778e31f75de886e18aa45189afcecc29",
     "all_pages_rendered": true,
     "text_and_bounds_pass": true,
     "page_details": [
       {
         "page": 1,
-        "characters": 1021,
+        "characters": 619,
         "images": 0,
         "out_of_bounds": []
       },
       {
         "page": 2,
-        "characters": 726,
+        "characters": 727,
         "images": 0,
         "out_of_bounds": []
       },
@@ -79,7 +79,7 @@
       },
       {
         "page": 4,
-        "characters": 2665,
+        "characters": 2672,
         "images": 0,
         "out_of_bounds": []
       },
@@ -91,151 +91,181 @@
       },
       {
         "page": 6,
-        "characters": 2616,
+        "characters": 2127,
         "images": 0,
         "out_of_bounds": []
       },
       {
         "page": 7,
-        "characters": 1609,
-        "images": 1,
-        "out_of_bounds": []
-      },
-      {
-        "page": 8,
-        "characters": 1990,
+        "characters": 555,
         "images": 0,
         "out_of_bounds": []
       },
       {
-        "page": 9,
-        "characters": 150,
+        "page": 8,
+        "characters": 1046,
         "images": 1,
+        "out_of_bounds": []
+      },
+      {
+        "page": 9,
+        "characters": 629,
+        "images": 0,
         "out_of_bounds": []
       },
       {
         "page": 10,
-        "characters": 2292,
-        "images": 1,
+        "characters": 1991,
+        "images": 0,
         "out_of_bounds": []
       },
       {
         "page": 11,
-        "characters": 923,
+        "characters": 151,
         "images": 1,
         "out_of_bounds": []
       },
       {
         "page": 12,
-        "characters": 1625,
+        "characters": 1896,
         "images": 1,
         "out_of_bounds": []
       },
       {
         "page": 13,
+        "characters": 1199,
+        "images": 0,
+        "out_of_bounds": []
+      },
+      {
+        "page": 14,
+        "characters": 187,
+        "images": 1,
+        "out_of_bounds": []
+      },
+      {
+        "page": 15,
+        "characters": 1625,
+        "images": 1,
+        "out_of_bounds": []
+      },
+      {
+        "page": 16,
         "characters": 1303,
         "images": 1,
         "out_of_bounds": []
       },
       {
-        "page": 14,
+        "page": 17,
         "characters": 1107,
         "images": 0,
         "out_of_bounds": []
       },
       {
-        "page": 15,
+        "page": 18,
         "characters": 199,
         "images": 2,
         "out_of_bounds": []
       },
       {
-        "page": 16,
+        "page": 19,
         "characters": 1324,
         "images": 1,
         "out_of_bounds": []
       },
       {
-        "page": 17,
+        "page": 20,
         "characters": 998,
         "images": 1,
         "out_of_bounds": []
       },
       {
-        "page": 18,
+        "page": 21,
         "characters": 224,
         "images": 2,
         "out_of_bounds": []
       },
       {
-        "page": 19,
+        "page": 22,
         "characters": 226,
         "images": 2,
         "out_of_bounds": []
       },
       {
-        "page": 20,
+        "page": 23,
         "characters": 1076,
         "images": 1,
         "out_of_bounds": []
       },
       {
-        "page": 21,
+        "page": 24,
         "characters": 299,
         "images": 2,
         "out_of_bounds": []
       },
       {
-        "page": 22,
+        "page": 25,
         "characters": 733,
         "images": 1,
         "out_of_bounds": []
       },
       {
-        "page": 23,
-        "characters": 3455,
-        "images": 0,
-        "out_of_bounds": []
-      },
-      {
-        "page": 24,
-        "characters": 814,
-        "images": 2,
-        "out_of_bounds": []
-      },
-      {
-        "page": 25,
-        "characters": 2940,
-        "images": 0,
-        "out_of_bounds": []
-      },
-      {
         "page": 26,
-        "characters": 3736,
+        "characters": 2899,
         "images": 0,
         "out_of_bounds": []
       },
       {
         "page": 27,
-        "characters": 2259,
-        "images": 0,
+        "characters": 1228,
+        "images": 1,
         "out_of_bounds": []
       },
       {
         "page": 28,
-        "characters": 1886,
-        "images": 0,
+        "characters": 195,
+        "images": 1,
         "out_of_bounds": []
       },
       {
         "page": 29,
-        "characters": 1371,
+        "characters": 2552,
         "images": 0,
         "out_of_bounds": []
       },
       {
         "page": 30,
-        "characters": 1119,
+        "characters": 3158,
+        "images": 0,
+        "out_of_bounds": []
+      },
+      {
+        "page": 31,
+        "characters": 1605,
+        "images": 0,
+        "out_of_bounds": []
+      },
+      {
+        "page": 32,
+        "characters": 2259,
+        "images": 0,
+        "out_of_bounds": []
+      },
+      {
+        "page": 33,
+        "characters": 1886,
+        "images": 0,
+        "out_of_bounds": []
+      },
+      {
+        "page": 34,
+        "characters": 1371,
+        "images": 0,
+        "out_of_bounds": []
+      },
+      {
+        "page": 35,
+        "characters": 1131,
         "images": 0,
         "out_of_bounds": []
       }

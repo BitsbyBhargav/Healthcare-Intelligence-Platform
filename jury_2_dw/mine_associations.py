@@ -73,13 +73,31 @@ def main():
     te = TransactionEncoder()
     basket = pd.DataFrame(te.fit(transactions).transform(transactions), columns=te.columns_)
     print(f"Unique clinical items: {basket.shape[1]}", flush=True)
-    methods = {"Apriori": apriori, "FP-Growth": fpgrowth}
+    start = time.perf_counter()
+    apriori_freq = apriori(
+        basket,
+        min_support=args.min_support,
+        use_colnames=True,
+        max_len=3,
+    )
+    apriori_seconds = time.perf_counter() - start
+
+    start = time.perf_counter()
+    fp_growth_freq = fpgrowth(
+        basket,
+        min_support=args.min_support,
+        use_colnames=True,
+        max_len=3,
+    )
+    fp_growth_seconds = time.perf_counter() - start
+
+    results = [
+        ("Apriori", apriori_freq, apriori_seconds),
+        ("FP-Growth", fp_growth_freq, fp_growth_seconds),
+    ]
     summary = {}
     all_rules = {}
-    for name, algorithm in methods.items():
-        start = time.perf_counter()
-        freq = algorithm(basket, min_support=args.min_support, use_colnames=True, max_len=3)
-        seconds = time.perf_counter() - start
+    for name, freq, seconds in results:
         rule_kwargs = {"metric": "confidence", "min_threshold": args.min_confidence}
         # mlxtend 0.23.x releases differ in whether num_itemsets is required.
         if "num_itemsets" in inspect.signature(association_rules).parameters:

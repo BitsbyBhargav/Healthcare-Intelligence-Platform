@@ -1,4 +1,4 @@
-"""Jury 2 | Clinical Risk Intelligence Studio.
+"""Jury 2 | HealthLine Clinical Analytics.
 
 Run from the repository root:
     streamlit run jury_2_dw/app.py
@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import sys
 
 import joblib
 import pandas as pd
@@ -22,36 +23,18 @@ import streamlit as st
 from jury2_features import FEATURES, LABELS
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 OUT = ROOT / "jury_2_dw" / "outputs"
 DATA = ROOT / "data" / "diabetes_130_us.csv"
 COLOR = {"NO": "#376A9A", ">30": "#E8AB54", "<30": "#D96264"}
 MODEL_PATH = OUT / "best_model.joblib"
 PAGES = [
-    "Overview", "Model Benchmark", "Best Model", "Association Mining",
-    "Clinical Profiling", "Live Risk Studio",
+    "Overview", "Model Comparison", "Model Performance", "Association Analysis",
+    "Population Profiles", "Readmission Assessment", "Patient Segmentation",
 ]
 
-st.set_page_config(
-    page_title="Clinical Risk Intelligence | DWDM Jury 2",
-    page_icon="🏥", layout="wide", initial_sidebar_state="expanded",
-)
 
-st.markdown("""
-<style>
-.block-container {padding-top: 1.4rem; padding-bottom: 2.5rem; max-width: 1450px;}
-h1,h2,h3 {letter-spacing: -.025em;}
-.hero {padding: 22px 25px; border-radius: 16px; background:
- linear-gradient(105deg, #143550, #175B70); color:#fff; margin-bottom:19px;}
-.hero .eyebrow {text-transform:uppercase; letter-spacing:.14em; font-size:12px; opacity:.82;}
-.hero h1 {color:#fff; font-size:29px; margin:6px 0;}
-.hero p {color:#D8EBF1; margin:3px 0; font-size:14px;}
-.subtext {color:#5F7284; font-size:13px;}
-.tag {display:inline-block; border:1px solid #BED3DF; padding:3px 10px;
- border-radius:30px; font-size:12px; margin-right:8px;}
-[data-testid="stMetric"] {border:1px solid rgba(121,143,164,.24); border-radius:12px; padding:13px;}
-[data-testid="stSidebar"] {border-right: 1px solid rgba(130,152,170,.2);}
-</style>
-""", unsafe_allow_html=True)
 
 
 @st.cache_data(show_spinner=False)
@@ -69,10 +52,14 @@ def load_classifier(path: str):
     """Load only the local trained artifact you created; joblib files can execute code."""
     artifact = joblib.load(path)
     if not isinstance(artifact, dict) or "pipeline" not in artifact or "labels" not in artifact:
-        raise ValueError("Model artifact is not the expected Jury 2 pipeline bundle.")
+        raise ValueError("Model artifact is not the expected classifier pipeline bundle.")
     labels = list(artifact["labels"])
     if labels != LABELS:
         raise ValueError(f"Class order mismatch: model {labels}, expected {LABELS}.")
+    if artifact.get("features") != FEATURES or list(artifact["pipeline"].feature_names_in_) != FEATURES:
+        raise ValueError("Saved preprocessing feature names/order do not match the interface.")
+    if list(artifact["pipeline"].classes_) != [0, 1, 2]:
+        raise ValueError("Saved probability column order does not match outcome labels.")
     return artifact
 
 
@@ -86,7 +73,7 @@ def needed(filename: str) -> bool:
 
 def require_csv(filename: str) -> pd.DataFrame | None:
     if not needed(filename):
-        st.error(f"Missing result: `jury_2_dw/outputs/{filename}`. Run the corresponding Jury 2 analysis script.")
+        st.error(f"Missing result: `jury_2_dw/outputs/{filename}`. Run the corresponding analysis script.")
         return None
     try:
         return read_csv(str(from_output(filename)))
@@ -97,7 +84,7 @@ def require_csv(filename: str) -> pd.DataFrame | None:
 
 def require_json(filename: str) -> dict | None:
     if not needed(filename):
-        st.error(f"Missing result: `jury_2_dw/outputs/{filename}`. Run the corresponding Jury 2 analysis script.")
+        st.error(f"Missing result: `jury_2_dw/outputs/{filename}`. Run the corresponding analysis script.")
         return None
     try:
         return read_json(str(from_output(filename)))
@@ -106,7 +93,7 @@ def require_json(filename: str) -> dict | None:
         return None
 
 
-def hero(title: str, description: str, eyebrow: str = "Jury 2 • Healthcare Intelligence") -> None:
+def hero(title: str, description: str, eyebrow: str = "HealthLine 2.0") -> None:
     st.markdown(
         f'<div class="hero"><div class="eyebrow">{eyebrow}</div>'
         f"<h1>{title}</h1><p>{description}</p></div>",
@@ -123,7 +110,7 @@ def show_image(filename: str, caption: str) -> None:
 
 
 def show_overview() -> None:
-    hero("Clinical Risk Intelligence Studio", "Readmission analysis, model evaluation, and an interactive research demo.")
+    hero("HealthLine Clinical Analytics", "Readmission analysis, model evaluation, and an interactive research demo.")
     summary = require_json("clinical_summary.json")
     report = require_json("best_model_report.json")
     if summary is None or report is None:
@@ -148,7 +135,7 @@ def show_overview() -> None:
 
 
 def show_benchmark() -> None:
-    hero("Model Benchmark", "Compare the candidate classifiers on the validation set.")
+    hero("Model Comparison", "Compare the candidate classifiers on the validation set.")
     report = require_json("best_model_report.json")
     if report:
         st.info(f"Selected: {report['selected_model']} by validation macro F1 (equal weight per class); "
@@ -177,7 +164,7 @@ def show_benchmark() -> None:
 
 
 def show_best_model() -> None:
-    hero("Best Model", "Held-out test results for the model selected using validation macro F1.")
+    hero("Model Performance", "Held-out test results for the model selected using validation macro F1.")
     report = require_json("best_model_report.json")
     if report is None:
         return
@@ -213,7 +200,7 @@ def show_best_model() -> None:
 
 
 def show_associations() -> None:
-    hero("Association Mining", "Explore co-occurrence rules discovered with Apriori and FP-Growth.")
+    hero("Association Analysis", "Explore co-occurrence rules discovered with Apriori and FP-Growth.")
     st.caption("Support = fraction of encounters containing both sides; confidence = P(consequent | antecedent); "
                "lift = confidence / P(consequent). These are associations, not treatment effects.")
     algorithm = st.radio("Mining algorithm", ["Apriori", "FP-Growth"], horizontal=True)
@@ -250,7 +237,7 @@ def show_associations() -> None:
 
 
 def show_profiling() -> None:
-    hero("Clinical Profiling", "Descriptive, observational patterns in historical hospital encounters.")
+    hero("Population Profiles", "Descriptive, observational patterns in historical hospital encounters.")
     profile_files = {
         "Age group": ("profile_age.csv", "age"),
         "Primary diagnosis": ("profile_diagnosis.csv", "diagnosis_group"),
@@ -279,9 +266,9 @@ def show_profiling() -> None:
 
 
 def show_risk_studio() -> None:
-    hero("Live Risk Studio", "Enter discharge-time encounter details to explore the saved model's predictions.")
+    hero("Readmission Assessment", "Enter discharge-time encounter details to explore the saved model's predictions.")
     st.warning(
-        "Academic demonstration only—not a validated clinical decision support device. "
+        "Prototype only. This is not a validated clinical decision support device. "
         "Do not enter identifiable patient information or use predictions for care decisions."
     )
     with st.form("risk_inputs"):
@@ -366,22 +353,58 @@ def show_risk_studio() -> None:
     st.plotly_chart(chart, width="stretch")
 
 
-with st.sidebar:
-    st.markdown("## 🏥 Clinical Risk Intelligence")
-    page = st.radio("Navigate", PAGES, label_visibility="collapsed")
-    st.divider()
-    st.caption("Jury 2 · Diabetes readmission research")
-    st.caption("For academic demonstration only.")
 
-if page == "Overview":
-    show_overview()
-elif page == "Model Benchmark":
-    show_benchmark()
-elif page == "Best Model":
-    show_best_model()
-elif page == "Association Mining":
-    show_associations()
-elif page == "Clinical Profiling":
-    show_profiling()
-elif page == "Live Risk Studio":
-    show_risk_studio()
+def show_clustering():
+    from healthline.ui import clustering
+    hero("Patient Segmentation", "K-Means segmentation of the complete historical encounter dataset.")
+    clustering()
+
+
+def main():
+    st.set_page_config(
+        page_title="HealthLine 2.0 | Clinical Analytics",
+        page_icon="🏥", layout="wide", initial_sidebar_state="expanded",
+    )
+
+    st.markdown("""
+    <style>
+    .block-container {padding-top: 1.4rem; padding-bottom: 2.5rem; max-width: 1450px;}
+    h1,h2,h3 {letter-spacing: -.025em;}
+    .hero {padding: 22px 25px; border-radius: 16px; background:
+     linear-gradient(105deg, #143550, #175B70); color:#fff; margin-bottom:19px;}
+    .hero .eyebrow {text-transform:uppercase; letter-spacing:.14em; font-size:12px; opacity:.82;}
+    .hero h1 {color:#fff; font-size:29px; margin:6px 0;}
+    .hero p {color:#D8EBF1; margin:3px 0; font-size:14px;}
+    .subtext {color:#5F7284; font-size:13px;}
+    .tag {display:inline-block; border:1px solid #BED3DF; padding:3px 10px;
+     border-radius:30px; font-size:12px; margin-right:8px;}
+    [data-testid="stMetric"] {border:1px solid rgba(121,143,164,.24); border-radius:12px; padding:13px;}
+    [data-testid="stSidebar"] {border-right: 1px solid rgba(130,152,170,.2);}
+    </style>
+    """, unsafe_allow_html=True)
+
+    with st.sidebar:
+        st.markdown("## HealthLine 2.0")
+        page = st.radio("Navigate", PAGES, label_visibility="collapsed")
+        st.divider()
+        st.caption("HealthLine 2.0 · Clinical Analytics")
+        st.caption("Prototype for evaluation.")
+
+    if page == "Overview":
+        show_overview()
+    elif page == "Model Comparison":
+        show_benchmark()
+    elif page == "Model Performance":
+        show_best_model()
+    elif page == "Association Analysis":
+        show_associations()
+    elif page == "Population Profiles":
+        show_profiling()
+    elif page == "Readmission Assessment":
+        show_risk_studio()
+    elif page == "Patient Segmentation":
+        show_clustering()
+
+
+if __name__ == "__main__":
+    main()

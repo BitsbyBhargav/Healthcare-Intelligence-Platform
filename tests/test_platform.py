@@ -67,7 +67,11 @@ def test_association_metrics(raw):
     a=pd.read_csv(out/'apriori_rules.csv').drop(columns='algorithm').sort_values(['antecedents','consequents']).reset_index(drop=True)
     b=pd.read_csv(out/'fp_growth_rules.csv').drop(columns='algorithm').sort_values(['antecedents','consequents']).reset_index(drop=True)
     pd.testing.assert_frame_equal(a,b)
-    transactions=list(map(set,build_transactions(raw)))
+    settings=json.loads((out/'mining_summary.json').read_text())['settings']
+    # Respect the preserved local run: the miner samples with random_state=42.
+    n=settings['sampled_encounters']
+    mined=raw.sample(n=n,random_state=42) if n<len(raw) else raw
+    transactions=list(map(set,build_transactions(mined)))
     row=b.iloc[0]; left=set(row.antecedents.split(' | ')); right=set(row.consequents.split(' | '))
     both=sum((left|right)<=t for t in transactions)/len(transactions)
     pl=sum(left<=t for t in transactions)/len(transactions)
@@ -95,18 +99,18 @@ def test_warehouse():
         assert c.execute('pragma integrity_check').fetchone()[0]=='ok'
         assert c.execute('select count(*) from Fact_Admissions f join Dim_Patient p using(patient_nbr) join Dim_Admission a using(admission_id) join Dim_Diagnosis d using(diag_id)').fetchone()[0]==101766
 
-@pytest.mark.parametrize('page',['Overview','Model Benchmark','Best Model','Association Mining','Clinical Profiling','Live Risk Studio'])
+@pytest.mark.parametrize('page',['Overview','Model Comparison','Model Performance','Association Analysis','Population Profiles','Readmission Assessment','Patient Segmentation'])
 def test_dashboard_pages(page):
     at=AppTest.from_file(str(ROOT/'jury_2_dw/app.py'),default_timeout=30).run()
     at.sidebar.radio[0].set_value(page).run()
     assert not at.exception and not at.error
-    if page=='Live Risk Studio':
+    if page=='Readmission Assessment':
         at.button[0].click().run(); assert not at.exception and len(at.metric)==3
-    if page=='Association Mining':
+    if page=='Association Analysis':
         at.radio[0].set_value('FP-Growth').run(); assert not at.exception
-    if page=='Model Benchmark':
+    if page=='Model Comparison':
         at.selectbox[0].select('roc_auc_ovr_macro').run(); assert not at.exception
-    if page=='Clinical Profiling':
+    if page=='Population Profiles':
         for option in at.selectbox[0].options:
             at.selectbox[0].select(option).run(); assert not at.exception
 
@@ -116,7 +120,7 @@ def test_missing_and_invalid_artifacts(tmp_path):
     at=AppTest.from_string(script,default_timeout=30).run()
     assert not at.exception and at.error
     (tmp_path/'best_model_report.json').write_text('bad json')
-    at.sidebar.radio[0].set_value('Best Model').run()
+    at.sidebar.radio[0].set_value('Model Performance').run()
     assert not at.exception and 'Cannot read' in at.error[0].value
 
 def test_jury1_dashboard():

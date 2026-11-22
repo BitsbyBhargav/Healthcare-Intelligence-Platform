@@ -1,0 +1,249 @@
+FINAL JURY - BLOCK-BY-BLOCK PROJECT PLAN
+Prepared: 22 November 2026 (Asia/Calcutta)
+Status: Planning complete; implementation has not started.
+
+USER'S WORKING RULES
+1. Keep all final jury work inside this folder: final jury.
+2. Build this as an independent project. Do not copy or import Jury 1,
+   Jury 2, or HealthLine code, databases, trained models, results, reports,
+   screenshots, or dashboards. Do not depend on sibling project folders.
+3. Obtain and document source data independently for this project. Do not
+   silently reuse the earlier dataset or assume a new dataset is mandated
+   by the PDF. Dataset selection belongs to Block A planning.
+4. Complete blocks in the PDF's A-to-J order. At the end of each block,
+   verify its outputs, save evidence, and prepare a short oral explanation.
+5. This turn covers the plan and folder setup only.
+
+REFERENCE AND INTERPRETATION
+Reference: reference/END-SEMESTER  DWDM JURY GUIDELINES.pdf (six pages).
+The PDF supplies assessment requirements. The user's message controls the
+scope, project separation, and timing of the work.
+
+The cover states 50 marks, and A-J sum to 37:
+3 + 3 + 1 + 1 + 2 + 2 + 5 + 10 + 5 + 5 = 37.
+User clarification: the remaining 13 marks cover subject attendance,
+presentation skills, and assignment submission. Their individual weights
+were not specified. This allocation comes from the user, not the PDF.
+Plan technical deliverables against A-J (37 marks), and prepare presentation
+and submission checks for the remaining assessment components (13 marks).
+
+The PDF requires a minimum of four clustering algorithms; its five named
+algorithms are suggestions, not a requirement to implement all five.
+It requires one primary classifier plus at least two comparison classifiers.
+It does not explicitly require separate source datasets for supervised and
+unsupervised work. Choose suitable, clearly documented prepared datasets.
+Section J explicitly lists classification metrics only. Clustering metrics
+below are our proposed supporting analysis, not an extra quoted PDF rule.
+
+PROJECT APPROACH (PROPOSED, TO FINALIZE IN BLOCK A)
+Retain healthcare as the application domain unless the user changes it,
+while designing and implementing the final jury project independently.
+Choose a public, documented dataset with a meaningful classification target
+and useful numeric features for interpretable clustering. Confirm its
+warehouse, mining, and learning suitability before locking the design.
+
+Use one new local dashboard with A-J navigation in rubric order, independent
+SQL/ETL scripts, and reproducible training/mining scripts. Proposed tools:
+Python, Streamlit, pandas, scikit-learn, mlxtend, and Snowflake. Finalize
+versions and dataset-specific choices during implementation.
+
+Every block is complete only when its required content works, its saved
+results can be traced to a run, and its explanation can be given orally.
+Record actual results only; the plan contains no performance claims.
+
+BLOCK A - DASHBOARD 1: DATA WAREHOUSE DESIGN | 3 MARKS | PDF PAGES 1-2
+Build:
+- Define the application domain, business problem, and analytical questions.
+- Select and independently acquire documented source data; record source,
+  license/access terms, original shape, column dictionary, and limitations.
+- Declare the fact-table grain before deciding facts and dimensions.
+- Design a suitable star or snowflake schema with keys, relationships,
+  cardinality, and justified measures. Do not invent unavailable fields.
+- Implement and show the warehouse structure; prepare reproducible DDL and
+  an ETL mapping ready for deployment in Block B.
+Save: problem statement, source manifest, schema diagram, data dictionary,
+      DDL, transformation mapping, and Block A evidence.
+Done when: the business questions map to real fields and the fact grain,
+           joins, measures, and schema can be explained and demonstrated.
+
+BLOCK B - DASHBOARD 2: SNOWFLAKE DEPLOYMENT | 3 MARKS | PDF PAGE 2
+Build:
+- Demonstrate a real Snowflake environment and its compute/storage roles.
+- Create a dedicated final jury database and schema, then the Block A tables.
+- Load this project's data and reconcile source, accepted, and loaded counts.
+- Run meaningful SQL joins and aggregations on the uploaded data.
+- Show how the deployed tables correspond to the Block A schema.
+Save: setup/load/query SQL, count and join checks, query outputs, and real
+      Snowflake screenshots. Keep credentials out of saved evidence.
+Done when: the actual Snowflake tables contain verified data and queries run.
+Dependency: an accessible Snowflake account with suitable create/load/query
+            permissions. Check access during Block A to avoid a late delay.
+            Prepared SQL alone does not complete this deployment criterion.
+
+BLOCK C - DASHBOARD 3: SUPERVISED DATASET | 1 MARK | PDF PAGES 2-3
+Build:
+- Show the dataset name/source, record count, and attribute count.
+- Identify input features, target classes, and the intended application.
+- Show missingness, class balance, and any filtering/exclusions.
+- Define a leakage-safe split before fitting transformations. Keep repeated
+  entities together where applicable; remove identifiers and target proxies.
+Save: dataset card, feature/target specification, prepared-data preview,
+      split manifest, and dataset evidence.
+Done when: the learning task and each feature's availability are defensible.
+
+BLOCK D - APRIORI AND FP-GROWTH | 1 MARK | PDF PAGE 3
+Build:
+- Explain frequent itemsets and prepare justified transactions/items.
+- Run both Apriori and FP-Growth on the same transactions and thresholds.
+- Show actual itemsets/rules with support, confidence, and lift.
+- Interpret useful rules, including whether a rule adds meaningful insight.
+Save: transaction recipe, parameters, itemsets, rules, and evidence.
+Done when: both algorithms run and at least representative rule calculations
+           and interpretations can be explained. Document sparse/no-rule
+           results honestly and adjust only with a stated rationale.
+
+BLOCK E - CLASSIFICATION COMPARISON AND VALIDATION | 2 MARKS | PDF PAGE 3
+Build:
+- Train one primary classifier and at least two other suitable classifiers.
+- Initial candidates: Random Forest, Logistic Regression, Decision Tree;
+  finalize suitability against Block C's data rather than assume a winner.
+- Use the same held-out split and training-only fitted preprocessing.
+- Use training/validation data for model and parameter selection; keep the
+  final test set out of that selection. Add a majority-class baseline.
+- Present comparative results and explain tradeoffs and validation choices.
+Save: fitted pipelines, parameters/seeds, split references, comparison table,
+      validation method, and measured results.
+Done when: comparison is reproducible and fair, and a model choice is justified.
+Order note: E explicitly requires implementation of the primary classifier.
+            Train it here; F then demonstrates that implementation in depth.
+
+BLOCK F - CLASSIFICATION IMPLEMENTATION | 2 MARKS | PDF PAGES 3-4
+Build:
+- Explain the selected classifier and its preprocessing step by step.
+- Demonstrate training and real predictions using the Block E pipeline.
+- Explain predicted classes and classification decisions; distinguish model
+  scores from validated probabilities where relevant.
+Save: model explanation, preprocessing/training walkthrough, example inputs
+      and predictions, and demonstration evidence.
+Done when: a sample travels from input through preprocessing to prediction,
+           and its result and limitations can be explained.
+
+BLOCK G - UNSUPERVISED DATASET | 5 MARKS | PDF PAGE 4
+Build:
+- Document dataset name/source, records, attributes, and characteristics.
+- Select and justify clustering features, excluding identifiers and labels
+  from distance/model inputs. Explain encoding and feature weighting.
+- Handle missing data and scaling; show the prepared clustering matrix.
+- Explain why the dataset supports useful similarity-based segmentation.
+Save: dataset card, feature selection rationale, preprocessing pipeline,
+      before/after data preview, and clustering input manifest.
+Done when: the selected features, representation, and clustering purpose
+           are clear and the input is reproducible.
+
+BLOCK H - FOUR CLUSTERING ALGORITHMS | 10 MARKS | PDF PAGES 4-5
+Build:
+- Proposed four: K-Means, Agglomerative Hierarchical Clustering, DBSCAN,
+  and Gaussian Mixture Model. These satisfy the minimum; K-Medoids is optional.
+- Explain each algorithm's principle, assumptions, parameters, strengths,
+  and limitations. Use the same prepared feature representation and records.
+- If runtime requires a sample, select and document one fixed sample for all
+  four methods; show its relationship to the full dataset.
+- Run a bounded, recorded parameter exploration; show actual cluster sizes,
+  noise where applicable, runtime, profiles, and consistent visualizations.
+- Use PCA only for display unless a separate modeling choice is justified.
+- Compare silhouette, Davies-Bouldin, and Calinski-Harabasz where defined.
+  For DBSCAN, disclose noise coverage and how noise enters each calculation;
+  do not compare scores on differing retained subsets without explanation.
+- Choose the most suitable result using separation, coverage, stability or
+  sensitivity evidence, interpretability, and practical usefulness.
+Save: four runs, parameters, assignments, comparison table, plots, profiles,
+      limitations, and a reasoned selection.
+Done when: all four implementations work and the choice follows evidence.
+
+BLOCK I - SELECTED CLUSTERING IMPLEMENTATION | 5 MARKS | PDF PAGE 5
+Build:
+- Explain the method selected in H and demonstrate its implementation.
+- Justify parameters and show the resulting clusters and representative cases.
+- Interpret practical meaning from observed cluster profiles; acknowledge
+  weak separation or instability and avoid unsupported clinical labels.
+Save: algorithm walkthrough, parameter rationale, detailed profiles,
+      visualizations, practical interpretation, and demo evidence.
+Done when: cluster formation and its practical significance can be explained.
+
+BLOCK J - PERFORMANCE METRICS | 5 MARKS | PDF PAGES 5-6
+Build:
+- Present accuracy, precision, recall, F1-score, and confusion matrix.
+- State class order and averaging; include per-class results and suitable
+  aggregate scores so imbalance is visible. Explain mistakes and tradeoffs.
+- Consolidate and interpret H's clustering evaluation as supporting analysis;
+  report undefined metrics as undefined with a reason.
+Save: final metrics tables, labeled confusion matrices, clustering evaluation,
+      and a plain-language interpretation of strengths and limitations.
+Done when: reported values match saved predictions/assignments and the user
+           can explain what each metric measures and what it misses.
+
+PLANNED FOLDER STRUCTURE (CREATE AS EACH BLOCK STARTS)
+final jury/
+  FINAL_JURY_PLAN.txt
+  reference/                 supplied guidelines and inspection preview
+  data/raw/                  independently obtained source files
+  data/processed/            this project's prepared datasets
+  A_warehouse_design/
+  B_snowflake_deployment/
+  C_supervised_dataset/
+  D_association_mining/
+  E_classification_comparison/
+  F_classification_implementation/
+  G_unsupervised_dataset/
+  H_clustering_comparison/
+  I_clustering_implementation/
+  J_performance_metrics/
+  app/                       independent dashboard with A-J navigation
+  evidence/                  evidence indexed by block
+  reports/                   final report and oral/demo notes
+  requirements.txt           pinned dependencies after implementation
+  RUN_FIRST.txt              independent setup and launch instructions
+
+EXECUTION AND JURY PREPARATION
+- Follow A -> B -> C -> D -> E -> F -> G -> H -> I -> J.
+- Reserve the largest work allocation for G-H-I: together they carry 20 of
+  the 37 explicitly itemized marks. Preserve the requested sequence.
+- At each checkpoint save code/SQL, measured results, one useful visual or
+  table, genuine evidence, and a short explanation of design decisions.
+- Keep expensive training separate from dashboard navigation; cache only
+  this project's measured outputs and offer reproducible regeneration.
+- After J, assemble a concise report in A-J order, a rubric checklist, and
+  a walkthrough. Include source attribution and honest limitations.
+- For presentation skills, rehearse clear explanations, readable visuals,
+  transitions in A-J order, and likely viva questions. For assignment
+  submission, check the required files, naming, format, deadline, and proof
+  of submission against the institution's actual instructions. Track subject
+  attendance separately using the official record; no marks are assumed.
+- Rehearse once from the final jury folder: setup, warehouse, Snowflake,
+  datasets, mining, classification, four clusterers, and metrics. Keep saved
+  outputs/screenshots for connection interruptions while clearly identifying
+  them as evidence from the actual completed runs.
+- Verify independence: no imports, file paths, or runtime dependencies on
+  jury_1_dw, jury_2_dw, healthline, or their generated artifacts.
+
+CURRENT CHECKLIST
+[x] Read all six PDF pages and inspect the rendered document.
+[x] Establish a separate final jury folder and save this plan.
+[x] Preserve a reference copy of the supplied PDF.
+[ ] A  Warehouse design
+[ ] B  Snowflake deployment
+[ ] C  Supervised dataset
+[ ] D  Apriori and FP-Growth
+[ ] E  Classification comparison and validation
+[ ] F  Classification implementation
+[ ] G  Unsupervised dataset
+[ ] H  Four clustering algorithms and comparison
+[ ] I  Selected clustering implementation
+[ ] J  Performance metrics
+[ ] Final report, evidence index, independent launch check, and rehearsal
+[ ] Assignment submission requirements and official attendance check
+
+NEXT SESSION ACTION
+Begin Block A: finalize the business problem and source dataset, then define
+the fact grain and schema. Check Snowflake access early as a dependency,
+while keeping deployment implementation in Block B.

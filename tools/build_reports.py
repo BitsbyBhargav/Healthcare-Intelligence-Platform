@@ -12,6 +12,8 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 from reportlab.lib import colors
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.enums import TA_LEFT,TA_JUSTIFY
 from reportlab.lib.pagesizes import A4,A3,landscape
 from reportlab.lib.styles import getSampleStyleSheet,ParagraphStyle
@@ -20,31 +22,40 @@ from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,PageBreak,Imag
 from reportlab.platypus.tableofcontents import TableOfContents
 
 R=Path(__file__).resolve().parents[1]; O=R/'jury_2_dw/outputs'; D=R/'deliverables'; E=D/'evidence'
-BLUE=colors.HexColor('#153e56'); TEAL=colors.HexColor('#147b83'); GREY=colors.HexColor('#526674')
+# Embed the actual Times New Roman font family; do not substitute PDF Times-Roman.
+FONT_DIR=Path('C:/Windows/Fonts')
+for name,filename in [('TimesNewRoman','times.ttf'),('TimesNewRoman-Bold','timesbd.ttf'),('TimesNewRoman-Italic','timesi.ttf'),('TimesNewRoman-BoldItalic','timesbi.ttf')]:
+    pdfmetrics.registerFont(TTFont(name,str(FONT_DIR/filename)))
+pdfmetrics.registerFontFamily('TimesNewRoman',normal='TimesNewRoman',bold='TimesNewRoman-Bold',italic='TimesNewRoman-Italic',boldItalic='TimesNewRoman-BoldItalic')
+plt.rcParams['font.family']='Times New Roman'
+BLUE=colors.black; TEAL=colors.black; GREY=colors.HexColor('#333333')
 styles=getSampleStyleSheet()
-styles.add(ParagraphStyle(name='BodyJ',fontName='Helvetica',fontSize=9.7,leading=14,spaceAfter=8,alignment=TA_JUSTIFY,textColor=colors.HexColor('#203440')))
-styles.add(ParagraphStyle(name='SmallText',fontSize=8,leading=11,spaceAfter=7,textColor=GREY))
-styles.add(ParagraphStyle(name='CoverTitle',fontName='Helvetica-Bold',fontSize=25,leading=32,spaceAfter=18,textColor=BLUE))
-styles.add(ParagraphStyle(name='Kicker',fontName='Helvetica-Bold',fontSize=10,leading=14,spaceAfter=12,textColor=TEAL))
-styles.add(ParagraphStyle(name='TableHeader',parent=styles['SmallText'],textColor=colors.white,fontName='Helvetica-Bold'))
-styles['Heading1'].textColor=BLUE;styles['Heading1'].fontSize=19;styles['Heading1'].leading=24
+styles.add(ParagraphStyle(name='BodyJ',fontName='TimesNewRoman',fontSize=12,leading=16,spaceAfter=8,alignment=TA_JUSTIFY,textColor=colors.black))
+styles.add(ParagraphStyle(name='SmallText',fontName='TimesNewRoman',fontSize=12,leading=15,spaceAfter=7,textColor=GREY))
+styles.add(ParagraphStyle(name='CoverTitle',fontName='TimesNewRoman-Bold',fontSize=25,leading=32,spaceAfter=18,textColor=BLUE))
+styles.add(ParagraphStyle(name='Kicker',fontName='TimesNewRoman-Bold',fontSize=10,leading=14,spaceAfter=12,textColor=TEAL))
+styles.add(ParagraphStyle(name='TableHeader',parent=styles['SmallText'],textColor=colors.white,fontName='TimesNewRoman-Bold'))
+styles['Heading1'].fontName='TimesNewRoman-Bold';styles['Heading1'].textColor=BLUE;styles['Heading1'].fontSize=19;styles['Heading1'].leading=24
 styles['Heading1'].spaceAfter=17
-styles['Heading2'].textColor=TEAL;styles['Heading2'].fontSize=12;styles['Heading2'].leading=17
+styles['Heading2'].fontName='TimesNewRoman-Bold';styles['Heading2'].textColor=TEAL;styles['Heading2'].fontSize=12;styles['Heading2'].leading=17
 styles['Heading2'].spaceBefore=10;styles['Heading2'].spaceAfter=9
+styles['Heading1'].keepWithNext=True
+styles['Heading2'].keepWithNext=True
 report=json.loads((O/'best_model_report.json').read_text())
 clinical=json.loads((O/'clinical_summary.json').read_text())
-mining=json.loads((O/'mining_summary.json').read_text())
+MINING_SNAPSHOT=D/'report_assets'
+mining=json.loads((MINING_SNAPSHOT/'mining_summary.json').read_text())
 orange=json.loads((D/'logs/orange_validation.json').read_text())
 provenance=json.loads((O/'run_provenance.json').read_text())
 comparison=pd.read_csv(O/'model_comparison.csv')
-rules=pd.read_csv(O/'fp_growth_rules.csv')
+rules=pd.read_csv(MINING_SNAPSHOT/'fp_growth_rules.csv')
 
 def clean(s):
     return str(s).replace('—','-').replace('–','-').replace('’',"'").replace('→',' -> ').replace('≥','>=').replace('×','x')
 def markup(s):
     s=escape(clean(s))
     s=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',s)
-    s=re.sub(r'`([^`]+)`',r'<font name="Courier">\1</font>',s)
+    s=re.sub(r'`([^`]+)`',r'<font name="TimesNewRoman">\1</font>',s)
     return s
 def para(s,style='BodyJ'): return Paragraph(markup(s),styles[style])
 def text(story,s):
@@ -53,7 +64,7 @@ def text(story,s):
 def table(story,headers,rows,widths=None):
     data=[[para(v,'TableHeader') for v in headers]]+[[para(v,'SmallText') for v in row] for row in rows]
     t=Table(data,colWidths=widths,repeatRows=1,hAlign='LEFT')
-    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),BLUE),('TEXTCOLOR',(0,0),(-1,0),colors.white),('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.HexColor('#f0f6f8'),colors.white]),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),7),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),5),('LINEBELOW',(0,0),(-1,0),1,TEAL),('LINEBELOW',(0,-1),(-1,-1),.4,colors.HexColor('#bfd2dc'))]))
+    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),BLUE),('TEXTCOLOR',(0,0),(-1,0),colors.white),('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.HexColor('#f2f2f2'),colors.white]),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),7),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),5),('LINEBELOW',(0,0),(-1,0),1,TEAL),('LINEBELOW',(0,-1),(-1,-1),.4,colors.HexColor('#bbbbbb'))]))
     story.extend([KeepTogether([t]) if len(rows)<=10 else t,Spacer(1,12)])
 def figure(story,path,caption,width=487,max_height=360):
     path=Path(path)
@@ -65,7 +76,7 @@ def footer(canvas,doc):
     w,h=doc.pagesize
     canvas.saveState();canvas.setStrokeColor(TEAL);canvas.setLineWidth(.6)
     canvas.line(doc.leftMargin,33,w-doc.rightMargin,33)
-    canvas.setFont('Helvetica',8);canvas.setFillColor(GREY)
+    canvas.setFont('TimesNewRoman',12);canvas.setFillColor(GREY)
     canvas.drawString(doc.leftMargin,21,'HEALTHCARE INTELLIGENCE PLATFORM  |  JURY 2  |  21 OCTOBER 2026')
     canvas.drawRightString(w-doc.rightMargin,21,str(doc.page));canvas.restoreState()
 class ReportDoc(SimpleDocTemplate):
@@ -80,11 +91,14 @@ def cover(story,title,evidence=False):
     text(story,'Integrated Clinical & Operational Healthcare Intelligence Platform: Data Warehouse with AI-Driven Patient Readmission & Bed Capacity Prediction')
     story.append(para('Jury 2 focus: Predictive Patient Risk Mining and Clinical Feature Profiling using Healthcare Data','Heading2'))
     story.append(Spacer(1,22))
-    table(story,['Team member name','Registration number'],[['________________________________','________________________'] for _ in range(4)], [270,210] if not evidence else [400,320])
-    for label in ['Department','Institution','Faculty / Guide']:
-        story.append(para(label+': __________________________________________________________'))
+    table(story,['Team member name','Enrollment no.','Roll no.'],[
+        ['Bhargav Sonawane','ADT24SOCB0313','9'],
+        ['Chetan Bhapkar','ADT24SOCB0336','11'],
+    ], [225,165,90] if not evidence else [340,240,140])
+    for label,value in [('Department','School of computing'),('Faculty / Guide','Prof.Dr.Reena Pagare')]:
+        story.append(para(label+': '+value))
     story.append(Spacer(1,16))
-    text(story,'Verified implementation and evidence edition - 21 October 2026. Personal and institutional details are intentionally left blank for the team to complete.')
+    text(story,'Verified implementation and evidence edition - 21 October 2026.')
     if evidence:
         text(story,'Screenshots in this document were captured directly from the working Streamlit application in an isolated Google Chrome session. No dashboard interface or displayed result was reconstructed. Landscape A3 pages preserve screenshot readability; zoom when viewing on a smaller display.')
     story.append(PageBreak())
@@ -117,10 +131,10 @@ def diagrams():
     def diagram(filename,boxes,arrows,title):
         fig,ax=plt.subplots(figsize=(11,6));ax.set(xlim=(0,11),ylim=(0,6));ax.axis('off')
         for x,y,w,h,label in boxes:
-            patch=FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.08',facecolor='#e9f3f6',edgecolor='#147b83',linewidth=1.5)
-            ax.add_patch(patch);ax.text(x+w/2,y+h/2,label,ha='center',va='center',fontsize=10,color='#153e56',wrap=True)
-        for start,end in arrows:ax.annotate('',xy=end,xytext=start,arrowprops=dict(arrowstyle='->',color='#527381',lw=1.8))
-        ax.set_title(title,fontsize=14,pad=15,color='#153e56');fig.tight_layout();fig.savefig(D/'figures'/filename,dpi=180);plt.close(fig)
+            patch=FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.08',facecolor='#f2f2f2',edgecolor='#222222',linewidth=1.5)
+            ax.add_patch(patch);ax.text(x+w/2,y+h/2,label,ha='center',va='center',fontsize=10,color='#111111',wrap=True)
+        for start,end in arrows:ax.annotate('',xy=end,xytext=start,arrowprops=dict(arrowstyle='->',color='#444444',lw=1.8))
+        ax.set_title(title,fontsize=14,pad=15,color='#111111');fig.tight_layout();fig.savefig(D/'figures'/filename,dpi=180);plt.close(fig)
     diagram('architecture.png',[(3.6,4.8,3.6,.75,'Preserved UCI encounter CSV\n101,766 encounters'),(.3,2.8,3.1,1,'Jury 1: local ETL\nSQLite star schema + OLAP'),(4.0,2.8,3.1,1,'Jury 2: features\nclassification / mining / profiles'),(7.8,2.8,2.8,1,'Orange export\n3,000 unique patients'),(.3,.7,3.1,1,'Warehouse dashboard\nTableau / Power BI assets'),(4.0,.7,3.1,1,'Current artifacts\nStreamlit + saved inference'),(7.8,.7,2.8,1,'Supplementary Orange\nclassification / association')],[((4.1,4.8),(1.85,3.8)),((5.55,4.8),(5.55,3.8)),((7.0,4.8),(9.2,3.8)),((1.85,2.8),(1.85,1.7)),((5.55,2.8),(5.55,1.7)),((9.2,2.8),(9.2,1.7))],'Implemented data flow (design schematic derived from source code)')
     diagram('model_workflow.png',[(.2,4.6,2.9,.9,'Patient-group split\ntrain / validation / test'),(4,4.6,2.9,.9,'Training-only pipeline\nimputation / scale / one-hot'),(7.8,4.6,2.9,.9,'Five fixed candidates\nsame rows and feature set'),(7.8,2.5,2.9,.9,'Select validation macro F1\ntie-break: <30-day recall'),(4,2.5,2.9,.9,'Refit selected Random Forest\ntrain + validation'),(.2,2.5,2.9,.9,'Untouched test patients\nmetrics / CM / ROC'),(4,.4,2.9,.9,'Persist complete pipeline\nStreamlit discharge-time demo')],[((3.1,5.05),(4,5.05)),((6.9,5.05),(7.8,5.05)),((9.25,4.6),(9.25,3.4)),((7.8,2.95),(6.9,2.95)),((4,2.95),(3.1,2.95)),((1.7,2.5),(5.45,1.3))],'Classification experiment and inference workflow')
     diagram('mining_workflow.png',[(.3,4.5,3,1,'Encounter records\n3 diagnosis columns + meds'),(4,4.5,3,1,'Basket construction\ngroup ICD-9, active meds'),(7.7,4.5,3,1,'Boolean encoding\n101,766 x 33 items'),(.3,2.3,3,1,'Apriori\n85 frequent itemsets'),(4,2.3,3,1,'FP-Growth\n85 frequent itemsets'),(7.7,2.3,3,1,'Rules + transparent filters\n23 qualifying rules each'),(4,.3,3,1,'CSV / JSON / chart\nStreamlit association view')],[((3.3,5),(4,5)),((7,5),(7.7,5)),((9.2,4.5),(1.8,3.3)),((9.2,4.5),(5.5,3.3)),((3.3,2.8),(7.7,2.8)),((7,2.8),(7.7,2.8)),((9.2,2.3),(5.5,1.3))],'Association mining flow (same baskets and thresholds for both algorithms)')
@@ -133,7 +147,7 @@ def build_evidence():
     pages.insert(2,('1.2 Association rule chart','01_association_chart.png','The actual dashboard chart compares lift across the highest-ranked rules, with confidence encoded by colour. The current dataset shows modest enrichment; this visual does not establish medical causation.'))
     for i,(title,file,explanation) in enumerate(pages):
         s.append(para(title,'Heading1'));text(s,explanation)
-        figure(s,E/file,'Genuine Streamlit viewport capture - '+file,width=size[0]-86,max_height=size[1]-185)
+        figure(s,E/file,'Genuine Streamlit viewport capture - '+file,width=size[0]-86,max_height=size[1]-265)
         if i<len(pages)-1:s.append(PageBreak())
     doc.build(s,onFirstPage=footer,onLaterPages=footer)
 
@@ -141,7 +155,7 @@ def build_report():
     path=D/'Jury2_Healthcare_Intelligence_Implementation_Report.pdf'
     doc=ReportDoc(str(path),pagesize=A4,leftMargin=49,rightMargin=49,topMargin=46,bottomMargin=48,title='Jury 2 - Healthcare Intelligence Implementation Report',author='Healthcare Intelligence Platform Team')
     s=[];cover(s,'Complete Jury 2 Implementation Report')
-    s.append(para('Contents','Heading1'));toc=TableOfContents();toc.levelStyles=[ParagraphStyle(name='TOC',fontName='Helvetica',fontSize=10,leading=16,spaceBefore=4,textColor=BLUE)];s.append(toc);s.append(PageBreak())
+    s.append(para('Contents','Heading1'));toc=TableOfContents();toc.levelStyles=[ParagraphStyle(name='TOC',fontName='TimesNewRoman',fontSize=12,leading=16,spaceBefore=4,textColor=BLUE)];s.append(toc);s.append(PageBreak())
     s.append(para('Abstract','Heading1'))
     text(s,f'''This implementation integrates a reproducible SQLite healthcare warehouse with three data-mining tasks: multiclass readmission prediction, diagnosis-medication association mining, and descriptive clinical feature profiling. It uses the preserved local UCI Diabetes 130-US Hospitals dataset, with {clinical['dataset_encounters']:,} encounters and {clinical['unique_patients']:,} patients. Jury 1 retains its ETL, SQL/OLAP and warehouse dashboard; Jury 2 adds a five-model benchmark, a saved inference pipeline and a six-view Streamlit demonstration.
 
@@ -197,7 +211,7 @@ The original Tableau workbook, Power BI asset and Jury 1 screenshots remain avai
 Apriori took 0.089 seconds and FP-Growth took 0.256 seconds for itemset discovery in this run. These timings exclude surrounding load/export work and do not establish general speed rankings. The workload has only 33 observed items and a maximum itemset length of three, which makes candidate enumeration small.''')
     table(s,['Method','Itemsets','Rules','Itemset time'],[[k,mining[k]['frequent_itemsets'],mining[k]['cross_domain_rules'],str(mining[k]['seconds'])+' s'] for k in ['Apriori','FP-Growth']],[145,100,100,130])
     table(s,['Antecedent -> consequent','Support','Confidence','Lift'],[[r.antecedents+' -> '+r.consequents,f'{r.support:.4f}',f'{r.confidence:.4f}',f'{r.lift:.3f}'] for r in rules.head(5).itertuples()],[265,70,75,65])
-    figure(s,O/'top_association_rules.png','Figure 6.2. Actual highest-lift qualifying FP-Growth rules. Truncated plot labels are expanded in the saved rule table.')
+    figure(s,MINING_SNAPSHOT/'top_association_rules.png','Figure 6.2. Actual highest-lift qualifying FP-Growth rules. Truncated plot labels are expanded in the saved rule table.')
     chapter(s,7,'Classification Model Comparison')
     section(s,'7.1 Algorithms and evaluation process',handover_section('Training, comparison and evaluation').split('The verified winner')[0])
     figure(s,D/'figures/model_workflow.png','Figure 7.1. Training, validation selection, final test and saved inference workflow.')
@@ -217,7 +231,7 @@ After selecting with validation macro F1, the forest is refit on 81,278 training
     section(s,'8.2 Interpretation and practical limits', '''Only 711 of 2,367 true early-readmission encounters are correctly assigned to <30; 845 are assigned to NO and 811 to >30. Conversely, many predicted early readmissions are false positives, giving precision 0.19927. Such errors materially limit use beyond an academic demonstration.
 
 An all-NO baseline on the same test set achieves accuracy 0.53304 and macro F1 0.23180. Random Forest has lower accuracy but substantially higher macro F1 and nonzero minority recall. This comparison explains the criterion without claiming the model is clinically useful. Macro AUC 0.65031 indicates modest ranking ability, not calibrated risk probabilities or benefit to patients.''')
-    figure(s,O/'best_feature_importance.png','Figure 8.3. Exploratory permutation importance on 250 fixed test rows, two repeats.')
+    figure(s,O/'best_feature_importance.png','Figure 8.3. Exploratory permutation importance on 250 fixed test rows, two repeats.',max_height=250)
     section(s,'8.3 Model interpretation',handover_section('Training, comparison and evaluation').split('Permutation importance')[1].join(['Permutation importance','']))
     chapter(s,9,'Clinical Feature Profiling')
     section(s,'9.1 Grouping and outputs', '''The profiling script summarises the same source cohort across age bands, primary diagnosis groups, medication counts, prior inpatient visits and observed length-of-stay bands. Each output contains encounter count, under-30-day count/rate, average hospital days and average medication count. Primary-diagnosis display excludes groups below 500 encounters to avoid presenting very small cohorts without context.
@@ -230,7 +244,7 @@ The overall early-readmission fraction is 11.16%, mean stay is 4.40 days and mea
 
 Overview provides context; Clinical Profiling allows cohort grouping; Live Risk Studio demonstrates the saved pipeline using a hypothetical bounded encounter form. The application does not retrain during browsing. It resolves artifacts relative to its source file, caches read-only results, checks the model bundle/class order, and reports missing or corrupt CSV/JSON files clearly.''')
     for file,caption in [('01_association.png','Association Mining, showing actual full-cohort rules.'),('02_benchmark.png','Five-model validation comparison and declared selection criterion.'),('03_best_model.png','Selected Random Forest test metrics, confusion matrix and ROC.'),('05_inference.png','Working saved-pipeline example inference on hypothetical input.')]:
-        figure(s,E/file,'Figure 10.'+str(['01_association.png','02_benchmark.png','03_best_model.png','05_inference.png'].index(file)+1)+'. Genuine Streamlit browser screenshot: '+caption,max_height=360)
+        figure(s,E/file,'Figure 10.'+str(['01_association.png','02_benchmark.png','03_best_model.png','05_inference.png'].index(file)+1)+'. Genuine Streamlit browser screenshot: '+caption,max_height=290)
     section(s,'10.2 Demonstration sequence', '''Begin with the historical source counts and discharge-time prediction scope. Open Association Mining and interpret one measured rule. Compare validation macro F1 across the five classifiers; explain kNN's accuracy/recall trade-off. Show the selected model's test confusion matrix and read the early-readmission row, then demonstrate a hypothetical inference. Use a clinical profile and supplementary Orange workflow only after the three required views. The separate evidence PDF provides larger screenshots for inspection.''')
     chapter(s,11,'Orange Data Mining Integration')
     markdown(s,(R/'docs/ORANGE_DEMONSTRATION.md').read_text().split('## Repair evidence')[1].replace('## Association workflow','## Association workflow',1))
@@ -259,7 +273,7 @@ Operational intelligence requires time-stamped admission/discharge and capacity 
     s.append(PageBreak());s.append(para('References','Heading1'))
     refs=[('[1] UCI Machine Learning Repository','Diabetes 130-US Hospitals for Years 1999-2008. Official dataset description and provenance.','https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008'),('[2] scikit-learn documentation','Metrics and scoring: quantifying the quality of predictions; pipelines, grouping and model documentation.','https://scikit-learn.org/stable/modules/model_evaluation.html'),('[3] mlxtend documentation','Association rules: support, confidence, lift and frequent-pattern interfaces.','https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/'),('[4] Orange Data Mining documentation','File widget and native three-header tab-separated format.','https://orangedatamining.com/widget-catalog/data/file/'),('[5] Streamlit documentation','App testing framework and AppTest.','https://docs.streamlit.io/develop/api-reference/app-testing'),('[6] XGBoost documentation','Python estimator and tree-boosting parameters.','https://xgboost.readthedocs.io/en/stable/parameter.html')]
     for title,description,url in refs:
-        text(s,title+'. '+description);s.append(Paragraph('<link href="'+escape(url,quote=True)+'" color="#147b83">'+escape(url)+'</link>',styles['SmallText']))
+        text(s,title+'. '+description);s.append(Paragraph('<link href="'+escape(url,quote=True)+'" color="#222222">'+escape(url)+'</link>',styles['SmallText']))
     text(s,'References accessed 21 October 2026. Library versions and the source SHA-256 are recorded in run_provenance.json. The implementation findings in this report derive from local source code, executed logs, CSV/JSON results and genuine screenshots, rather than unsupported literature claims.')
     s.append(PageBreak());s.append(para('Appendix A - Reproduction and artifact index','Heading1'))
     text(s,'Run commands and dependency instructions are in README.md. Technical handover, viva preparation, Orange demonstration and validation records are in docs/. Current analysis outputs are under jury_2_dw/outputs. The external pre-edit backup and the local archive preserve historical work. The complete final file tree, change disposition and Git state are in docs/FINAL_COMPLETION_REPORT.md.')
@@ -267,6 +281,7 @@ Operational intelligence requires time-stamped admission/discharge and capacity 
     doc.multiBuild(s,onFirstPage=footer,onLaterPages=footer)
 
 def main():
-    D.mkdir(exist_ok=True);diagrams();build_evidence();build_report()
+    from build_jury2_diagrams import build as build_jury2_diagrams
+    D.mkdir(exist_ok=True);diagrams();build_jury2_diagrams();build_evidence();build_report()
     for p in D.glob('*.pdf'):print(p,p.stat().st_size)
 if __name__=='__main__':main()

@@ -1,6 +1,6 @@
 """Render every final PDF page and validate text, images and page bounds."""
 from pathlib import Path
-import hashlib,json,subprocess,shutil
+import hashlib,json,subprocess,shutil,re
 import pymupdf as fitz
 from PIL import Image,ImageOps,ImageDraw
 R=Path(__file__).resolve().parents[1];D=R/'deliverables';T=R/'tmp/pdfs';T.mkdir(parents=True,exist_ok=True)
@@ -26,9 +26,25 @@ def main():
             assert len(text.strip())>60 or page.get_images(),(filename,n+1,'empty page')
             assert '\ufffd' not in text,(filename,n+1,'replacement character')
             pages.append({'page':n+1,'characters':len(text),'images':len(page.get_images()),'out_of_bounds':boxes})
+        cover=doc[0].get_text()
+        assert 'Institution' not in cover,(filename,'institution field remains')
+        for page in doc:
+            spans=[span for block in page.get_text('dict')['blocks'] if 'lines' in block for line in block['lines'] for span in line['spans']]
+            for span in spans:
+                assert span['font'].startswith('TimesNewRoman'),(filename,page.number+1,span['font'])
+                assert round(span['size'],1) in (10,12,19,25),(filename,page.number+1,span['size'])
+                if 'Bold' not in span['font']:
+                    assert abs(span['size']-12)<0.01,(filename,page.number+1,'normal text must be 12 pt')
+                color=span['color'];rgb=((color>>16)&255,(color>>8)&255,color&255)
+                assert max(rgb)-min(rgb)<=1,(filename,page.number+1,'tinted text',rgb)
+            assert page.get_text().strip() and (len(page.get_text().strip())>100 or page.get_images()),(filename,page.number+1,'empty body')
+        for term in ['Bhargav Sonawane','ADT24SOCB0313','Chetan Bhapkar','ADT24SOCB0336','Enrollment no.','Roll no.','Prof.Dr.Reena Pagare','School of computing']:
+            assert term in cover,(filename,term,'missing cover detail')
+        assert re.search(r'ADT24SOCB0313\s+9\b',cover),(filename,'Bhargav roll number')
+        assert re.search(r'ADT24SOCB0336\s+11\b',cover),(filename,'Chetan roll number')
         if stem=='report':
             for chapter in range(1,15):assert f'Chapter {chapter} -' in fulltext,(chapter,'missing chapter')
-            for term in ['Abstract','Contents','References','0.43302','0.65031','Registration number']:assert term in fulltext,term
+            for term in ['Abstract','Contents','References','0.43302','0.65031','Enrollment no.']:assert term in fulltext,term
             assert len(doc.get_toc())>=15,'missing document navigation'
         else:
             assert sum(bool(p['images']) for p in pages)>=5

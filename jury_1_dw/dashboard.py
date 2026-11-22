@@ -7,7 +7,7 @@ from pathlib import Path
 st.set_page_config(page_title="Healthcare DW Analytics", layout="wide")
 
 st.title("🏥 Hospital Operational Analytics & Readmission Dashboard")
-st.markdown("### Data Warehouse Business Intelligence Platform (Jury 1)")
+st.markdown("### HealthLine 2.0 | Warehouse Analytics")
 
 # Resolve the actual warehouse database in the data folder
 project_root = Path(__file__).resolve().parent.parent

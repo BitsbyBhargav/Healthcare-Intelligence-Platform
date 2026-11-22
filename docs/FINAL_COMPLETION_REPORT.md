@@ -61,7 +61,7 @@ Real browser checks pass for Association Mining, Model Benchmark, Best Model, Cl
 * `deliverables/Jury2_Three_Dashboard_Evidence.pdf` - 7 pages of actual Streamlit screenshots, explanations and results; landscape A3 for readability.
 * `deliverables/Jury2_Healthcare_Intelligence_Implementation_Report.pdf` - 30-page A4 academic report, all fourteen requested chapters, table of contents, measured results, code-derived diagrams, genuine screenshots and references.
 
-Team and institution fields remain blank. Final page counts, hashes and all-page rendering/text/bounds checks are in `deliverables/logs/pdf_validation.json`. Rendered pages were visually reviewed and sparse page breaks repaired.
+The two team members' names, enrollment numbers and roll numbers are filled in. Department and faculty details are filled in; the institution field has been removed. Final page counts, hashes and all-page rendering/text/bounds checks are in `deliverables/logs/pdf_validation.json`. Rendered pages were visually reviewed and sparse page breaks repaired.
 
 ## 11. Team handover material
 
@@ -100,7 +100,7 @@ python -m venv .venv
 
 ## 13. Remaining limits and manual steps
 
-Fill the personal/institution fields before submission. Tableau and Power BI assets are preserved but were not interactively retested. Orange automated widget checks and two desktop outputs are verified; every possible GUI selection was not exhaustively tested. Close extra analytical sessions if Orange reaches the machine's virtual-memory limit. Regenerate workflow paths after relocating the repository.
+Tableau and Power BI assets are preserved but were not interactively retested. Orange automated widget checks and two desktop outputs are verified; every possible GUI selection was not exhaustively tested. Close extra analytical sessions if Orange reaches the machine's virtual-memory limit. Regenerate workflow paths after relocating the repository.
 
 The study has no temporal/external validation, calibration, subgroup fairness study or causal analysis. Length-of-stay prediction and bed-capacity forecasting remain future work. The current model uses discharge-time variables and is an academic prototype.
 
@@ -109,3 +109,5 @@ The study has no temporal/external validation, calibration, subgroup fairness st
 Working branch: `codex/jury2-finalization`. Publication was authorized after the user's manual demo review. The publication commit is titled `Finalize Jury 2 Healthcare Intelligence Platform` and targets this finalization branch; `main` is not modified. Exact final commit/status and remote verification are recorded after publishing in local `docs/FINAL_GIT_STATE.txt` and reported to the user. Inspect with `git log -1 --oneline` and `git status --short --branch`. See `PUBLICATION_CHECKLIST.md` for the information, artifact-size and recovery checks.
 
 External backup: `C:\Users\offic\OneDrive\Desktop\Healthcare-Intelligence-Platform-backup-20261021`. It includes uncommitted/untracked files and Git metadata; replaceable `.venv` was excluded. Seventy non-cache project files were hash-verified. Original source SHA-256 remains `cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964`.
+
+Faculty typography revision (22 October 2026): both PDFs now embed Times New Roman with normal text at 12 pt, retain heading sizes, and omit the institution field. Neutral document styles replace the green tint. Revised page counts are 35 (implementation report) and 7 (evidence). Original screenshots and analytical findings are preserved; `deliverables/logs/pdf_validation.json` records current hashes and page checks.

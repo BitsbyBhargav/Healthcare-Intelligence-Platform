@@ -1,0 +1,24 @@
+[
+  {
+    "file": "Jury2_Three_Dashboard_Evidence.pdf",
+    "changed_pages": [
+      1
+    ],
+    "pages": 7,
+    "remaining_pages_unchanged": true,
+    "navigation_preserved": true,
+    "sha256": "69c592c27562ec4a26949248214a8da5b337944b5fa97679060a602bcc841b02"
+  },
+  {
+    "file": "Jury2_Healthcare_Intelligence_Implementation_Report.pdf",
+    "changed_pages": [
+      1,
+      7,
+      10
+    ],
+    "pages": 30,
+    "remaining_pages_unchanged": true,
+    "navigation_preserved": true,
+    "sha256": "d0f31a1a74c7f76f977b026c16cd1aaeb55fc50491ff950f9921bad638f32a03"
+  }
+]

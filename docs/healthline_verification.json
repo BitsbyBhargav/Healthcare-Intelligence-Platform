@@ -1,0 +1,216 @@
+{
+  "generated_at_utc": "2026-10-30T01:54:40.408+00:00",
+  "tests": {
+    "tests": "45",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "20.091",
+    "timestamp": "2026-10-30T07:23:24.879807+05:30"
+  },
+  "browser": {
+    "checks": [
+      {
+        "page": "Executive Command Center",
+        "status": "passed"
+      },
+      {
+        "page": "Live Pipeline Studio",
+        "status": "passed"
+      },
+      {
+        "interaction": "Real historical replay committed",
+        "status": "passed"
+      },
+      {
+        "page": "Data Warehouse Explorer",
+        "status": "passed"
+      },
+      {
+        "page": "Patient Clustering",
+        "status": "passed"
+      },
+      {
+        "page": "Live Risk Studio",
+        "status": "passed"
+      },
+      {
+        "interaction": "Saved three-class model inference",
+        "status": "passed"
+      },
+      {
+        "page": "Operational Scenario Lab",
+        "status": "passed"
+      },
+      {
+        "page": "Architecture & Evidence",
+        "status": "passed"
+      }
+    ],
+    "page_errors": [],
+    "external_http_blocked": true,
+    "blocked_request_count": 0,
+    "capture": "Actual Chrome screenshots of local Streamlit; no reconstructed UI"
+  },
+  "protected_artifacts_sha256": {
+    "data/diabetes_130_us.csv": "cbe830d669653c59c6ccb66c98b3c6f8084ff38da94e7c6a1660b2609ac98964",
+    "data/healthcare_dw.db": "c893b7a9b0898f4ee4301f2a3eb425d0f21a105fa61e65143ad6b14976085b13",
+    "jury_2_dw/outputs/best_model.joblib": "4a4f8961a20f509b0464e61102012df6e892b865a4ddae776ff587c31b13b48a"
+  },
+  "original_artifacts_unchanged": true,
+  "real_batch": {
+    "run_id": "d7d05101108d498282abd1951300e520",
+    "started_at": "2026-10-30T01:54:38.352+00:00",
+    "ended_at": "2026-10-30T01:54:38.478+00:00",
+    "source_batch": "explicit",
+    "input_rows": 100,
+    "accepted_rows": 100,
+    "rejected_rows": 0,
+    "duplicate_rows": 0,
+    "loaded_rows": 100,
+    "duration_seconds": 0.1259660000000622,
+    "status": "success",
+    "error_details": "",
+    "before_count": 0,
+    "after_count": 100
+  },
+  "same_batch_repeated": {
+    "run_id": "7956758d4f804f758015cda21f91b2a8",
+    "started_at": "2026-10-30T01:54:38.486+00:00",
+    "ended_at": "2026-10-30T01:54:38.503+00:00",
+    "source_batch": "explicit",
+    "input_rows": 100,
+    "accepted_rows": 100,
+    "rejected_rows": 0,
+    "duplicate_rows": 100,
+    "loaded_rows": 0,
+    "duration_seconds": 0.016762700000072073,
+    "status": "success",
+    "error_details": "",
+    "before_count": 100,
+    "after_count": 100
+  },
+  "temporary_warehouse_counts": [
+    {
+      "table": "Dim_Admission",
+      "rows": 25
+    },
+    {
+      "table": "Dim_Diagnosis",
+      "rows": 90
+    },
+    {
+      "table": "Dim_Patient",
+      "rows": 98
+    },
+    {
+      "table": "Fact_Admissions",
+      "rows": 100
+    },
+    {
+      "table": "demo_metadata",
+      "rows": 2
+    },
+    {
+      "table": "ingestion_batches",
+      "rows": 2
+    },
+    {
+      "table": "model_predictions",
+      "rows": 100
+    },
+    {
+      "table": "operational_scenarios",
+      "rows": 0
+    },
+    {
+      "table": "patient_clusters",
+      "rows": 100
+    },
+    {
+      "table": "pipeline_runs",
+      "rows": 2
+    },
+    {
+      "table": "rejected_records",
+      "rows": 0
+    }
+  ],
+  "sql_readmission_distribution": [
+    {
+      "readmitted": "<30",
+      "encounters": 8
+    },
+    {
+      "readmitted": ">30",
+      "encounters": 50
+    },
+    {
+      "readmitted": "NO",
+      "encounters": 42
+    }
+  ],
+  "isolated_reset_verified": true,
+  "clustering": {
+    "version": "409654075925",
+    "trained_at": "2026-10-30T01:30:19.349+00:00",
+    "encounters": 101766,
+    "features": [
+      "age_midpoint",
+      "num_medications",
+      "number_diagnoses",
+      "num_lab_procedures",
+      "num_procedures",
+      "number_inpatient",
+      "number_emergency",
+      "number_outpatient",
+      "time_in_hospital"
+    ],
+    "selected_k": 2,
+    "silhouette": 0.1742779738900155,
+    "silhouette_sample": 2000,
+    "seed": 42,
+    "k_comparison": [
+      {
+        "k": 2,
+        "silhouette": 0.1742779738900155
+      },
+      {
+        "k": 3,
+        "silhouette": 0.13932625320315112
+      },
+      {
+        "k": 4,
+        "silhouette": 0.14477398820586723
+      },
+      {
+        "k": 5,
+        "silhouette": 0.15236401151163653
+      },
+      {
+        "k": 6,
+        "silhouette": 0.15530178207940548
+      }
+    ],
+    "pca_explained_variance": [
+      0.2283920954338643,
+      0.1525060187754609
+    ],
+    "duration_seconds": 8.27322890000005,
+    "method": "Full-data KMeans; median imputation; StandardScaler; age bin midpoint; retrospective LOS"
+  },
+  "publication_scan": {
+    "text_files_scanned": 107,
+    "findings": [],
+    "ignored_runtime_and_secrets": {
+      "runtime/replay.db": true,
+      ".env": true,
+      ".streamlit/secrets.toml": true,
+      "archive/healthline2_before/example": true,
+      "__pycache__/example.pyc": true
+    },
+    "scope": "Text candidates: common credential and non-loopback IP patterns. Not a comprehensive privacy guarantee. Original source hash unchanged; no new patient input files."
+  },
+  "git_branch": "codex/healthline-2",
+  "publication": "Not committed or pushed. Await explicit user authorization."
+}
